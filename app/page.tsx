@@ -141,48 +141,48 @@ export default function Portfolio() {
     }
   ];
 
-  const projects = [
-    {
-      title: 'Government Service Bus',
-      description: 'Leading the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
-      tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
-      impact: 'Transforming how millions of Zambians access government services',
-      icon: Shield,
-      gradient: 'from-[#d9a085] to-black',
-      link: 'https://zamportal.gov.zm/',
-      status: 'Live'
-    },
-    {
-      title: 'Zamlex AI',
-      description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
-      tags: ['AI/ML', 'Legal Tech', 'NLP', 'GraphQL', 'Serverless'],
-      impact: 'Reduced legal research time by 70% for business professionals',
-      icon: Zap,
-      gradient: 'from-black to-[#d9a085]',
-      link: 'https://ai.zamlex.com/',
-      status: 'Live'
-    },
-    {
-      title: 'Temzie Bites',
-      description: 'Interactive cultural hub preserving Zambia\'s culinary heritage with Strapi CMS, geolocation search, and responsive video storytelling.',
-      tags: ['Cultural Preservation', 'Headless CMS', 'Geolocation', 'Video Streaming'],
-      impact: 'Preserving and sharing Zambian cultural heritage digitally',
-      icon: Globe,
-      gradient: 'from-[#d9a085] to-gray-800',
-      link: 'https://www.temziebites.com/',
-      status: 'Live'
-    },
-    {
-      title: 'Digital Infrastructure Projects',
-      description: 'Multiple scalable web and mobile solutions with cloud architecture, automated pipelines, and modern tech stacks.',
-      tags: ['Cloud Architecture', 'CI/CD', 'Docker', 'AWS', 'Mobile Development'],
-      impact: 'Enhanced digital capabilities for various organizations',
-      icon: Cloud,
-      gradient: 'from-gray-900 to-[#d9a085]',
-      link: 'https://www.pixelpulse.co.zm/',
-      status: 'Portfolio'
-    }
-  ];
+const projects = [
+  {
+    title: 'Government Service Bus',
+    description: 'Leading the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
+    tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
+    impact: 'Transforming how millions of Zambians access government services',
+    icon: Shield,
+    gradient: 'from-[#d9a085] to-black',
+    link: 'https://zamportal.gov.zm/',
+    status: 'Live'
+  },
+  {
+    title: 'Zamlex AI',
+    description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
+    tags: ['AI/ML', 'Legal Tech', 'NLP', 'GraphQL', 'Serverless'],
+    impact: 'Reduced legal research time by 70% for business professionals',
+    icon: Zap,
+    gradient: 'from-black to-[#d9a085]',
+    link: 'https://ai.zamlex.com/',
+    status: 'Live'
+  },
+  {
+    title: 'Temzie Bites',
+    description: 'Interactive cultural hub preserving Zambia\'s culinary heritage with Strapi CMS, geolocation search, and responsive video storytelling.',
+    tags: ['Cultural Preservation', 'Headless CMS', 'Geolocation', 'Video Streaming'],
+    impact: 'Preserving and sharing Zambian cultural heritage digitally',
+    icon: Globe,
+    gradient: 'from-[#d9a085] to-gray-800',
+    link: 'https://www.temziebites.com/',
+    status: 'Live'
+  },
+  {
+    title: 'Freelance Digital Solutions',
+    description: 'Delivered rapid, high-quality digital solutions for local SMEs including Smart Mechanics Zambia, from brand websites to operational systems with modern UI/UX and scalable backends.',
+    tags: ['Freelance', 'Web Development', 'Brand Websites', 'UI/UX Design', 'Business Automation'],
+    impact: 'Empowering local businesses with professional digital tools and platforms',
+    icon: Cloud,
+    gradient: 'from-gray-900 to-[#d9a085]',
+    link: 'https://smart-mechanics.vercel.app/',
+    status: 'Portfolio'
+  }
+];
 
   const education = [
     {
