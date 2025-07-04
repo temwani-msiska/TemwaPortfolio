@@ -1,0 +1,841 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import { 
+  Code, 
+  Database, 
+  Globe, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Linkedin, 
+  Github, 
+  Server, 
+  Users, 
+  TrendingUp, 
+  Award,
+  ChevronDown,
+  ExternalLink,
+  Briefcase,
+  GraduationCap,
+  Zap,
+  Target,
+  Layers,
+  CheckCircle,
+  Building,
+  Calendar,
+  Rocket,
+  Shield,
+  Cloud,
+  Smartphone,
+  Monitor,
+  BookOpen,
+  Star,
+  Menu,
+  X,
+  Download,
+  ArrowUp,
+  Eye,
+  Coffee,
+  Heart,
+  Lightbulb
+} from 'lucide-react';
+
+export default function Portfolio() {
+  const [activeSection, setActiveSection] = useState('hero');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+      setShowScrollTop(scrollY > 500);
+
+      // Update active section based on scroll position
+      const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const skills = [
+    { name: 'Business Analysis', level: 95, icon: TrendingUp, color: 'from-[#d9a085] to-[#c4906f]' },
+    { name: 'Systems Development', level: 92, icon: Code, color: 'from-black to-gray-800' },
+    { name: 'Digital Transformation', level: 94, icon: Zap, color: 'from-[#d9a085] to-black' },
+    { name: 'Cloud Architecture', level: 88, icon: Cloud, color: 'from-gray-800 to-black' },
+    { name: 'API Development', level: 90, icon: Server, color: 'from-[#d9a085] to-[#b8845e]' },
+    { name: 'Full-Stack Development', level: 89, icon: Monitor, color: 'from-black to-[#d9a085]' },
+    { name: 'Database Management', level: 87, icon: Database, color: 'from-[#c4906f] to-[#d9a085]' },
+    { name: 'Mobile Development', level: 85, icon: Smartphone, color: 'from-gray-900 to-[#d9a085]' }
+  ];
+
+  const experiences = [
+    {
+      title: 'Business Analyst & Systems Developer',
+      company: 'Smart Zambia Institute - Government Service Bus',
+      period: 'January 2025 - Present',
+      type: 'Government',
+      description: 'Leading Zambia\'s digital transformation at the heart of the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
+      achievements: [
+        'Gather and document detailed system requirements for national e-government services',
+        'Design scalable digital solutions aligned with operational and strategic objectives',
+        'Develop secure, user-friendly software systems for the Government Service Bus',
+        'Create comprehensive user manuals and conduct training for government staff',
+        'Champion feedback-driven improvements to streamline citizen access to digital services',
+        'Reduce service delivery times through efficient workflow analysis and optimization'
+      ],
+      icon: Building,
+      gradient: 'from-[#d9a085] to-black',
+      link: 'https://zamportal.gov.zm/'
+    },
+    {
+      title: 'Systems Developer',
+      company: 'Smart Zambia Institute',
+      period: 'January 2024 - December 2024',
+      type: 'Government',
+      description: 'Designed and maintained robust software systems to enhance Zambia\'s digital public infrastructure and improve government service delivery across multiple platforms.',
+      achievements: [
+        'Developed scalable software systems for national digital infrastructure',
+        'Conducted comprehensive system requirements analysis with stakeholders',
+        'Implemented innovative solutions with seamless government platform integration',
+        'Provided frontline user support and system monitoring for deployed solutions',
+        'Collaborated with cross-functional teams to optimize operational efficiency',
+        'Drove continuous improvement through user feedback and system evaluation'
+      ],
+      icon: Code,
+      gradient: 'from-black to-[#d9a085]'
+    },
+    {
+      title: 'CEO & Founder',
+      company: 'Pixel Pulse Studio',
+      period: 'January 2018 - Present',
+      type: 'Entrepreneurship',
+      description: 'Founded and lead a technology studio delivering end-to-end web and mobile solutions with scalable cloud architecture, clean API contracts, and automated CI/CD pipelines.',
+      achievements: [
+        'Built Zamlex AI: AI-powered legal-tech platform reducing legal research time by 70%',
+        'Developed Temzie Bites: Interactive cultural hub preserving Zambian culinary heritage',
+        'Architected scalable microservices using React, Next.js, Node.js, and TypeScript',
+        'Implemented robust DevOps practices with Docker, GitHub Actions, and zero-downtime deployments',
+        'Delivered WCAG-compliant, mobile-first user interfaces across multiple projects',
+        'Established automated CI/CD pipelines deployed to AWS, Vercel, and DigitalOcean'
+      ],
+      icon: Rocket,
+      gradient: 'from-[#d9a085] to-gray-900',
+      link: 'https://www.pixelpulse.co.zm/'
+    }
+  ];
+
+  const projects = [
+    {
+      title: 'Government Service Bus',
+      description: 'Leading the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
+      tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
+      impact: 'Transforming how millions of Zambians access government services',
+      icon: Shield,
+      gradient: 'from-[#d9a085] to-black',
+      link: 'https://zamportal.gov.zm/',
+      status: 'Live'
+    },
+    {
+      title: 'Zamlex AI',
+      description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
+      tags: ['AI/ML', 'Legal Tech', 'NLP', 'GraphQL', 'Serverless'],
+      impact: 'Reduced legal research time by 70% for business professionals',
+      icon: Zap,
+      gradient: 'from-black to-[#d9a085]',
+      link: 'https://ai.zamlex.com/',
+      status: 'Live'
+    },
+    {
+      title: 'Temzie Bites',
+      description: 'Interactive cultural hub preserving Zambia\'s culinary heritage with Strapi CMS, geolocation search, and responsive video storytelling.',
+      tags: ['Cultural Preservation', 'Headless CMS', 'Geolocation', 'Video Streaming'],
+      impact: 'Preserving and sharing Zambian cultural heritage digitally',
+      icon: Globe,
+      gradient: 'from-[#d9a085] to-gray-800',
+      link: 'https://www.temziebites.com/',
+      status: 'Live'
+    },
+    {
+      title: 'Digital Infrastructure Projects',
+      description: 'Multiple scalable web and mobile solutions with cloud architecture, automated pipelines, and modern tech stacks.',
+      tags: ['Cloud Architecture', 'CI/CD', 'Docker', 'AWS', 'Mobile Development'],
+      impact: 'Enhanced digital capabilities for various organizations',
+      icon: Cloud,
+      gradient: 'from-gray-900 to-[#d9a085]',
+      link: 'https://www.pixelpulse.co.zm/',
+      status: 'Portfolio'
+    }
+  ];
+
+  const education = [
+    {
+      degree: 'BSc (Hons) Computer Systems and Networking',
+      institution: 'Greenwich University',
+      achievement: 'Upper Second Class Honours',
+      level: 'Bachelor\'s Degree',
+      gradient: 'from-[#d9a085] to-black'
+    },
+    {
+      degree: 'NCC Education Level Diploma in Computing (Level 5)',
+      institution: 'Computer Science',
+      achievement: 'With Merit',
+      level: 'Level 5 Diploma',
+      gradient: 'from-black to-[#d9a085]'
+    },
+    {
+      degree: 'NCC Education Level Diploma in Computing (Level 4)',
+      institution: 'Computer Science',
+      achievement: 'Completed',
+      level: 'Level 4 Diploma',
+      gradient: 'from-[#d9a085] to-gray-800'
+    },
+    {
+      degree: 'NCC Education Level Diploma in Computing (Level 3)',
+      institution: 'Computer Science',
+      achievement: 'With Merit',
+      level: 'Level 3 Diploma',
+      gradient: 'from-gray-800 to-[#d9a085]'
+    }
+  ];
+
+  const techStack = [
+    'React', 'Next.js', 'Node.js', 'TypeScript', 'Django', 'PostgreSQL', 
+    'Docker', 'AWS', 'Vercel', 'DigitalOcean', 'GraphQL', 'REST APIs',
+    'GitHub Actions', 'Microservices', 'Serverless', 'NLP'
+  ];
+
+ const testimonials = [ 
+  {
+    text: " I highly recommend Temwani as a top-tier Business Analyst. She demonstrated exceptional analytical skills during the development of the GSB toolkits, following Agile methodology throughout the system development process. Her professionalism and attention to detail made her a valued asset to the team.",
+    author: "Private Consultant",
+    role: "Government Service Bus Consultant",
+    gradient: 'from-[#d9a085] to-black'
+  },
+  {
+    text: "Working with Temwani on our Smart Mechanics Zambia project was a pleasure. Her quick turnaround time and creative approach to design and development helped us launch faster with a polished brand image. She delivered beyond expectations and brought our vision to life seamlessly.",
+    author: "Smart Mechanics Zambia",
+    role: "Executive Team",
+    gradient: 'from-black to-[#d9a085]'
+  }
+];
+
+
+  const navItems = [
+    { href: '#about', label: 'About' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#education', label: 'Education' },
+    { href: '#contact', label: 'Contact' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
+      {/* Navigation */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold text-black">
+              Temwani Msiska
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {navItems.map((item) => (
+                <a 
+                  key={item.href}
+                  href={item.href} 
+                  className={`transition-colors ${
+                    activeSection === item.href.slice(1) 
+                      ? 'text-[#d9a085] font-semibold' 
+                      : 'text-gray-700 hover:text-[#d9a085]'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-black"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-4 pt-4">
+                {navItems.map((item) => (
+                  <a 
+                    key={item.href}
+                    href={item.href} 
+                    className="text-gray-700 hover:text-[#d9a085] transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d9a085]/20 via-transparent to-black/20"></div>
+        <div className="max-w-7xl mx-auto px-6 py-20 text-center relative z-10">
+          <div className="mb-12">
+            <div className="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-[#d9a085] to-black rounded-full flex items-center justify-center shadow-2xl p-2 animate-pulse">
+              <div className="w-44 h-44 bg-white rounded-full flex items-center justify-center p-1">
+                <img 
+                  src="/WhatsApp Image 2025-05-21 at 18.19.13_42fc92ab.jpg" 
+                  alt="Temwani Msiska"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-black mb-6">
+              Temwani Msiska
+            </h1>
+            <p className="text-xl sm:text-2xl md:text-3xl text-[#d9a085] font-semibold mb-4">
+              Business Analyst & Systems Developer
+            </p>
+            <p className="text-lg sm:text-xl text-black font-medium mb-8">
+              CEO & Founder, Pixel Pulse Studio
+            </p>
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              Leading Zambia's digital transformation through the Government Service Bus while building 
+              innovative solutions that bridge technology and meaningful impact across Africa.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="#contact" className="bg-[#d9a085] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#c4906f] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              Get In Touch
+            </a>
+            <a href="#projects" className="border-2 border-[#d9a085] text-[#d9a085] px-8 py-4 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-all duration-300">
+              View Projects
+            </a>
+            <a 
+              href="/resume.pdf" 
+              download
+              className="border-2 border-black text-black px-8 py-4 rounded-lg font-semibold hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <Download className="w-5 h-5" />
+              <span>Download CV</span>
+            </a>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-[#d9a085]" />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">About Me</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                I am an accomplished IT professional with over eight years of experience as both a Business Analyst 
+                and Systems Developer, currently leading initiatives on the Government Service Bus at Smart Zambia Institute 
+                in collaboration with the Ministry of Finance and National Planning.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                As CEO and Founder of Pixel Pulse Studio since 2018, I specialize in delivering end-to-end web and mobile 
+                solutions with scalable cloud architecture, clean API contracts, and automated CI/CD pipelines using modern 
+                technologies like React, Next.js, Node.js, and TypeScript.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                My work bridges the gap between policy intent and practical implementation, turning stakeholder needs into 
+                efficient, scalable digital services that advance national e-government goals and drive meaningful impact 
+                across Africa.
+              </p>
+              
+              {/* Fun Facts */}
+              <div className="mt-8 p-6 bg-gradient-to-r from-[#d9a085]/10 to-black/10 rounded-xl border border-[#d9a085]/20">
+                <h3 className="text-xl font-bold text-black mb-4 flex items-center">
+                  <Lightbulb className="w-6 h-6 text-[#d9a085] mr-2" />
+                  Fun Facts
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
+                  <div className="flex items-center">
+                    <Coffee className="w-4 h-4 text-[#d9a085] mr-2" />
+                    <span>Powered by coffee and innovation</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Heart className="w-4 h-4 text-[#d9a085] mr-2" />
+                    <span>Passionate about African tech growth</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Code className="w-4 h-4 text-[#d9a085] mr-2" />
+                    <span>7+ years of coding experience</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Globe className="w-4 h-4 text-[#d9a085] mr-2" />
+                    <span>Building solutions for millions</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-[#d9a085]/10 to-[#d9a085]/20 p-6 rounded-xl text-center border border-[#d9a085]/20 transform hover:scale-105 transition-transform duration-300">
+                <Award className="w-12 h-12 text-[#d9a085] mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-black mb-2">8+</h3>
+                <p className="text-gray-600">Years Experience</p>
+              </div>
+              <div className="bg-gradient-to-br from-black/5 to-black/10 p-6 rounded-xl text-center border border-black/20 transform hover:scale-105 transition-transform duration-300">
+                <Rocket className="w-12 h-12 text-black mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-black mb-2">50+</h3>
+                <p className="text-gray-600">Projects Delivered</p>
+              </div>
+              <div className="bg-gradient-to-br from-[#d9a085]/10 to-black/10 p-6 rounded-xl text-center border border-[#d9a085]/20 transform hover:scale-105 transition-transform duration-300">
+                <Users className="w-12 h-12 text-[#d9a085] mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-black mb-2">1M+</h3>
+                <p className="text-gray-600">Users Impacted</p>
+              </div>
+              <div className="bg-gradient-to-br from-black/5 to-[#d9a085]/10 p-6 rounded-xl text-center border border-black/20 transform hover:scale-105 transition-transform duration-300">
+                <TrendingUp className="w-12 h-12 text-black mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-black mb-2">70%</h3>
+                <p className="text-gray-600">Efficiency Gains</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Core Expertise</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {skills.map((skill, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${skill.color} flex items-center justify-center mr-4`}>
+                    <skill.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-black">{skill.name}</h3>
+                </div>
+                <div className="mb-2">
+                  <div className="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Proficiency</span>
+                    <span>{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div 
+                      className={`h-2 rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000`}
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Tech Stack */}
+          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <h3 className="text-2xl font-bold text-black mb-6 text-center">Technology Stack</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {techStack.map((tech, index) => (
+                <span key={index} className="px-4 py-2 bg-gradient-to-r from-[#d9a085]/10 to-black/10 text-gray-800 rounded-full text-sm font-medium hover:from-[#d9a085]/20 hover:to-black/20 transition-all duration-300 border border-[#d9a085]/20 transform hover:scale-105">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Professional Journey</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+          </div>
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative">
+                <div className={`bg-gradient-to-r ${exp.gradient} p-1 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300`}>
+                  <div className="bg-white p-6 sm:p-8 rounded-xl">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                      <div className="flex-1">
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-4">
+                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${exp.gradient} flex items-center justify-center mb-4 sm:mb-0 sm:mr-4`}>
+                            <exp.icon className="w-8 h-8 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl sm:text-2xl font-bold text-black mb-1">{exp.title}</h3>
+                            <div className="flex items-center">
+                              <p className="text-lg sm:text-xl text-[#d9a085] font-semibold">{exp.company}</p>
+                              {exp.link && (
+                                <a 
+                                  href={exp.link} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="ml-2 text-[#d9a085] hover:text-black transition-colors"
+                                >
+                                  <ExternalLink className="w-5 h-5" />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+                          <div className="flex items-center text-gray-600">
+                            <Calendar className="w-5 h-5 mr-2" />
+                            <span>{exp.period}</span>
+                          </div>
+                          <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full font-medium border border-[#d9a085]/20 w-fit">
+                            {exp.type}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 mb-6 leading-relaxed text-base sm:text-lg">{exp.description}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {exp.achievements.map((achievement, i) => (
+                        <div key={i} className="flex items-start space-x-3">
+                          <CheckCircle className="w-5 h-5 text-[#d9a085] mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm sm:text-base">{achievement}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Key Projects</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <a 
+                key={index} 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group border border-gray-100"
+              >
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-xl flex items-center justify-center`}>
+                      <project.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                        project.status === 'Live' 
+                          ? 'bg-green-100 text-green-800 border border-green-200' 
+                          : 'bg-blue-100 text-blue-800 border border-blue-200'
+                      }`}>
+                        {project.status}
+                      </span>
+                      <ExternalLink className="w-6 h-6 text-gray-400 group-hover:text-[#d9a085] transition-colors" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 group-hover:text-[#d9a085] transition-colors">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-xs sm:text-sm rounded-full font-medium border border-[#d9a085]/20">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="border-t pt-4">
+                  <div className="flex items-start space-x-3">
+                    <Star className="w-5 h-5 text-[#d9a085] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm text-gray-600 font-medium mb-1">Impact:</p>
+                      <p className="text-black font-medium text-sm sm:text-base">{project.impact}</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">What People Say</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className={`bg-gradient-to-r ${testimonial.gradient} p-1 rounded-xl shadow-lg`}>
+                <div className="bg-white p-6 sm:p-8 rounded-xl">
+                  <div className="mb-6">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-[#d9a085]/10 rounded-full flex items-center justify-center mr-4">
+                        <Star className="w-6 h-6 text-[#d9a085]" />
+                      </div>
+                      <div className="flex text-[#d9a085]">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 italic leading-relaxed text-sm sm:text-base">"{testimonial.text}"</p>
+                  </div>
+                  <div className="border-t pt-4">
+                    <p className="font-semibold text-black">{testimonial.author}</p>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Education</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+          </div>
+          <div className="max-w-5xl mx-auto space-y-6">
+            {education.map((edu, index) => (
+              <div key={index} className={`bg-gradient-to-r ${edu.gradient} p-1 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300`}>
+                <div className="bg-white p-4 sm:p-6 rounded-xl">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-4 lg:mb-0">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${edu.gradient} rounded-xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-4`}>
+                        <GraduationCap className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-bold text-black mb-1">
+                          {edu.degree}
+                        </h3>
+                        <p className="text-base sm:text-lg text-[#d9a085] font-semibold mb-1">{edu.institution}</p>
+                        <p className="text-sm sm:text-md text-black font-medium">{edu.achievement}</p>
+                      </div>
+                    </div>
+                    <div className="text-center lg:text-right">
+                      <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#d9a085]/10 to-black/10 rounded-full border border-[#d9a085]/20">
+                        <BookOpen className="w-5 h-5 text-[#d9a085] mr-2" />
+                        <span className="text-black font-semibold text-sm sm:text-base">{edu.level}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Let's Connect</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
+            <p className="text-lg sm:text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
+              Passionate about digital transformation and regional integration, I am committed to building systems 
+              that empower people and streamline service delivery across Africa.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-[#d9a085]/10 rounded-lg flex items-center justify-center border border-[#d9a085]/20">
+                  <Mail className="w-6 h-6 text-[#d9a085]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black">Email</h3>
+                  <a href="mailto:temwani.msiska@gmail.com" className="text-gray-600 hover:text-[#d9a085] transition-colors">
+                    temwani.msiska@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center border border-black/20">
+                  <Phone className="w-6 h-6 text-black" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black">Phone</h3>
+                  <a href="tel:+260761286574" className="text-gray-600 hover:text-black transition-colors">
+                    +260 76 128 6574
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-[#d9a085]/10 rounded-lg flex items-center justify-center border border-[#d9a085]/20">
+                  <MapPin className="w-6 h-6 text-[#d9a085]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black">Location</h3>
+                  <p className="text-gray-600">Lusaka, Zambia</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-[#d9a085]/10 rounded-lg flex items-center justify-center border border-[#d9a085]/20">
+                  <Linkedin className="w-6 h-6 text-[#d9a085]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black">LinkedIn</h3>
+                  <a 
+                    href="https://www.linkedin.com/in/temwani-msiska" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-[#d9a085] transition-colors"
+                  >
+                    Connect with me professionally
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center border border-black/20">
+                  <Github className="w-6 h-6 text-black" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-black">GitHub</h3>
+                  <a 
+                    href="https://github.com/temwani-msiska" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                  >
+                    View my code repositories
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-[#d9a085]/5 to-black/5 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold text-black mb-6">Ready to Collaborate?</h3>
+              <p className="text-gray-700 mb-6">
+                Looking to collaborate on projects that turn complex challenges into effective, 
+                user-focused solutions? Let's discuss how we can work together to drive meaningful 
+                digital transformation across Africa.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="mailto:temwani.msiska@gmail.com" 
+                  className="bg-[#d9a085] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#c4906f] transition-all duration-300 flex items-center space-x-2 transform hover:scale-105"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>Send Email</span>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/temwani-msiska" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="border-2 border-[#d9a085] text-[#d9a085] px-6 py-3 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-all duration-300 flex items-center space-x-2"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
+                </a>
+                <a 
+                  href="https://github.com/temwani-msiska" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="border-2 border-black text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-all duration-300 flex items-center space-x-2"
+                >
+                  <Github className="w-5 h-5" />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-12">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-4">Temwani Msiska</h3>
+            <p className="text-gray-400 mb-6">
+              Transforming Africa through innovative digital solutions
+            </p>
+            <div className="flex justify-center space-x-6">
+              <a 
+                href="https://www.linkedin.com/in/temwani-msiska" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#d9a085] transition-colors transform hover:scale-110"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://github.com/temwani-msiska" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#d9a085] transition-colors transform hover:scale-110"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a 
+                href="mailto:temwani.msiska@gmail.com" 
+                className="text-gray-400 hover:text-[#d9a085] transition-colors transform hover:scale-110"
+              >
+                <Mail className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8">
+            <p className="text-gray-400">
+              © 2025 Temwani Msiska. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-[#d9a085] text-white p-3 rounded-full shadow-lg hover:bg-[#c4906f] transition-all duration-300 transform hover:scale-110 z-40"
+        >
+          <ArrowUp className="w-6 h-6" />
+        </button>
+      )}
+    </div>
+  );
+}
