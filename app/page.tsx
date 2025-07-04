@@ -179,7 +179,7 @@ const projects = [
     impact: 'Empowering local businesses with professional digital tools and platforms',
     icon: Cloud,
     gradient: 'from-gray-900 to-[#d9a085]',
-    link: 'https://smart-mechanics.vercel.app/',
+    link: 'https://www.pixelpulse.co.zm/',
     status: 'Portfolio'
   }
 ];
