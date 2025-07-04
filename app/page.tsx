@@ -683,28 +683,8 @@ export default function Portfolio() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#d9a085]/10 rounded-lg flex items-center justify-center border border-[#d9a085]/20">
-                  <Mail className="w-6 h-6 text-[#d9a085]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-black">Email</h3>
-                  <a href="mailto:temwani.msiska@gmail.com" className="text-gray-600 hover:text-[#d9a085] transition-colors">
-                    temwani.msiska@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center border border-black/20">
-                  <Phone className="w-6 h-6 text-black" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-black">Phone</h3>
-                  <a href="tel:+260761286574" className="text-gray-600 hover:text-black transition-colors">
-                    +260 76 128 6574
-                  </a>
-                </div>
-              </div>
+ 
+
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-[#d9a085]/10 rounded-lg flex items-center justify-center border border-[#d9a085]/20">
                   <MapPin className="w-6 h-6 text-[#d9a085]" />
