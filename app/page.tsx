@@ -91,7 +91,7 @@ export default function Portfolio() {
       company: 'Smart Zambia Institute - Government Service Bus',
       period: 'January 2025 - Present',
       type: 'Government',
-      description: 'Leading Zambia\'s digital transformation at the heart of the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
+      description: 'Working at the heart of  Zambia\'s digital transformation on the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
       achievements: [
         'Gather and document detailed system requirements for national e-government services',
         'Design scalable digital solutions aligned with operational and strategic objectives',
@@ -144,7 +144,7 @@ export default function Portfolio() {
 const projects = [
   {
     title: 'Government Service Bus',
-    description: 'Leading the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
+    description: 'Collaborating in the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
     tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
     impact: 'Transforming how millions of Zambians access government services',
     icon: Shield,
@@ -328,7 +328,7 @@ const projects = [
               CEO & Founder, Pixel Pulse Studio
             </p>
             <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Leading Zambia's digital transformation through the Government Service Bus while building 
+              Working at the heart of  Zambia's digital transformation through the Government Service Bus while building 
               innovative solutions that bridge technology and meaningful impact across Africa.
             </p>
           </div>
@@ -364,8 +364,8 @@ const projects = [
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                I am an accomplished IT professional with over eight years of experience as both a Business Analyst 
-                and Systems Developer, currently leading initiatives on the Government Service Bus at Smart Zambia Institute 
+                I am an IT professional with over eight years of experience as both a Business Analyst 
+                and Systems Developer, currently working on initiatives on the Government Service Bus at Smart Zambia Institute 
                 in collaboration with the Ministry of Finance and National Planning.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
