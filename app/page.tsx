@@ -217,8 +217,8 @@ const projects = [
 
   const techStack = [
     'React', 'Next.js', 'Node.js', 'TypeScript', 'Django', 'PostgreSQL', 
-    'Docker', 'AWS', 'Vercel', 'DigitalOcean', 'GraphQL', 'REST APIs',
-    'GitHub Actions', 'Microservices', 'Serverless', 'NLP'
+    'Docker', 'AWS', 'Vercel', 'DigitalOcean', 'REST APIs',
+    'GitHub Actions', 'Microservices'
   ];
 
  const testimonials = [ 
