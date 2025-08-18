@@ -1,6 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { 
+  useState, 
+  useEffect 
+} from 'react';
 import { 
   Code, 
   Database, 
@@ -16,11 +19,8 @@ import {
   Award,
   ChevronDown,
   ExternalLink,
-  Briefcase,
   GraduationCap,
   Zap,
-  Target,
-  Layers,
   CheckCircle,
   Building,
   Calendar,
@@ -30,49 +30,20 @@ import {
   Smartphone,
   Monitor,
   BookOpen,
-  Star,
-  Menu,
-  X,
-  Download,
-  ArrowUp,
-  Eye,
-  Coffee,
-  Heart,
-  Lightbulb
+  Star
 } from 'lucide-react';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 50);
-      setShowScrollTop(scrollY > 500);
-
-      // Update active section based on scroll position
-      const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const skills = [
     { name: 'Business Analysis', level: 95, icon: TrendingUp, color: 'from-[#d9a085] to-[#c4906f]' },
@@ -91,7 +62,7 @@ export default function Portfolio() {
       company: 'Smart Zambia Institute - Government Service Bus',
       period: 'January 2025 - Present',
       type: 'Government',
-      description: 'Working at the heart of  Zambia\'s digital transformation on the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
+      description: 'Leading Zambia\'s digital transformation at the heart of the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
       achievements: [
         'Gather and document detailed system requirements for national e-government services',
         'Design scalable digital solutions aligned with operational and strategic objectives',
@@ -142,47 +113,67 @@ export default function Portfolio() {
   ];
 
 const projects = [
-  {
-    title: 'Government Service Bus',
-    description: 'Collaborating in the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
-    tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
-    impact: 'Transforming how millions of Zambians access government services',
-    icon: Shield,
-    gradient: 'from-[#d9a085] to-black',
-    link: 'https://zamportal.gov.zm/',
-    status: 'Live'
-  },
-  {
-    title: 'Zamlex AI',
-    description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
-    tags: ['AI/ML', 'Legal Tech', 'NLP', 'GraphQL', 'Serverless'],
-    impact: 'Reduced legal research time by 70% for business professionals',
-    icon: Zap,
-    gradient: 'from-black to-[#d9a085]',
-    link: 'https://ai.zamlex.com/',
-    status: 'Live'
-  },
-  {
-    title: 'Temzie Bites',
-    description: 'Interactive cultural hub preserving Zambia\'s culinary heritage with Strapi CMS, geolocation search, and responsive video storytelling.',
-    tags: ['Cultural Preservation', 'Headless CMS', 'Geolocation', 'Video Streaming'],
-    impact: 'Preserving and sharing Zambian cultural heritage digitally',
-    icon: Globe,
-    gradient: 'from-[#d9a085] to-gray-800',
-    link: 'https://www.temziebites.com/',
-    status: 'Live'
-  },
-  {
-    title: 'Freelance Digital Solutions',
-    description: 'Delivered rapid, high-quality digital solutions for local SMEs including Smart Mechanics Zambia, from brand websites to operational systems with modern UI/UX and scalable backends.',
-    tags: ['Freelance', 'Web Development', 'Brand Websites', 'UI/UX Design', 'Business Automation'],
-    impact: 'Empowering local businesses with professional digital tools and platforms',
-    icon: Cloud,
-    gradient: 'from-gray-900 to-[#d9a085]',
-    link: 'https://www.pixelpulse.co.zm/',
-    status: 'Portfolio'
-  }
-];
+    {
+      title: 'Government Service Bus',
+      description: 'Leading the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
+      tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
+      impact: 'Transforming how millions of Zambians access government services',
+      icon: Shield,
+      gradient: 'from-[#d9a085] to-black',
+      link: 'https://zamportal.gov.zm/',
+      status: 'Live'
+    },
+    {
+      title: 'Zamlex AI',
+      description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
+      tags: ['AI/ML', 'Legal Tech', 'NLP', 'GraphQL', 'Serverless'],
+      impact: 'Reduced legal research time by 70% for business professionals',
+      icon: Zap,
+      gradient: 'from-black to-[#d9a085]',
+      link: 'https://ai.zamlex.com/',
+      status: 'Live'
+    },
+    {
+      title: 'Temzie Bites',
+      description: 'Interactive cultural hub preserving Zambia\'s culinary heritage with Strapi CMS, geolocation search, and responsive video storytelling.',
+      tags: ['Cultural Preservation', 'Headless CMS', 'Geolocation', 'Video Streaming'],
+      impact: 'Preserving and sharing Zambian cultural heritage digitally',
+      icon: Globe,
+      gradient: 'from-[#d9a085] to-gray-800',
+      link: 'https://www.temziebites.com/',
+      status: 'Live'
+    },
+    {
+      title: 'Smart Mechanics',
+      description: 'A dynamic and engaging portfolio website for Smart Mechanics, a leading mechanical service provider in Zambia since 2018. ',
+      tags: ['Portfolio Website', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+      impact: 'Enhanced digital presence for mechanical services',
+      icon: Globe,
+      gradient: 'from-gray-900 to-[#d9a085]',
+      link: 'https://www.smartmechanics.co.zm/',
+      status: 'Live'
+    },
+    {
+      title: 'Cowrie Shell',
+      description: 'An innovative giving platform connecting donors to African communities through transparent donations. It enables grassroots organizations to identify needs, local vendors to provide solutions, secure fund releases, and real-time impact tracking.',
+      tags: ['Social Impact Platform', 'Blockchain', 'Transparent Giving', 'Community Development'],
+      impact: 'Revolutionizing charitable giving with transparency and cultural relevance',
+      icon: Globe,
+      gradient: 'from-[#d9a085] to-gray-900',
+      link: 'https://www.cowrieshell.africa/',
+      status: 'Live'
+    },
+    {
+      title: 'EPDMIS',
+      description: 'Frontend development for Zambia\'s e-Payslip Distribution Management Information System, automating secure payslip delivery via email to public service employees, with self-service access under the SMART Zambia Institute.',
+      tags: ['Government Tech', 'Frontend Development', 'Digital Transformation', 'Secure Systems'],
+      impact: 'Streamlined payslip distribution and access for thousands of government employees',
+      icon: Shield,
+      gradient: 'from-gray-800 to-[#d9a085]',
+      link: 'https://epdmis.grz.gov.zm/',
+      status: 'Live'
+    }
+  ];
 
   const education = [
     {
@@ -217,33 +208,8 @@ const projects = [
 
   const techStack = [
     'React', 'Next.js', 'Node.js', 'TypeScript', 'Django', 'PostgreSQL', 
-    'Docker', 'AWS', 'Vercel', 'DigitalOcean', 'REST APIs',
-    'GitHub Actions', 'Microservices'
-  ];
-
- const testimonials = [ 
-  {
-    text: " I highly recommend Temwani as a top-tier Business Analyst. She demonstrated exceptional analytical skills during the development of the GSB toolkits, following Agile methodology throughout the system development process. Her professionalism and attention to detail made her a valued asset to the team.",
-    author: "Private Consultant",
-    role: "Government Service Bus Consultant",
-    gradient: 'from-[#d9a085] to-black'
-  },
-  {
-    text: "Working with Temwani on our Smart Mechanics Zambia project was a pleasure. Her quick turnaround time and creative approach to design and development helped us launch faster with a polished brand image. She delivered beyond expectations and brought our vision to life seamlessly.",
-    author: "Smart Mechanics Zambia",
-    role: "Executive Team",
-    gradient: 'from-black to-[#d9a085]'
-  }
-];
-
-
-  const navItems = [
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#education', label: 'Education' },
-    { href: '#contact', label: 'Contact' }
+    'Docker', 'AWS', 'Vercel', 'DigitalOcean', 'GraphQL', 'REST APIs',
+    'GitHub Actions', 'Microservices', 'Serverless', 'NLP'
   ];
 
   return (
@@ -257,50 +223,15 @@ const projects = [
             <div className="text-2xl font-bold text-black">
               Temwani Msiska
             </div>
-            
-            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {navItems.map((item) => (
-                <a 
-                  key={item.href}
-                  href={item.href} 
-                  className={`transition-colors ${
-                    activeSection === item.href.slice(1) 
-                      ? 'text-[#d9a085] font-semibold' 
-                      : 'text-gray-700 hover:text-[#d9a085]'
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              <a href="#about" className="text-gray-700 hover:text-[#d9a085] transition-colors">About</a>
+              <a href="#skills" className="text-gray-700 hover:text-[#d9a085] transition-colors">Skills</a>
+              <a href="#experience" className="text-gray-700 hover:text-[#d9a085] transition-colors">Experience</a>
+              <a href="#projects" className="text-gray-700 hover:text-[#d9a085] transition-colors">Projects</a>
+              <a href="#education" className="text-gray-700 hover:text-[#d9a085] transition-colors">Education</a>
+              <a href="#contact" className="text-gray-700 hover:text-[#d9a085] transition-colors">Contact</a>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden text-black"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
-
-          {/* Mobile Navigation */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-              <div className="flex flex-col space-y-4 pt-4">
-                {navItems.map((item) => (
-                  <a 
-                    key={item.href}
-                    href={item.href} 
-                    className="text-gray-700 hover:text-[#d9a085] transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
@@ -309,7 +240,7 @@ const projects = [
         <div className="absolute inset-0 bg-gradient-to-br from-[#d9a085]/20 via-transparent to-black/20"></div>
         <div className="max-w-7xl mx-auto px-6 py-20 text-center relative z-10">
           <div className="mb-12">
-            <div className="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-[#d9a085] to-black rounded-full flex items-center justify-center shadow-2xl p-2 animate-pulse">
+            <div className="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-[#d9a085] to-black rounded-full flex items-center justify-center shadow-2xl p-2">
               <div className="w-44 h-44 bg-white rounded-full flex items-center justify-center p-1">
                 <img 
                   src="/WhatsApp Image 2025-05-21 at 18.19.13_42fc92ab.jpg" 
@@ -318,34 +249,26 @@ const projects = [
                 />
               </div>
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-black mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-black mb-6">
               Temwani Msiska
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-[#d9a085] font-semibold mb-4">
+            <p className="text-2xl md:text-3xl text-[#d9a085] font-semibold mb-4">
               Business Analyst & Systems Developer
             </p>
-            <p className="text-lg sm:text-xl text-black font-medium mb-8">
+            <p className="text-xl text-black font-medium mb-8">
               CEO & Founder, Pixel Pulse Studio
             </p>
-            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Working at the heart of  Zambia's digital transformation through the Government Service Bus while building 
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              Leading Zambia's digital transformation through the Government Service Bus while building 
               innovative solutions that bridge technology and meaningful impact across Africa.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="#contact" className="bg-[#d9a085] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#c4906f] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <a href="#contact" className="bg-[#d9a085] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#c4906f] transition-colors shadow-lg hover:shadow-xl">
               Get In Touch
             </a>
-            <a href="#projects" className="border-2 border-[#d9a085] text-[#d9a085] px-8 py-4 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-all duration-300">
+            <a href="#projects" className="border-2 border-[#d9a085] text-[#d9a085] px-8 py-4 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-colors">
               View Projects
-            </a>
-            <a 
-              href="/resume.pdf" 
-              download
-              className="border-2 border-black text-black px-8 py-4 rounded-lg font-semibold hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
-            >
-              <Download className="w-5 h-5" />
-              <span>Download CV</span>
             </a>
           </div>
         </div>
@@ -358,14 +281,14 @@ const projects = [
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">About Me</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">About Me</h2>
             <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                I am an IT professional with over eight years of experience as both a Business Analyst 
-                and Systems Developer, currently working on initiatives on the Government Service Bus at Smart Zambia Institute 
+                I am an accomplished IT professional with over eight years of experience as both a Business Analyst 
+                and Systems Developer, currently leading initiatives on the Government Service Bus at Smart Zambia Institute 
                 in collaboration with the Ministry of Finance and National Planning.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -378,50 +301,24 @@ const projects = [
                 efficient, scalable digital services that advance national e-government goals and drive meaningful impact 
                 across Africa.
               </p>
-              
-              {/* Fun Facts */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-[#d9a085]/10 to-black/10 rounded-xl border border-[#d9a085]/20">
-                <h3 className="text-xl font-bold text-black mb-4 flex items-center">
-                  <Lightbulb className="w-6 h-6 text-[#d9a085] mr-2" />
-                  Fun Facts
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
-                  <div className="flex items-center">
-                    <Coffee className="w-4 h-4 text-[#d9a085] mr-2" />
-                    <span>Powered by coffee and innovation</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Heart className="w-4 h-4 text-[#d9a085] mr-2" />
-                    <span>Passionate about African tech growth</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Code className="w-4 h-4 text-[#d9a085] mr-2" />
-                    <span>7+ years of coding experience</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Globe className="w-4 h-4 text-[#d9a085] mr-2" />
-                    <span>Building solutions for millions</span>
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-[#d9a085]/10 to-[#d9a085]/20 p-6 rounded-xl text-center border border-[#d9a085]/20 transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-[#d9a085]/10 to-[#d9a085]/20 p-6 rounded-xl text-center border border-[#d9a085]/20">
                 <Award className="w-12 h-12 text-[#d9a085] mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-black mb-2">8+</h3>
                 <p className="text-gray-600">Years Experience</p>
               </div>
-              <div className="bg-gradient-to-br from-black/5 to-black/10 p-6 rounded-xl text-center border border-black/20 transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-black/5 to-black/10 p-6 rounded-xl text-center border border-black/20">
                 <Rocket className="w-12 h-12 text-black mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-black mb-2">50+</h3>
                 <p className="text-gray-600">Projects Delivered</p>
               </div>
-              <div className="bg-gradient-to-br from-[#d9a085]/10 to-black/10 p-6 rounded-xl text-center border border-[#d9a085]/20 transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-[#d9a085]/10 to-black/10 p-6 rounded-xl text-center border border-[#d9a085]/20">
                 <Users className="w-12 h-12 text-[#d9a085] mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-black mb-2">1M+</h3>
                 <p className="text-gray-600">Users Impacted</p>
               </div>
-              <div className="bg-gradient-to-br from-black/5 to-[#d9a085]/10 p-6 rounded-xl text-center border border-black/20 transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-black/5 to-[#d9a085]/10 p-6 rounded-xl text-center border border-black/20">
                 <TrendingUp className="w-12 h-12 text-black mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-black mb-2">70%</h3>
                 <p className="text-gray-600">Efficiency Gains</p>
@@ -435,10 +332,10 @@ const projects = [
       <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Core Expertise</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Core Expertise</h2>
             <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {skills.map((skill, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
                 <div className="flex items-center mb-4">
@@ -468,7 +365,7 @@ const projects = [
             <h3 className="text-2xl font-bold text-black mb-6 text-center">Technology Stack</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {techStack.map((tech, index) => (
-                <span key={index} className="px-4 py-2 bg-gradient-to-r from-[#d9a085]/10 to-black/10 text-gray-800 rounded-full text-sm font-medium hover:from-[#d9a085]/20 hover:to-black/20 transition-all duration-300 border border-[#d9a085]/20 transform hover:scale-105">
+                <span key={index} className="px-4 py-2 bg-gradient-to-r from-[#d9a085]/10 to-black/10 text-gray-800 rounded-full text-sm font-medium hover:from-[#d9a085]/20 hover:to-black/20 transition-colors border border-[#d9a085]/20">
                   {tech}
                 </span>
               ))}
@@ -481,24 +378,24 @@ const projects = [
       <section id="experience" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Professional Journey</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Professional Journey</h2>
             <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
           </div>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <div key={index} className="relative">
-                <div className={`bg-gradient-to-r ${exp.gradient} p-1 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300`}>
-                  <div className="bg-white p-6 sm:p-8 rounded-xl">
+                <div className={`bg-gradient-to-r ${exp.gradient} p-1 rounded-xl shadow-lg`}>
+                  <div className="bg-white p-8 rounded-xl">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                       <div className="flex-1">
-                        <div className="flex flex-col sm:flex-row sm:items-center mb-4">
-                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${exp.gradient} flex items-center justify-center mb-4 sm:mb-0 sm:mr-4`}>
+                        <div className="flex items-center mb-4">
+                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${exp.gradient} flex items-center justify-center mr-4`}>
                             <exp.icon className="w-8 h-8 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-black mb-1">{exp.title}</h3>
+                            <h3 className="text-2xl font-bold text-black mb-1">{exp.title}</h3>
                             <div className="flex items-center">
-                              <p className="text-lg sm:text-xl text-[#d9a085] font-semibold">{exp.company}</p>
+                              <p className="text-xl text-[#d9a085] font-semibold">{exp.company}</p>
                               {exp.link && (
                                 <a 
                                   href={exp.link} 
@@ -512,23 +409,23 @@ const projects = [
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+                        <div className="flex items-center space-x-4 mb-4">
                           <div className="flex items-center text-gray-600">
                             <Calendar className="w-5 h-5 mr-2" />
                             <span>{exp.period}</span>
                           </div>
-                          <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full font-medium border border-[#d9a085]/20 w-fit">
+                          <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full font-medium border border-[#d9a085]/20">
                             {exp.type}
                           </span>
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-700 mb-6 leading-relaxed text-base sm:text-lg">{exp.description}</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <p className="text-gray-700 mb-6 leading-relaxed text-lg">{exp.description}</p>
+                    <div className="grid md:grid-cols-2 gap-4">
                       {exp.achievements.map((achievement, i) => (
                         <div key={i} className="flex items-start space-x-3">
                           <CheckCircle className="w-5 h-5 text-[#d9a085] mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 text-sm sm:text-base">{achievement}</span>
+                          <span className="text-gray-700">{achievement}</span>
                         </div>
                       ))}
                     </div>
@@ -544,17 +441,17 @@ const projects = [
       <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Key Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Key Projects</h2>
             <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <a 
                 key={index} 
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group border border-gray-100"
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group border border-gray-100"
               >
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-4">
@@ -572,12 +469,12 @@ const projects = [
                       <ExternalLink className="w-6 h-6 text-gray-400 group-hover:text-[#d9a085] transition-colors" />
                     </div>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 group-hover:text-[#d9a085] transition-colors">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-black mb-3 group-hover:text-[#d9a085] transition-colors">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-xs sm:text-sm rounded-full font-medium border border-[#d9a085]/20">
+                    <span key={i} className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full font-medium border border-[#d9a085]/20">
                       {tag}
                     </span>
                   ))}
@@ -587,7 +484,7 @@ const projects = [
                     <Star className="w-5 h-5 text-[#d9a085] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-sm text-gray-600 font-medium mb-1">Impact:</p>
-                      <p className="text-black font-medium text-sm sm:text-base">{project.impact}</p>
+                      <p className="text-black font-medium">{project.impact}</p>
                     </div>
                   </div>
                 </div>
@@ -597,69 +494,34 @@ const projects = [
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">What People Say</h2>
-            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className={`bg-gradient-to-r ${testimonial.gradient} p-1 rounded-xl shadow-lg`}>
-                <div className="bg-white p-6 sm:p-8 rounded-xl">
-                  <div className="mb-6">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-[#d9a085]/10 rounded-full flex items-center justify-center mr-4">
-                        <Star className="w-6 h-6 text-[#d9a085]" />
-                      </div>
-                      <div className="flex text-[#d9a085]">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-current" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-gray-700 italic leading-relaxed text-sm sm:text-base">"{testimonial.text}"</p>
-                  </div>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-black">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
+      <section id="education" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Education</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Education</h2>
             <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
           </div>
           <div className="max-w-5xl mx-auto space-y-6">
             {education.map((edu, index) => (
-              <div key={index} className={`bg-gradient-to-r ${edu.gradient} p-1 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300`}>
-                <div className="bg-white p-4 sm:p-6 rounded-xl">
+              <div key={index} className={`bg-gradient-to-r ${edu.gradient} p-1 rounded-xl shadow-lg`}>
+                <div className="bg-white p-6 rounded-xl">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <div className="flex flex-col sm:flex-row sm:items-center mb-4 lg:mb-0">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${edu.gradient} rounded-xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-4`}>
+                    <div className="flex items-center mb-4 lg:mb-0">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${edu.gradient} rounded-xl flex items-center justify-center mr-4`}>
                         <GraduationCap className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg sm:text-xl font-bold text-black mb-1">
+                        <h3 className="text-xl font-bold text-black mb-1">
                           {edu.degree}
                         </h3>
-                        <p className="text-base sm:text-lg text-[#d9a085] font-semibold mb-1">{edu.institution}</p>
-                        <p className="text-sm sm:text-md text-black font-medium">{edu.achievement}</p>
+                        <p className="text-lg text-[#d9a085] font-semibold mb-1">{edu.institution}</p>
+                        <p className="text-md text-black font-medium">{edu.achievement}</p>
                       </div>
                     </div>
                     <div className="text-center lg:text-right">
                       <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#d9a085]/10 to-black/10 rounded-full border border-[#d9a085]/20">
                         <BookOpen className="w-5 h-5 text-[#d9a085] mr-2" />
-                        <span className="text-black font-semibold text-sm sm:text-base">{edu.level}</span>
+                        <span className="text-black font-semibold">{edu.level}</span>
                       </div>
                     </div>
                   </div>
@@ -671,20 +533,18 @@ const projects = [
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">Let's Connect</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Let's Connect</h2>
             <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full"></div>
-            <p className="text-lg sm:text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
               Passionate about digital transformation and regional integration, I am committed to building systems 
               that empower people and streamline service delivery across Africa.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
- 
-
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-[#d9a085]/10 rounded-lg flex items-center justify-center border border-[#d9a085]/20">
                   <MapPin className="w-6 h-6 text-[#d9a085]" />
@@ -727,7 +587,7 @@ const projects = [
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[#d9a085]/5 to-black/5 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-black mb-6">Ready to Collaborate?</h3>
               <p className="text-gray-700 mb-6">
                 Looking to collaborate on projects that turn complex challenges into effective, 
@@ -737,7 +597,7 @@ const projects = [
               <div className="flex flex-wrap gap-4">
                 <a 
                   href="mailto:temwani.msiska@gmail.com" 
-                  className="bg-[#d9a085] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#c4906f] transition-all duration-300 flex items-center space-x-2 transform hover:scale-105"
+                  className="bg-[#d9a085] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#c4906f] transition-colors flex items-center space-x-2"
                 >
                   <Mail className="w-5 h-5" />
                   <span>Send Email</span>
@@ -746,7 +606,7 @@ const projects = [
                   href="https://www.linkedin.com/in/temwani-msiska" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="border-2 border-[#d9a085] text-[#d9a085] px-6 py-3 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-all duration-300 flex items-center space-x-2"
+                  className="border-2 border-[#d9a085] text-[#d9a085] px-6 py-3 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-colors flex items-center space-x-2"
                 >
                   <Linkedin className="w-5 h-5" />
                   <span>LinkedIn</span>
@@ -755,7 +615,7 @@ const projects = [
                   href="https://github.com/temwani-msiska" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="border-2 border-black text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-all duration-300 flex items-center space-x-2"
+                  className="border-2 border-black text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors flex items-center space-x-2"
                 >
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
@@ -779,7 +639,7 @@ const projects = [
                 href="https://www.linkedin.com/in/temwani-msiska" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#d9a085] transition-colors transform hover:scale-110"
+                className="text-gray-400 hover:text-[#d9a085] transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -787,13 +647,13 @@ const projects = [
                 href="https://github.com/temwani-msiska" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#d9a085] transition-colors transform hover:scale-110"
+                className="text-gray-400 hover:text-[#d9a085] transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a 
                 href="mailto:temwani.msiska@gmail.com" 
-                className="text-gray-400 hover:text-[#d9a085] transition-colors transform hover:scale-110"
+                className="text-gray-400 hover:text-[#d9a085] transition-colors"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -806,16 +666,6 @@ const projects = [
           </div>
         </div>
       </footer>
-
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-[#d9a085] text-white p-3 rounded-full shadow-lg hover:bg-[#c4906f] transition-all duration-300 transform hover:scale-110 z-40"
-        >
-          <ArrowUp className="w-6 h-6" />
-        </button>
-      )}
     </div>
   );
 }
