@@ -113,16 +113,7 @@ export default function Portfolio() {
   ];
 
 const projects = [
-    {
-      title: 'Government Service Bus',
-      description: 'Leading the development of Zambia\'s unified digital government platform, enabling seamless service delivery across all government departments.',
-      tags: ['Digital Transformation', 'Government Tech', 'API Integration', 'Microservices'],
-      impact: 'Transforming how millions of Zambians access government services',
-      icon: Shield,
-      gradient: 'from-[#d9a085] to-black',
-      link: 'https://zamportal.gov.zm/',
-      status: 'Live'
-    },
+  
     {
       title: 'Zamlex AI',
       description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
@@ -161,16 +152,6 @@ const projects = [
       icon: Globe,
       gradient: 'from-[#d9a085] to-gray-900',
       link: 'https://www.cowrieshell.africa/',
-      status: 'Live'
-    },
-    {
-      title: 'EPDMIS',
-      description: 'Frontend development for Zambia\'s e-Payslip Distribution Management Information System, automating secure payslip delivery via email to public service employees, with self-service access under the SMART Zambia Institute.',
-      tags: ['Government Tech', 'Frontend Development', 'Digital Transformation', 'Secure Systems'],
-      impact: 'Streamlined payslip distribution and access for thousands of government employees',
-      icon: Shield,
-      gradient: 'from-gray-800 to-[#d9a085]',
-      link: 'https://epdmis.grz.gov.zm/',
       status: 'Live'
     }
   ];
