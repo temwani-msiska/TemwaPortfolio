@@ -63,7 +63,7 @@ If you work in this space or are trying to understand it, I hope you find someth
   },
   {
     slug: "mosip-transforming-digital-identity-global-south",
-    title: "MOSIP: How Open-Source Identity Infrastructure is Transforming the Global South",
+    title: "MOSIP: How Open Source Identity Infrastructure is Transforming the Global South",
     excerpt: "The Modular Open Source Identity Platform is reshaping how nations approach digital identity, offering a sovereign, interoperable foundation for inclusive public services.",
     content: `
 Digital identity sits at the foundation of modern public service delivery. Without reliable ways to verify who citizens are, governments struggle to target benefits, prevent fraud, and ensure services reach those who need them most. For decades, building national identity systems required either massive investment in proprietary solutions or dependence on external vendors with ongoing licensing costs.
@@ -72,38 +72,48 @@ MOSIP, the Modular Open Source Identity Platform, is changing this equation.
 
 ## What Makes MOSIP Different
 
-Developed by the International Institute of Information Technology Bangalore with support from the Bill and Melinda Gates Foundation, MOSIP provides countries with a complete, open-source foundation for building national digital identity systems. The platform handles the complex technical requirements of biometric capture, identity deduplication, credential issuance, and authentication services.
+Developed by the International Institute of Information Technology Bangalore with support from the Bill and Melinda Gates Foundation, MOSIP provides countries with a complete, open source foundation for building national digital identity systems. The platform handles the complex technical requirements of biometric capture, identity deduplication, credential issuance, and authentication services.
 
-What sets MOSIP apart is not just that it is free to use. The platform was designed from the ground up with the needs of developing nations in mind. It works on modest hardware, supports offline scenarios, and provides flexibility to accommodate different legal frameworks and use cases.
+What sets MOSIP apart is not just that it is free to use. The platform was designed from the ground up with the needs of developing nations in mind. It works on modest hardware, supports offline scenarios common in rural areas, and provides flexibility to accommodate different legal frameworks and use cases.
+
+For technology teams in government, this matters. Proprietary identity platforms often arrive as black boxes. When something breaks or needs customisation, you wait for the vendor. With MOSIP, the code is visible, modifiable, and supported by a growing community of implementers facing similar challenges.
 
 ## Adoption Across Africa and Beyond
 
-The momentum behind MOSIP adoption is significant. The Philippines has deployed MOSIP as the foundation for their PhilSys national ID program, enrolling tens of millions of citizens. Morocco, Ethiopia, Guinea, and Togo are at various stages of implementation. Sri Lanka and other nations across Asia have committed to the platform.
+The momentum behind MOSIP adoption is significant. The Philippines has deployed MOSIP as the foundation for their PhilSys national ID program, enrolling over 90 million citizens. Morocco has launched its system. Ethiopia, Guinea, Sierra Leone, and Togo are at various stages of implementation. Sri Lanka and other nations across Asia have committed to the platform.
 
-For African nations building foundational digital infrastructure, MOSIP represents an opportunity to leapfrog proprietary solutions. Countries can deploy sovereign identity systems without the ongoing costs and vendor dependencies that have constrained previous generations of government technology.
+Zambia recently joined this movement, with government developers completing MOSIP training focused on healthcare system integration as part of the World Bank supported Digital Zambia Acceleration Project. The country is preparing to launch an open source eKYC system that will enable identity verification using National Registration Card data.
+
+For African nations building foundational digital infrastructure, MOSIP represents an opportunity to leapfrog proprietary solutions. Countries can deploy sovereign identity systems without the ongoing costs and vendor dependencies that constrained previous generations of government technology. The global "50 in 5" campaign aims to implement digital identity systems in 50 countries within five years, and MOSIP is central to that ambition.
 
 ## Integration with Broader DPI Initiatives
 
 MOSIP does not exist in isolation. The platform is designed to work within the broader digital public infrastructure ecosystem. Identity credentials issued through MOSIP can integrate with payment systems, data exchange platforms, and service delivery applications.
 
-This interoperability matters. When identity, payments, and data exchange work together, governments can deliver services more efficiently. Citizens can access benefits without repeated verification. Fraud becomes harder as systems cross-check information automatically.
+This interoperability matters. When identity, payments, and data exchange work together, governments can deliver services more efficiently. Citizens can access benefits without repeated verification. Fraud becomes harder as systems cross check information automatically.
+
+The India Stack demonstrated this at scale. Aadhaar identity credentials linked to UPI payments and consent based data sharing created infrastructure that enabled everything from direct benefit transfers to rapid COVID vaccination tracking. MOSIP offers other countries a foundation to build similar integrated systems.
 
 ## Challenges and Considerations
 
-Adopting MOSIP is not without challenges. Countries need technical capacity to deploy and maintain the platform. Privacy frameworks must be established to govern how identity data is collected, stored, and used. Enrollment infrastructure must reach populations across diverse geographies.
+Adopting MOSIP is not without challenges. Countries need technical capacity to deploy and maintain the platform. Privacy frameworks must be established to govern how identity data is collected, stored, and used. Enrollment infrastructure must reach populations across diverse geographies, including rural areas with limited connectivity and citizens without existing documentation.
 
-These challenges are real but surmountable. The growing community of MOSIP implementers shares lessons learned and contributes improvements back to the platform. International organizations provide technical assistance to countries building implementation capacity.
+The governance questions are often harder than the technical ones. Who controls the identity database? What safeguards prevent misuse? How do you build public trust in a system that collects biometric data? These questions require clear policy answers before implementation begins, not after.
+
+One pattern emerging across implementations is the emphasis on local capacity building. Sustainable digital infrastructure requires domestic teams who can manage and maintain systems independently rather than depending on external vendors indefinitely. The growing community of MOSIP implementers shares lessons learned and contributes improvements back to the platform, but ultimately successful deployment depends on sustained political commitment and institutional investment that outlasts any single administration.
 
 ## Looking Forward
 
-The shift toward open-source identity infrastructure represents a fundamental change in how nations approach digital transformation. Rather than purchasing black-box solutions, countries can build on transparent foundations they control and can adapt to their specific needs.
+The shift toward open source identity infrastructure represents a fundamental change in how nations approach digital transformation. Rather than purchasing solutions they cannot inspect or modify, countries can build on transparent foundations they control and adapt to their specific needs.
 
-For those of us working in digital public infrastructure, MOSIP demonstrates what becomes possible when technology is designed as a public good. The platform proves that world-class identity infrastructure need not be the exclusive domain of wealthy nations or proprietary vendors.
+For those of us working in digital public infrastructure, MOSIP demonstrates what becomes possible when technology is designed as a public good. The platform proves that world class identity infrastructure need not be the exclusive domain of wealthy nations or proprietary vendors.
+
+The question for each country is not whether to digitise identity. That transition is already underway. The question is whether to do so on terms that preserve sovereignty, enable interoperability, and serve citizens rather than vendors.
     `,
     date: "2025-01-18",
     category: "Digital Public Infrastructure",
-    tags: ["MOSIP", "Digital Identity", "Open Source", "Africa"],
-    readTime: "6 min read",
+    tags: ["MOSIP", "Digital Identity", "Open Source", "Africa", "Zambia"],
+    readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
   },
   {
