@@ -100,7 +100,7 @@ For those of us working in digital public infrastructure, MOSIP demonstrates wha
     category: "Digital Public Infrastructure",
     tags: ["MOSIP", "Digital Identity", "Open Source", "Africa"],
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1569025743873-ea3a9ber4f1a?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
   },
   {
     slug: "g20-dpi-framework-emerging-economies",
