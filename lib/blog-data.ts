@@ -19,6 +19,57 @@ export const categories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "govstack-women-in-govtech-challenge-2026-mentee",
+    title: "Selected as a GovStack Women in GovTech Challenge 2026 Mentee",
+    excerpt: "Out of over 1,300 applicants from 137 countries, I am honoured to be among those chosen to participate in this global programme focused on advancing women in digital government.",
+    content: `
+Last week, I received news that I had been selected as a mentee for the GovStack Women in GovTech Challenge 2026. Out of over 1,300 applicants from 137 countries, I am honoured to be among those chosen to participate in this global programme focused on advancing women in digital government.
+
+The selection still feels surreal. When I submitted my application, I knew the competition would be intense. GovStack has become a significant force in the digital public infrastructure space, and the opportunity to learn from and collaborate with practitioners and leaders across the global GovTech ecosystem is extraordinary.
+
+## What is GovStack?
+
+For those unfamiliar, GovStack is an initiative supported by the International Telecommunication Union, the German development agency GIZ, Estonia, and the Digital Impact Alliance. The initiative provides governments with open source, reusable digital components called building blocks that can be assembled to deliver public services efficiently. Rather than building systems from scratch, countries can adopt tested, interoperable solutions and adapt them to local contexts.
+
+The philosophy aligns closely with the Digital Public Infrastructure approach that has gained momentum since the G20 endorsement in 2023. Identity, payments, data exchange, and service delivery can be built on shared foundations rather than siloed, proprietary systems. GovStack translates this philosophy into practical tools and frameworks that governments can actually implement.
+
+## Why This Matters to Me
+
+Working at SMART Zambia Institute, I have seen firsthand how digital transformation can improve public service delivery. I have also seen the challenges: coordination across agencies, building technical capacity, earning public trust, and sustaining systems beyond initial implementation. These are not problems with simple solutions. They require continuous learning, collaboration, and exposure to how others are navigating similar terrain.
+
+The GovStack mentorship programme offers exactly this. Over the coming months, I will have access to experienced practitioners, structured learning, and a global cohort of women working on similar challenges in their own countries. The cross border exchange of ideas and experiences is what excites me most.
+
+Too often, those of us working in digital government in African countries operate in relative isolation. We read about what India or Estonia or Singapore have done, but we rarely have the opportunity to engage directly with peers facing comparable constraints and opportunities. This programme creates that space.
+
+## Women in GovTech
+
+The focus on women in this programme is not incidental. Across the technology sector, and particularly in government technology, women remain underrepresented in technical and leadership roles. This matters not just for equity but for the quality of the systems we build. Digital public infrastructure serves everyone. The teams designing and implementing these systems should reflect that diversity.
+
+I have been fortunate to work in environments that supported my growth. Not every woman in technology has that experience. Programmes like the GovStack Women in GovTech Challenge create pathways, visibility, and networks that can make a meaningful difference in how careers develop and how perspectives are included in the work.
+
+## What I Hope to Contribute
+
+Mentorship is not a one way exchange. While I am eager to learn from those with more experience, I also come to this programme with perspectives shaped by working on real implementation challenges in Zambia. The eKYC rollouts, the Government Service Bus integration work, the OpenG2P training in Bangalore, the daily reality of translating policy intent into functioning systems: these experiences have taught me things that might be valuable to others.
+
+I hope to bring questions grounded in practice. What governance models actually work when multiple agencies must share data? How do you build public trust in biometric systems when misinformation spreads faster than facts? What does sustainable capacity building look like when resources are constrained? These are the questions I wrestle with professionally, and I suspect others in the cohort will recognise them.
+
+## Looking Ahead
+
+The programme kicks off in February, and I am already preparing. There is reading to do, connections to make, and a mindset to cultivate: open to learning, willing to share, and focused on outcomes that matter.
+
+For anyone considering applying to future cohorts of this programme or similar initiatives, my encouragement is simple: apply. The worst outcome is a rejection. The best outcome is an opportunity that reshapes your trajectory. I almost did not submit my application, thinking the odds were too long. I am grateful I did.
+
+To the GovStack team, the ITU, GIZ, and everyone involved in making this programme possible: thank you. To my colleagues at SMART Zambia who supported my application: thank you. And to the other women selected for this cohort: I look forward to learning alongside you.
+
+This is the kind of opportunity that does not come often. I intend to make the most of it.
+    `,
+    date: "2025-01-22",
+    category: "GovTech & Public Sector Innovation",
+    tags: ["GovStack", "Women in Tech", "Mentorship", "Digital Government", "Zambia"],
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80"
+  },
+  {
     slug: "working-at-intersection-technology-public-service",
     title: "Working at the Intersection of Technology and Public Service",
     excerpt: "Technology and public institutions create a particular kind of complexity. The real challenge lies in coordination: making systems work together across agencies and ensuring digital services reach citizens.",
