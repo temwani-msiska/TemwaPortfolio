@@ -63,6 +63,19 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
+      {/* Featured Image */}
+      {post.image && (
+        <div className="max-w-4xl mx-auto px-6 -mt-4">
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-64 md:h-80 object-cover"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Article Content */}
       <article className="py-12">
         <div className="max-w-4xl mx-auto px-6">

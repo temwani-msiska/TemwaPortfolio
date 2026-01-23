@@ -497,31 +497,42 @@ const projects = [
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1 overflow-hidden"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full border border-[#d9a085]/20">
-                    {post.category}
-                  </span>
-                  <span className="text-gray-400 text-sm">{post.readTime}</span>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-3 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center justify-between">
-                  <time className="text-gray-400 text-sm">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
-                    })}
-                  </time>
-                  <span className="text-[#d9a085] font-medium text-sm">
-                    Read more
-                  </span>
+                {post.image && (
+                  <div className="h-40 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full border border-[#d9a085]/20">
+                      {post.category}
+                    </span>
+                    <span className="text-gray-400 text-sm">{post.readTime}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-black mb-3 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <time className="text-gray-400 text-sm">
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </time>
+                    <span className="text-[#d9a085] font-medium text-sm">
+                      Read more
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
