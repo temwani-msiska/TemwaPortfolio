@@ -123,42 +123,78 @@ The question for each country is not whether to digitise identity. That transiti
     content: `
 In 2023, under India's presidency, the G20 endorsed a framework for Digital Public Infrastructure that has significant implications for how nations approach foundational digital systems. This was not merely a technical document. It represented a shift in how the international community thinks about digital development.
 
+But frameworks do not build systems. The real question is what happens when these principles meet the realities of implementation in countries with limited resources, competing priorities, and institutional constraints.
+
 ## From Products to Infrastructure
 
-The traditional approach to government digitization focused on procuring specific solutions for specific problems. A tax system here, a benefits platform there, each implemented as a standalone product. The DPI framework proposes something different: shared digital infrastructure that multiple services can build upon.
+The traditional approach to government digitisation focused on procuring specific solutions for specific problems. A tax system here, a benefits platform there, each implemented as a standalone product with its own database, authentication mechanism, and vendor relationship.
+
+The DPI framework proposes something different: shared digital infrastructure that multiple services can build upon.
 
 This shift matters because it changes the economics of digital transformation. When identity verification, payment processing, and data exchange exist as shared infrastructure, individual services do not need to build these capabilities from scratch. Development costs decrease. Interoperability improves. Innovation accelerates as builders focus on services rather than plumbing.
+
+The logic is compelling. But it also requires a different kind of coordination than most governments are structured to deliver.
 
 ## The Three Foundational Layers
 
 The G20 framework identifies three core components of digital public infrastructure. Digital identity systems enable citizens to prove who they are across services. Payment infrastructure allows money to move efficiently between parties. Data exchange frameworks permit information to flow between systems with appropriate consent and governance.
 
-India's own experience with Aadhaar, UPI, and the India Stack demonstrated how these layers could work together at scale. Over a billion identity credentials. Billions of real-time payments monthly. A foundation that enabled innovations from direct benefit transfers to the CoWIN vaccination platform during the pandemic.
+India's experience with Aadhaar and UPI, implemented through the broader India Stack, demonstrated how these layers could work together at scale. Over a billion identity credentials. Billions of real time payments monthly. A foundation that enabled innovations from direct benefit transfers to the CoWIN vaccination platform during the pandemic.
 
-## Implications for African Nations
+The India example is powerful but also exceptional. India had decades of investment in technical institutions, a massive domestic market, and programme continuity that sustained the effort across administrations. Countries looking to replicate these results must be realistic about what is transferable and what is context specific.
 
-For countries building digital infrastructure, the G20 framework provides both validation and direction. It confirms that investing in foundational layers rather than isolated systems is the right approach. It provides a common vocabulary for discussing digital transformation with international partners.
+## What This Means for African Nations
 
-More practically, the framework has catalyzed funding and technical assistance for DPI initiatives in developing nations. Organizations like the World Bank, bilateral development agencies, and private foundations have aligned programs around the DPI approach.
+For countries building digital infrastructure, the G20 framework provides both validation and direction. It confirms that investing in foundational layers rather than isolated systems is the right approach. It provides a common vocabulary for discussing digital transformation with international partners and development finance institutions.
 
-## Governance Challenges
+More practically, the framework has catalysed funding and technical assistance for DPI initiatives. The World Bank, bilateral development agencies, and private foundations have aligned programmes around the DPI approach. Countries can now access resources specifically designed to support foundational infrastructure rather than piecemeal projects.
 
-Shared infrastructure requires shared governance. When multiple agencies depend on common platforms, decisions about standards, access, and evolution become inherently political. Who controls the identity system? What data can flow through exchange platforms? How are costs and benefits distributed?
+This alignment is evident across the continent. Zambia's Digital Zambia Acceleration Project, supported by a $100 million World Bank grant, is structured around DPI principles. Similar initiatives are underway in Ethiopia, Nigeria, and elsewhere. The framework has given these efforts a shared language and a clearer path to international support.
 
-These governance questions are often harder than the technical ones. Countries implementing DPI must build institutional arrangements that balance efficiency with accountability, innovation with stability, inclusion with security.
+But funding is only part of the equation. The harder work is institutional.
+
+## The Governance Problem
+
+Shared infrastructure requires shared governance. When multiple agencies depend on common platforms, decisions about standards, access, and evolution involve competing interests across government. Who controls the identity system? What data can flow through exchange platforms? How are costs and benefits distributed across agencies that did not choose to depend on each other?
+
+These questions are often harder than the technical ones.
+
+Consider a practical example. A government service bus that integrates data across ministries sounds efficient in theory. In practice, it means agencies must agree on data standards, accept dependencies on systems they do not control, and trust that the platform will remain available and secure. Ministries accustomed to operating their own systems may resist this loss of autonomy even when the collective benefits are clear.
+
+Countries implementing DPI must build institutional arrangements that balance efficiency with accountability, innovation with stability, inclusion with security. This requires sustained attention to governance design, not just technology deployment.
+
+## What the Framework Does Not Solve
+
+The G20 framework is useful but incomplete. It describes what to build without fully addressing how to build it in contexts where technical capacity is limited, institutional attention is stretched, and existing systems cannot simply be replaced.
+
+A few gaps are worth noting.
+
+The framework assumes a level of state capacity that many countries are still developing. Building and maintaining foundational infrastructure requires not just initial investment but ongoing operational capability. Who trains the engineers? Who maintains the systems when vendors leave?
+
+The framework is largely silent on the transition problem. Most countries are not starting from scratch. They have existing identity databases, payment systems, and data silos that may be outdated but are also operational. Migrating to new infrastructure while keeping services running is a different challenge than greenfield development.
+
+The framework underemphasises the importance of public trust. I experienced this firsthand during an eKYC rollout at a government ministry. The hesitation and distrust among staff and citizens over biometric data collection was significant. In a context where online misinformation spreads rapidly and where religious concerns about surveillance and identity systems run deep, fear can outpace facts. Some worried about how their data would be used. Others had heard alarming theories online about what biometric systems really mean.
+
+This is not irrational. People are being asked to hand over their most personal identifiers to systems they do not fully understand, managed by institutions they may not fully trust. Without sustained public sensitisation, clear communication about data protection, and visible accountability mechanisms, even well designed systems will face resistance.
+
+The framework also underemphasises the need for clear legal foundations. Singapore offers a useful contrast here. The Government Technology Agency, known as GovTech, was established as a statutory board in 2016 with a clear legislative mandate to drive digital transformation across government. Singapore's Cybersecurity Act provides a legal framework for protecting critical information infrastructure, and a new Digital Infrastructure Act is being introduced to regulate foundational digital services including cloud providers and data centres. This legislative clarity creates accountability structures that define who owns what, who is responsible for security, and how incidents are handled.
+
+Many countries implementing DPI lack equivalent legal frameworks. Without legislation that clearly designates ownership of national digital systems, establishes data protection requirements, and assigns accountability for failures, implementation happens in a governance vacuum. Building these legal foundations should be a prerequisite, not an afterthought.
+
+None of this means the framework is wrong. It means implementation requires more than following a blueprint.
 
 ## The Path Forward
 
-The G20 endorsement was a milestone, not a conclusion. Translating principles into practice requires sustained effort across technical, institutional, and policy dimensions. Countries must build implementation capacity, establish appropriate governance frameworks, and maintain focus through political transitions.
+The G20 endorsement was a milestone, not a conclusion. Translating principles into practice requires sustained effort across technical, institutional, and policy dimensions. Countries must build implementation capacity, establish appropriate governance frameworks, and maintain focus through transitions in government.
 
-For practitioners in this space, the framework provides common ground for collaboration. We can share lessons across borders, contribute to open-source platforms, and build communities of practice around DPI implementation.
+For practitioners in this space, the framework provides common ground for collaboration. We can share lessons across borders, contribute to open source platforms, and build communities of practice around DPI implementation.
 
-The opportunity is significant. Digital public infrastructure, implemented well, can transform how governments serve citizens. The G20 framework helps point the way.
+The opportunity is significant. Digital public infrastructure, implemented well, can transform how governments serve citizens. The G20 framework helps point the way. But the work of building these systems, earning public trust, and sustaining them over time remains with those of us doing it on the ground.
     `,
     date: "2025-01-10",
     category: "Internet & Digital Governance",
-    tags: ["G20", "DPI", "Policy", "International Cooperation"],
-    readTime: "6 min read",
+    tags: ["G20", "DPI", "Policy", "International Cooperation", "Zambia", "Governance"],
+    readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80"
   }
 ];
