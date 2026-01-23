@@ -1,9 +1,11 @@
 "use client";
 
-import { 
-  useState, 
-  useEffect 
+import {
+  useState,
+  useEffect
 } from 'react';
+import Link from 'next/link';
+import { blogPosts } from '@/lib/blog-data';
 import { 
   Code, 
   Database, 
@@ -209,6 +211,7 @@ const projects = [
               <a href="#skills" className="text-gray-700 hover:text-[#d9a085] transition-colors">Skills</a>
               <a href="#experience" className="text-gray-700 hover:text-[#d9a085] transition-colors">Experience</a>
               <a href="#projects" className="text-gray-700 hover:text-[#d9a085] transition-colors">Projects</a>
+              <a href="#blog" className="text-gray-700 hover:text-[#d9a085] transition-colors">Blog</a>
               <a href="#education" className="text-gray-700 hover:text-[#d9a085] transition-colors">Education</a>
               <a href="#contact" className="text-gray-700 hover:text-[#d9a085] transition-colors">Contact</a>
             </div>
@@ -475,8 +478,67 @@ const projects = [
         </div>
       </section>
 
+      {/* Blog Section */}
+      <section id="blog" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Blog</h2>
+            <div className="w-24 h-1 bg-[#d9a085] mx-auto rounded-full mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Technology. Governance. Public Digital Systems.
+            </p>
+            <p className="text-gray-500 mt-2 max-w-2xl mx-auto">
+              Exploring how digital technologies shape public institutions, policy frameworks,
+              and global cooperation — with a focus on GovTech and emerging economies.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full border border-[#d9a085]/20">
+                    {post.category}
+                  </span>
+                  <span className="text-gray-400 text-sm">{post.readTime}</span>
+                </div>
+                <h3 className="text-lg font-bold text-black mb-3 line-clamp-2">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <time className="text-gray-400 text-sm">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </time>
+                  <span className="text-[#d9a085] font-medium text-sm">
+                    Read more
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/blog"
+              className="inline-block border-2 border-[#d9a085] text-[#d9a085] px-8 py-4 rounded-lg font-semibold hover:bg-[#d9a085] hover:text-white transition-colors"
+            >
+              View All Posts
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Education Section */}
-      <section id="education" className="py-20 bg-white">
+      <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-[#f5f1ed]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Education</h2>
