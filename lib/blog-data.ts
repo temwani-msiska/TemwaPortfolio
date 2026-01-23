@@ -29,13 +29,15 @@ This is the space where I work.
 
 ## The Work
 
-As a Business Analyst and Systems Developer at SMART Zambia Institute, I contribute to initiatives at the core of Zambia's digital transformation. My current focus is the Government Service Bus, a national integration platform developed in partnership with the Ministry of Finance and National Planning.
+As a Business Analyst and Systems Developer at SMART Zambia Institute, I contribute to initiatives at the core of Zambia's digital transformation. My current focus is the Government Service Bus, a national integration platform developed in partnership with the Ministry of Finance and National Planning and supported by the World Bank.
 
-The work involves translating between worlds. Stakeholders articulate needs in policy language. Technical teams think in systems and data flows. The gap between these perspectives is where requirements get lost and where projects stall. Bridging that gap through documentation, analysis, and coordination is central to what I do.
+The work involves translating between worlds. Stakeholders articulate needs in policy language. Technical teams think in systems and data flows. The gap between these perspectives is where requirements get lost and where projects stall.
 
-I also build systems. At SMART Zambia, this means developing software that supports national digital infrastructure. Through Pixel Pulse Studio, the technology studio I founded in 2018, I work with clients across sectors to create platforms and digital tools that solve real problems.
+I have seen this firsthand. Working on national integration platforms means navigating not just technical complexity but institutional complexity. Different agencies with different systems, different data standards, and different assumptions about how information should flow. The technical work is often the straightforward part. The harder work is aligning stakeholders before code gets written.
 
-This dual role shapes my approach. When gathering requirements, I understand what is feasible and where implementation risks lie. When writing code, I think about users, institutions, and the policy context the system must serve.
+Bridging that gap through requirements analysis, documentation, and coordination is central to what I do.
+
+I also build systems. This dual role shapes my approach. When gathering requirements, I understand what is technically feasible and where implementation risks lie. When writing code, I think about users, institutions, and the policy context the system must serve.
 
 ## What Drives This Work
 
@@ -47,9 +49,11 @@ These outcomes require more than technology. They require thoughtful implementat
 
 ## What This Space Explores
 
-This blog works through ideas at the intersection of technology, governance, and public systems. The focus is digital public infrastructure, GovTech implementation, and the frameworks that shape how digital systems serve public interests.
+This blog works through ideas at the intersection of technology, governance, and public systems. The focus is digital public infrastructure, GovTech implementation, and the practical challenges of making these systems work in emerging economies.
 
-The perspective is practitioner oriented. I write from the position of someone doing this work, not observing from a distance. The questions here are the ones I encounter professionally: How do integration architectures scale? What makes governance frameworks effective? Why do some initiatives succeed where others stall?
+The perspective is practitioner oriented. I write from the position of someone doing this work in Zambia and engaging with the broader African digital public infrastructure community, not observing from a distance. The questions here are the ones I encounter professionally. How do integration architectures scale across agencies with different technical maturity? What makes governance frameworks effective when institutional capacity is limited? Why do some digital transformation initiatives succeed where others stall?
+
+If you work in this space or are trying to understand it, I hope you find something useful here.
     `,
     date: "2025-01-20",
     category: "Policy to Implementation",
