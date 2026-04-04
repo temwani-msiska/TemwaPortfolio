@@ -96,6 +96,22 @@ export default function Portfolio() {
     },
     {
       title: 'CEO & Founder',
+      company: 'Code SHEROs (A Codebloom Digital Technologies Company)',
+      period: '2026 - Present',
+      type: 'EdTech',
+      description: 'Building Africa\'s first story driven coding education platform for girls aged 7 to 12. Code SHEROs teaches HTML, CSS, and JavaScript through gamified missions featuring three mentor characters who guide players through progressively challenging coding worlds.',
+      achievements: [
+        'Built the full platform independently: Django REST backend, Next.js frontend, PostgreSQL, GPT 4o integration',
+        'Designed 8 learning tracks across 3 character worlds with 12 interactive challenge types',
+        'Developed organisation system with teacher dashboards, pacing controls, and impact reporting',
+        'Preparing pilot programme targeting 100 to 200 girls across 3 to 5 Lusaka schools in Q3 2026'
+      ],
+      icon: Rocket,
+      gradient: 'from-[#E91E8C] to-[#4A0E6B]',
+      link: 'https://www.codesheros.co.zm'
+    },
+    {
+      title: 'CEO & Founder',
       company: 'Pixel Pulse Studio',
       period: 'January 2018 - Present',
       type: 'Entrepreneurship',
@@ -106,7 +122,8 @@ export default function Portfolio() {
         'Architected scalable microservices using React, Next.js, Node.js, and TypeScript',
         'Implemented robust DevOps practices with Docker, GitHub Actions, and zero-downtime deployments',
         'Delivered WCAG-compliant, mobile-first user interfaces across multiple projects',
-        'Established automated CI/CD pipelines deployed to AWS, Vercel, and DigitalOcean'
+        'Established automated CI/CD pipelines deployed to AWS, Vercel, and DigitalOcean',
+        'Founded Code SHEROs (2026): story driven coding platform for African girls, now operating as a separate company under Codebloom Digital Technologies'
       ],
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
@@ -211,6 +228,7 @@ const projects = [
               <a href="#skills" className="text-white/80 hover:text-[#E91E8C] transition-colors">Skills</a>
               <a href="#experience" className="text-white/80 hover:text-[#E91E8C] transition-colors">Experience</a>
               <a href="#projects" className="text-white/80 hover:text-[#E91E8C] transition-colors">Projects</a>
+              <a href="#passion" className="text-white/80 hover:text-[#E91E8C] transition-colors">Passion Projects</a>
               <a href="#blog" className="text-white/80 hover:text-[#E91E8C] transition-colors">Blog</a>
               <a href="#education" className="text-white/80 hover:text-[#E91E8C] transition-colors">Education</a>
               <a href="#contact" className="text-white/80 hover:text-[#E91E8C] transition-colors">Contact</a>
@@ -467,6 +485,76 @@ const projects = [
                 </div>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Passion Projects */}
+      <section id="passion" className="py-20 bg-[#FDF6FF]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-heading font-bold text-center text-[#1A0525] mb-2">What I am Building</h2>
+          <p className="text-center text-[#6B4D7A] mb-12 max-w-2xl mx-auto">
+            Projects driven by purpose, not just profit. These are the things I work on because they matter.
+          </p>
+
+          <div className="bg-white rounded-xl shadow-lg border-l-4 border-[#E91E8C] p-8 md:p-10">
+            <div className="md:flex md:gap-10">
+              <div className="md:w-2/5 mb-6 md:mb-0 flex flex-col items-center justify-center">
+                <h3 className="text-3xl font-heading font-bold text-[#4A0E6B] mb-2">&lt;Code&gt; SHEROs</h3>
+                <a
+                  href="https://www.codesheros.co.zm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#00B4D8] hover:underline text-sm"
+                >
+                  codesheros.co.zm
+                </a>
+              </div>
+
+              <div className="md:w-3/5">
+                <p className="text-xl font-semibold text-[#4A0E6B] mb-4">
+                  Teaching African girls to code through story driven missions.
+                </p>
+                <p className="text-[#1A0525] mb-4">
+                  Code SHEROs is an interactive coding education platform for girls aged 7 to 12, built in Zambia and designed for Africa. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
+                </p>
+                <p className="text-[#1A0525] mb-6">
+                  The platform is preparing for its pilot launch across 3 to 5 schools in Lusaka, targeting 100 to 200 girls in Q3 2026.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-sm">
+                  <div>
+                    <span className="text-[#6B4D7A]">Role:</span>
+                    <span className="text-[#1A0525] ml-1">CEO & Founder</span>
+                  </div>
+                  <div>
+                    <span className="text-[#6B4D7A]">Stack:</span>
+                    <span className="text-[#1A0525] ml-1">Next.js, Django, TypeScript</span>
+                  </div>
+                  <div>
+                    <span className="text-[#6B4D7A]">Stage:</span>
+                    <span className="text-[#1A0525] ml-1">Pre launch, pilot in prep</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="https://www.codesheros.co.zm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#E91E8C] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#C2185B] transition-colors shadow-md"
+                  >
+                    Visit codesheros.co.zm
+                  </a>
+                  <a
+                    href="/blog/building-code-sheros"
+                    className="border-2 border-[#4A0E6B] text-[#4A0E6B] px-6 py-3 rounded-lg font-semibold hover:bg-[#4A0E6B] hover:text-white transition-colors"
+                  >
+                    Read the Story
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
