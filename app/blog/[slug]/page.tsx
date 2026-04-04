@@ -97,9 +97,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 );
               }
               if (trimmed) {
+                const parts = trimmed.split(/(codesheros\.co\.zm)/g);
                 return (
                   <p key={index} className="text-gray-700 leading-relaxed mb-6">
-                    {trimmed}
+                    {parts.map((part, i) =>
+                      part === 'codesheros.co.zm' ? (
+                        <a key={i} href="https://www.codesheros.co.zm" target="_blank" rel="noopener noreferrer" className="text-[#00B4D8] hover:underline">codesheros.co.zm</a>
+                      ) : (
+                        part
+                      )
+                    )}
                   </p>
                 );
               }
@@ -125,7 +132,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#FDF6FF]">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-2xl font-bold text-[#1A0525] mb-8">Related Posts</h2>
             <div className="grid md:grid-cols-2 gap-6">
