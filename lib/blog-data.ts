@@ -11,6 +11,7 @@ export interface BlogPost {
 }
 
 export const categories = [
+  "EdTech & Social Impact",
   "Digital Public Infrastructure",
   "GovTech & Public Sector Innovation",
   "Internet & Digital Governance",
@@ -18,6 +19,41 @@ export const categories = [
 ] as const;
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "building-code-sheros",
+    title: "Building Code SHEROs: Why I am Teaching African Girls to Code",
+    excerpt: "I have spent the better part of a decade building software systems. And in all of that time, one thing has been consistently obvious: the rooms where technology gets built do not have enough women in them.",
+    date: "March 15, 2026",
+    readTime: "8 min read",
+    category: "EdTech & Social Impact",
+    tags: ["Code SHEROs", "EdTech", "Girls in STEM", "Zambia", "Coding Education", "Social Impact"],
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+    content: `I have spent the better part of a decade building software systems. For government. For businesses. For clients across Zambia and beyond. And in all of that time, across all of those projects, one thing has been consistently, painfully obvious: the rooms where technology gets built do not have enough women in them. And they almost never have women who look like the girls I grew up with in Lusaka.
+
+That observation is not new. Anyone working in African tech knows the numbers. But knowing a statistic and seeing it play out in front of you are different things. The moment that really stuck with me was not in a boardroom or at a conference. It was watching my younger relatives interact with phones and tablets. The boys were curious about how things worked. They wanted to take things apart, build things, break things and fix them. The girls were users. They consumed content, they scrolled, they watched. Nobody had ever told them they could be the ones building what they were looking at.
+
+That is not because they lack ability. It is because nobody showed them it was possible. Nobody put a line of code in front of them and said, here, type this, and watch what happens.
+
+Code SHEROs started with that simple idea. What if the first time a girl sees code, it is wrapped in a story where she is the hero? What if learning to code feels like playing a game, not sitting through a lecture? What if the characters on screen look like her, sound like her, and come from the same world she knows?
+
+The platform teaches HTML, CSS, and JavaScript through story driven missions. There are three mentor characters. Byte is the Problem Solver who teaches logic and HTML. Pixel is the Creator who handles design and CSS. Nova is the Explorer who covers data and JavaScript. Together they fight Dr. Glitch, a villain who has unleashed Code Bugs across the internet. Every coding challenge is a battle. Every correct answer pushes back the chaos. Every completed mission makes the player a little more confident that yes, she can do this.
+
+I chose to build it as a game because the research is clear: girls begin losing interest in STEM subjects between the ages of 11 and 15, and unlike other subjects, that interest does not come back. Code SHEROs targets girls aged 7 to 12, right at the edge of that window. If we can reach them before the world tells them technology is not for them, we can change the trajectory entirely.
+
+The design philosophy is what I call "story first, code second." Every mission starts with a narrative. The Code Bugs have corrupted a school newsletter. Dr. Glitch has broken the links on a website. A recipe page has lost its structure. The girl is not just learning what an h1 tag does. She is saving something. She has a reason to care about getting the code right. And when she does get it right, the page comes back to life on her screen. That moment, watching text appear because you typed the right tag, is genuinely magical the first time it happens. I have seen it. It changes something.
+
+Building the platform has been one of the hardest things I have done. I work full time at Smart Zambia Institute on the Government Service Bus, leading digital transformation for public services. Code SHEROs gets built in the evenings, on weekends, during any gap I can find. I chose Django for the backend and Next.js for the frontend because they are the tools I know best, and when you are building something alone you cannot afford to learn a new framework at the same time. The entire platform, every API endpoint, every mission, every animation, every line of dialogue, was built by me.
+
+There were weeks where I questioned whether it was worth the exhaustion. Then I would test a new mission and imagine a 9 year old girl in Lusaka completing it, seeing her heading turn purple for the first time, and knowing she made that happen with code. That image kept me going.
+
+The pilot is coming. Three to five schools in Lusaka. One hundred to two hundred girls. Their first real experience writing code. I am not going to pretend this will single handedly close the gender gap in African tech. That would be naive. But if even a handful of those girls finish the programme and think, I want to learn more, I want to build more, then Code SHEROs will have done what it was designed to do.
+
+There is a specific moment I am working toward. It is not a launch event or a press feature. It is a girl, maybe 10 years old, opening her laptop at home and showing her parents a webpage she built. Her name in a big heading. Her favourite things in a list. A link to something she cares about. A background colour she chose herself. And her parents looking at that screen and realising their daughter just did something they do not know how to do.
+
+That is the moment. That is why I am building this.
+
+If you want to see what we are building, visit codesheros.co.zm. And if you know a girl between 7 and 12 who might want to try coding for the first time, the platform will be ready for her soon.`
+  },
   {
     slug: "govstack-women-in-govtech-challenge-2026-mentee",
     title: "Selected as a GovStack Women in GovTech Challenge 2026 Mentee",
