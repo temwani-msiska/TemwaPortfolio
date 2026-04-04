@@ -10,15 +10,15 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-gradient-to-br from-[#d9a085]/10 to-white py-20">
+      <header className="bg-gradient-to-br from-[#E91E8C]/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <Link
             href="/"
-            className="inline-block text-[#d9a085] hover:text-[#c4906f] transition-colors mb-8"
+            className="inline-block text-[#E91E8C] hover:text-[#C2185B] transition-colors mb-8"
           >
             Back to Portfolio
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1A0525] mb-6">Blog</h1>
           <p className="text-lg text-gray-600 max-w-2xl">
             Technology. Governance. Public Digital Systems.
           </p>
@@ -51,12 +51,12 @@ export default function BlogPage() {
                   )}
                   <div className={`p-8 ${post.image ? 'md:w-2/3' : 'w-full'}`}>
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="px-3 py-1 bg-[#d9a085]/10 text-[#d9a085] text-sm rounded-full border border-[#d9a085]/20">
+                      <span className="px-3 py-1 bg-[#E91E8C]/10 text-[#E91E8C] text-sm rounded-full border border-[#E91E8C]/20">
                         {post.category}
                       </span>
                       <span className="text-gray-400 text-sm">{post.readTime}</span>
                     </div>
-                    <h2 className="text-xl font-bold text-black mb-3 line-clamp-2">
+                    <h2 className="text-xl font-bold text-[#1A0525] mb-3 line-clamp-2">
                       {post.title}
                     </h2>
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -70,7 +70,7 @@ export default function BlogPage() {
                           day: 'numeric'
                         })}
                       </time>
-                      <span className="text-[#d9a085] font-medium">
+                      <span className="text-[#E91E8C] font-medium">
                         Read more
                       </span>
                     </div>

@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -31,7 +35,9 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
+          DEFAULT: '#4A0E6B',
+          dark: '#2D0840',
+          light: '#7B2D8E',
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
@@ -43,14 +49,21 @@ const config: Config = {
           foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
+          DEFAULT: '#E91E8C',
+          secondary: '#00B4D8',
           foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        border: 'hsl(var(--border))',
+        surface: {
+          DEFAULT: '#FDF6FF',
+          alt: '#F8F5FA',
+        },
+        'text-primary': '#1A0525',
+        'text-secondary': '#6B4D7A',
+        border: '#E8DFF0',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         chart: {
