@@ -60,27 +60,38 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      title: 'Business Analyst & Systems Developer',
-      company: 'Smart Zambia Institute - Government Service Bus',
-      period: 'January 2025 - Present',
+      title: 'Senior Systems Developer',
+      company: 'SMART Zambia Institute',
+      period: 'March 2026 - Present',
       type: 'Government',
-      description: 'Leading Zambia\'s digital transformation at the heart of the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
+      description: 'Developing national payment and payroll systems at SMART Zambia Institute under the Office of the President, building secure digital infrastructure for civil servants nationwide.',
       achievements: [
-        'Gather and document detailed system requirements for national e-government services',
-        'Design scalable digital solutions aligned with operational and strategic objectives',
-        'Develop secure, user-friendly software systems for the Government Service Bus',
-        'Create comprehensive user manuals and conduct training for government staff',
-        'Champion feedback-driven improvements to streamline citizen access to digital services',
-        'Reduce service delivery times through efficient workflow analysis and optimization'
+        'Developing the Payment Aggregator system to curb payslip fraud through integration with accredited financial institutions, multi-factor authentication, and multi-layered access controls',
+        'Built the ePayslip system digitising payroll delivery for civil servants nationwide',
+        'Contributing to the Cash for Work digital payment system supporting social protection disbursements'
       ],
       icon: Building,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
       link: 'https://zamportal.gov.zm/'
     },
     {
+      title: 'Business Analyst and Systems Developer',
+      company: 'SMART Zambia Institute - Government Service Bus',
+      period: 'January 2025 - April 2026',
+      type: 'Government',
+      description: 'Collaborated with the Ministry of Finance and National Planning on the Government Service Bus initiative, bridging policy intent with practical implementation for national e-government services.',
+      achievements: [
+        'Gathered and documented system requirements for national e-government services on the GSB',
+        'Created user manuals and conducted training for government staff across ministries',
+        'Collaborated with the Ministry of Finance and National Planning on integrated digital service delivery'
+      ],
+      icon: Building,
+      gradient: 'from-[#2D0840] to-[#4A0E6B]'
+    },
+    {
       title: 'Systems Developer',
-      company: 'Smart Zambia Institute',
-      period: 'January 2024 - December 2024',
+      company: 'SMART Zambia Institute',
+      period: 'January 2024 - January 2025',
       type: 'Government',
       description: 'Designed and maintained robust software systems to enhance Zambia\'s digital public infrastructure and improve government service delivery across multiple platforms.',
       achievements: [
@@ -96,10 +107,10 @@ export default function Portfolio() {
     },
     {
       title: 'CEO & Founder',
-      company: 'Code SHEROs (A Codebloom Digital Technologies Company)',
+      company: 'Code SHEROs (A Code Bloom / Codebloom Digital Technologies Company)',
       period: '2026 - Present',
       type: 'EdTech',
-      description: 'Building Africa\'s first story driven coding education platform for girls aged 7 to 12. Code SHEROs teaches HTML, CSS, and JavaScript through gamified missions featuring three mentor characters who guide players through progressively challenging coding worlds.',
+      description: 'Building Africa\'s first story driven coding education platform for girls aged 7 to 18. Code SHEROs teaches HTML, CSS, and JavaScript through gamified missions featuring three mentor characters who guide players through progressively challenging coding worlds.',
       achievements: [
         'Built the full platform independently: Django REST backend, Next.js frontend, PostgreSQL, GPT 4o integration',
         'Designed 8 learning tracks across 3 character worlds with 12 interactive challenge types',
@@ -123,7 +134,7 @@ export default function Portfolio() {
         'Implemented robust DevOps practices with Docker, GitHub Actions, and zero-downtime deployments',
         'Delivered WCAG-compliant, mobile-first user interfaces across multiple projects',
         'Established automated CI/CD pipelines deployed to AWS, Vercel, and DigitalOcean',
-        'Founded Code SHEROs (2026): story driven coding platform for African girls, now operating as a separate company under Codebloom Digital Technologies'
+        'Founded Code SHEROs (2026): story driven coding platform for African girls, now operating as a separate company under Code Bloom / Codebloom Digital Technologies'
       ],
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
@@ -231,6 +242,8 @@ const projects = [
               <a href="#passion" className="text-white/80 hover:text-[#E91E8C] transition-colors">Passion Projects</a>
               <a href="#blog" className="text-white/80 hover:text-[#E91E8C] transition-colors">Blog</a>
               <a href="#education" className="text-white/80 hover:text-[#E91E8C] transition-colors">Education</a>
+              <a href="#international" className="text-white/80 hover:text-[#E91E8C] transition-colors">International</a>
+              <a href="#certifications" className="text-white/80 hover:text-[#E91E8C] transition-colors">Certifications</a>
               <a href="#contact" className="text-white/80 hover:text-[#E91E8C] transition-colors">Contact</a>
             </div>
           </div>
@@ -255,13 +268,16 @@ const projects = [
               Temwani Msiska
             </h1>
             <p className="text-2xl md:text-3xl text-[#E91E8C] font-semibold mb-4">
-              Business Analyst & Systems Developer
+              Senior Systems Developer | Digital Public Infrastructure | GovTech
             </p>
             <p className="text-xl text-[#1A0525] font-medium mb-8">
-              CEO & Founder, Code SHEROs | Pixel Pulse Studio
+              CEO & Founder, Code SHEROs | Pixel Pulse Studio |{' '}
+              <a href="https://www.codesheros.co.zm" target="_blank" rel="noopener noreferrer" className="text-[#E91E8C] hover:underline">codesheros.co.zm</a>
+              {' | '}
+              <a href="https://www.codebloom.co.zm" target="_blank" rel="noopener noreferrer" className="text-[#E91E8C] hover:underline">codebloom.co.zm</a>
             </p>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Leading Zambia's digital transformation through the Government Service Bus at Smart Zambia Institute, while building Code SHEROs, a platform teaching African girls to code through story driven missions.
+              Developing national payment and payroll systems at SMART Zambia Institute, while building Code SHEROs, a platform teaching African girls to code through story driven missions.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -288,13 +304,13 @@ const projects = [
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                I am an IT professional with over eight years of experience as both a Business Analyst and Systems Developer, currently leading initiatives on the Government Service Bus at Smart Zambia Institute in collaboration with the Ministry of Finance and National Planning.
+                I am an IT professional with over eight years of experience as a Senior Systems Developer, currently developing national payment and payroll systems at SMART Zambia Institute under the Office of the President.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                As CEO and Founder of Code SHEROs, I am building Africa's first story driven coding education platform for girls aged 7 to 12. The platform teaches real programming through gamified missions, and is preparing for its pilot launch across Lusaka schools in Q3 2026.
+                As CEO and Founder of Code SHEROs, I am building Africa's first story driven coding education platform for girls aged 7 to 18. The platform teaches real programming through gamified missions, and is preparing for its pilot launch across Lusaka schools in Q3 2026.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Through Pixel Pulse Studio, my technology consultancy, I deliver end to end web and mobile solutions with scalable cloud architecture and modern development practices. My work bridges the gap between policy intent and practical implementation, turning stakeholder needs into efficient, scalable digital services.
+                Through Code Bloom, a women-led digital studio where passion meets purpose, and Pixel Pulse Studio, my technology consultancy, I deliver end-to-end web and mobile solutions. My work bridges the gap between policy intent and practical implementation, turning stakeholder needs into efficient, scalable digital services.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
@@ -516,7 +532,7 @@ const projects = [
                   Teaching African girls to code through story driven missions.
                 </p>
                 <p className="text-[#1A0525] mb-4">
-                  Code SHEROs is an interactive coding education platform for girls aged 7 to 12, built in Zambia and designed for Africa. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
+                  Code SHEROs is an interactive coding education platform for girls aged 7 to 18, built in Zambia and designed for Africa. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
                 </p>
                 <p className="text-[#1A0525] mb-6">
                   The platform is preparing for its pilot launch across 3 to 5 schools in Lusaka, targeting 100 to 200 girls in Q3 2026.
@@ -659,6 +675,106 @@ const projects = [
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* International Experience Section */}
+      <section id="international" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">International Experience</h2>
+            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
+          </div>
+          <div className="max-w-5xl mx-auto space-y-6">
+            {[
+              {
+                title: 'GovStack Women in GovTech Challenge 2026 Mentee',
+                detail: 'Selected from 1,300+ applicants across 137 countries',
+                gradient: 'from-[#E91E8C] to-[#2D0840]'
+              },
+              {
+                title: 'OpenG2P Advanced Training Course',
+                detail: 'IIIT Bangalore, December 2024',
+                gradient: 'from-[#2D0840] to-[#E91E8C]'
+              },
+              {
+                title: 'AFRALO Individual Member',
+                detail: 'ICANN',
+                gradient: 'from-[#E91E8C] to-[#4A0E6B]'
+              },
+              {
+                title: 'ICANN Fellowship Applicant',
+                detail: 'ICANN87 Muscat Oman, October 2026',
+                gradient: 'from-[#4A0E6B] to-[#E91E8C]'
+              }
+            ].map((item, index) => (
+              <div key={index} className={`bg-gradient-to-r ${item.gradient} p-1 rounded-xl shadow-lg`}>
+                <div className="bg-white p-6 rounded-xl flex items-center">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${item.gradient} rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}>
+                    <Globe className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1A0525] mb-1">{item.title}</h3>
+                    <p className="text-lg text-[#E91E8C] font-semibold">{item.detail}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certifications" className="py-20 bg-gradient-to-br from-[#FDF6FF] to-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Certifications</h2>
+            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
+          </div>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+            {[
+              { name: 'OpenG2P Advanced Training Course, IIIT Bangalore', detail: 'December 2024', gradient: 'from-[#E91E8C] to-[#2D0840]' },
+              { name: 'Digital Awareness Certificate', detail: '', gradient: 'from-[#2D0840] to-[#E91E8C]' },
+              { name: 'Introduction to Modern Artificial Intelligence', detail: '', gradient: 'from-[#E91E8C] to-[#4A0E6B]' },
+              { name: 'CAPM Certification', detail: 'In progress, target May 2026', gradient: 'from-[#4A0E6B] to-[#E91E8C]' }
+            ].map((cert, index) => (
+              <div key={index} className={`bg-gradient-to-r ${cert.gradient} p-1 rounded-xl shadow-lg`}>
+                <div className="bg-white p-6 rounded-xl flex items-center">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${cert.gradient} rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}>
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#1A0525]">{cert.name}</h3>
+                    {cert.detail && <p className="text-[#E91E8C] font-medium">{cert.detail}</p>}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Languages Section */}
+      <section id="languages" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Languages</h2>
+            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
+          </div>
+          <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-[#E91E8C] to-[#2D0840] p-1 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl text-center">
+                <h3 className="text-xl font-bold text-[#1A0525] mb-2">English</h3>
+                <p className="text-[#E91E8C] font-semibold">Fluent</p>
+              </div>
+            </div>
+            <div className="bg-gradient-to-r from-[#2D0840] to-[#E91E8C] p-1 rounded-xl shadow-lg">
+              <div className="bg-white p-6 rounded-xl text-center">
+                <h3 className="text-xl font-bold text-[#1A0525] mb-2">French</h3>
+                <p className="text-[#E91E8C] font-semibold">Intermediate</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
