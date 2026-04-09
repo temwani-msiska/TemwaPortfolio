@@ -6,20 +6,18 @@ import {
 } from 'react';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
-import { 
-  Code, 
-  Database, 
-  Globe, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Github, 
-  Server, 
-  Users, 
-  TrendingUp, 
+import {
+  Code,
+  Database,
+  Globe,
+  Mail,
+  MapPin,
+  Linkedin,
+  Github,
+  Server,
+  Users,
+  TrendingUp,
   Award,
-  ChevronDown,
   ExternalLink,
   GraduationCap,
   Zap,
@@ -27,21 +25,23 @@ import {
   Building,
   Calendar,
   Rocket,
-  Shield,
   Cloud,
   Smartphone,
   Monitor,
   BookOpen,
-  Star
+  Star,
+  ArrowUpRight,
+  Menu,
+  X
 } from 'lucide-react';
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -60,27 +60,38 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      title: 'Business Analyst & Systems Developer',
-      company: 'Smart Zambia Institute - Government Service Bus',
-      period: 'January 2025 - Present',
+      title: 'Senior Systems Developer',
+      company: 'SMART Zambia Institute',
+      period: 'March 2026 - Present',
       type: 'Government',
-      description: 'Leading Zambia\'s digital transformation at the heart of the Government Service Bus initiative, collaborating with the Ministry of Finance and National Planning to bridge policy intent with practical implementation.',
+      description: 'Developing national payment and payroll systems at SMART Zambia Institute under the Office of the President, building secure digital infrastructure for civil servants nationwide.',
       achievements: [
-        'Gather and document detailed system requirements for national e-government services',
-        'Design scalable digital solutions aligned with operational and strategic objectives',
-        'Develop secure, user-friendly software systems for the Government Service Bus',
-        'Create comprehensive user manuals and conduct training for government staff',
-        'Champion feedback-driven improvements to streamline citizen access to digital services',
-        'Reduce service delivery times through efficient workflow analysis and optimization'
+        'Developing the Payment Aggregator system to curb payslip fraud through integration with accredited financial institutions, multi-factor authentication, and multi-layered access controls',
+        'Built the ePayslip system digitising payroll delivery for civil servants nationwide',
+        'Contributing to the Cash for Work digital payment system supporting social protection disbursements'
       ],
       icon: Building,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
       link: 'https://zamportal.gov.zm/'
     },
     {
+      title: 'Business Analyst and Systems Developer',
+      company: 'SMART Zambia Institute - Government Service Bus',
+      period: 'January 2025 - April 2026',
+      type: 'Government',
+      description: 'Collaborated with the Ministry of Finance and National Planning on the Government Service Bus initiative, bridging policy intent with practical implementation for national e-government services.',
+      achievements: [
+        'Gathered and documented system requirements for national e-government services on the GSB',
+        'Created user manuals and conducted training for government staff across ministries',
+        'Collaborated with the Ministry of Finance and National Planning on integrated digital service delivery'
+      ],
+      icon: Building,
+      gradient: 'from-[#2D0840] to-[#4A0E6B]'
+    },
+    {
       title: 'Systems Developer',
-      company: 'Smart Zambia Institute',
-      period: 'January 2024 - December 2024',
+      company: 'SMART Zambia Institute',
+      period: 'January 2024 - January 2025',
       type: 'Government',
       description: 'Designed and maintained robust software systems to enhance Zambia\'s digital public infrastructure and improve government service delivery across multiple platforms.',
       achievements: [
@@ -96,10 +107,10 @@ export default function Portfolio() {
     },
     {
       title: 'CEO & Founder',
-      company: 'Code SHEROs (A Codebloom Digital Technologies Company)',
+      company: 'Code SHEROs (A Code Bloom / Codebloom Digital Technologies Company)',
       period: '2026 - Present',
       type: 'EdTech',
-      description: 'Building Africa\'s first story driven coding education platform for girls aged 7 to 12. Code SHEROs teaches HTML, CSS, and JavaScript through gamified missions featuring three mentor characters who guide players through progressively challenging coding worlds.',
+      description: 'Building Africa\'s first story driven coding education platform for girls aged 7 to 18. Code SHEROs teaches HTML, CSS, and JavaScript through gamified missions featuring three mentor characters who guide players through progressively challenging coding worlds.',
       achievements: [
         'Built the full platform independently: Django REST backend, Next.js frontend, PostgreSQL, GPT 4o integration',
         'Designed 8 learning tracks across 3 character worlds with 12 interactive challenge types',
@@ -123,7 +134,7 @@ export default function Portfolio() {
         'Implemented robust DevOps practices with Docker, GitHub Actions, and zero-downtime deployments',
         'Delivered WCAG-compliant, mobile-first user interfaces across multiple projects',
         'Established automated CI/CD pipelines deployed to AWS, Vercel, and DigitalOcean',
-        'Founded Code SHEROs (2026): story driven coding platform for African girls, now operating as a separate company under Codebloom Digital Technologies'
+        'Founded Code SHEROs (2026): story driven coding platform for African girls, now operating as a separate company under Code Bloom / Codebloom Digital Technologies'
       ],
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
@@ -213,345 +224,357 @@ const projects = [
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FDF6FF] to-white">
-      {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#2D0840]/95 backdrop-blur-sm shadow-lg' : 'bg-[#2D0840]'
+    <div className="min-h-screen bg-neutral-300/40">
+      {/* Sticky Nav - appears on scroll */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="text-2xl font-heading font-bold text-white">
-              Temwani Msiska
+        <div className="mx-2 md:mx-5 mt-2 md:mt-3">
+          <div className="bg-white/90 backdrop-blur-md rounded-full px-4 md:px-8 py-3 flex items-center justify-between border border-neutral-200">
+            <a href="#hero" className="text-sm font-heading font-bold text-neutral-900">TM</a>
+            <div className="hidden md:flex items-center gap-6">
+              <a href="#about" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">About</a>
+              <a href="#experience" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Experience</a>
+              <a href="#projects" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Projects</a>
+              <a href="#blog" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Blog</a>
+              <a href="#education" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Education</a>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-white/80 hover:text-[#E91E8C] transition-colors">About</a>
-              <a href="#skills" className="text-white/80 hover:text-[#E91E8C] transition-colors">Skills</a>
-              <a href="#experience" className="text-white/80 hover:text-[#E91E8C] transition-colors">Experience</a>
-              <a href="#projects" className="text-white/80 hover:text-[#E91E8C] transition-colors">Projects</a>
-              <a href="#passion" className="text-white/80 hover:text-[#E91E8C] transition-colors">Passion Projects</a>
-              <a href="#blog" className="text-white/80 hover:text-[#E91E8C] transition-colors">Blog</a>
-              <a href="#education" className="text-white/80 hover:text-[#E91E8C] transition-colors">Education</a>
-              <a href="#contact" className="text-white/80 hover:text-[#E91E8C] transition-colors">Contact</a>
-            </div>
+            <a href="#contact" className="bg-neutral-900 text-white rounded-full px-5 py-2 text-sm font-medium hover:bg-neutral-800 transition-colors flex items-center gap-1.5">
+              Let&apos;s Talk <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#E91E8C]/20 via-transparent to-[#2D0840]/20"></div>
-        <div className="max-w-7xl mx-auto px-6 py-20 text-center relative z-10">
-          <div className="mb-12">
-            <div className="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-[#E91E8C] to-[#2D0840] rounded-full flex items-center justify-center shadow-2xl p-2">
-              <div className="w-44 h-44 bg-white rounded-full flex items-center justify-center p-1">
-                <img 
-                  src="/WhatsApp Image 2025-05-21 at 18.19.13_42fc92ab.jpg" 
-                  alt="Temwani Msiska"
-                  className="w-full h-full object-cover rounded-full"
-                />
+      <section id="hero" className="min-h-screen p-2 md:p-5">
+        <div className="bg-white rounded-[20px] md:rounded-[28px] min-h-[calc(100vh-16px)] md:min-h-[calc(100vh-40px)] relative overflow-hidden flex flex-col">
+          {/* Hero Nav */}
+          <nav className="flex items-center justify-between px-4 md:px-10 py-4 md:py-5 relative z-20">
+            <div className="flex items-center gap-2 border border-neutral-200 rounded-full px-4 py-2">
+              <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs md:text-sm font-medium text-neutral-700">Open to Collaborate</span>
+            </div>
+            <div className="hidden lg:flex items-center gap-8">
+              <a href="#projects" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Projects <span className="text-neutral-300">[{projects.length}]</span></a>
+              <a href="#experience" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Experience <span className="text-neutral-300">[8y+]</span></a>
+              <a href="#skills" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Skills</a>
+              <a href="#blog" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Blog</a>
+              <a href="#contact" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Contact</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <a href="#contact" className="bg-neutral-900 text-white rounded-full px-5 py-2.5 text-sm font-medium hover:bg-neutral-800 transition-colors flex items-center gap-2">
+                Let&apos;s Talk <ArrowUpRight className="w-4 h-4" />
+              </a>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-neutral-200 hover:bg-neutral-50 transition-colors"
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden absolute top-16 left-4 right-4 bg-white rounded-2xl border border-neutral-200 shadow-xl z-30 p-4">
+              <div className="flex flex-col gap-1">
+                {[
+                  { href: '#about', label: 'About' },
+                  { href: '#experience', label: 'Experience' },
+                  { href: '#projects', label: 'Projects' },
+                  { href: '#skills', label: 'Skills' },
+                  { href: '#passion', label: 'Code SHEROs' },
+                  { href: '#blog', label: 'Blog' },
+                  { href: '#education', label: 'Education' },
+                  { href: '#international', label: 'International' },
+                  { href: '#certifications', label: 'Certifications' },
+                  { href: '#contact', label: 'Contact' },
+                ].map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-4 py-2.5 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
               </div>
             </div>
-            <h1 className="text-6xl md:text-7xl font-heading font-bold text-[#1A0525] mb-6">
-              Temwani Msiska
-            </h1>
-            <p className="text-2xl md:text-3xl text-[#E91E8C] font-semibold mb-4">
-              Business Analyst & Systems Developer
-            </p>
-            <p className="text-xl text-[#1A0525] font-medium mb-8">
-              CEO & Founder, Code SHEROs | Pixel Pulse Studio
-            </p>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Leading Zambia's digital transformation through the Government Service Bus at Smart Zambia Institute, while building Code SHEROs, a platform teaching African girls to code through story driven missions.
-            </p>
+          )}
+
+          {/* Hero Content */}
+          <div className="flex-1 flex flex-col justify-center items-center relative px-4 md:px-10 pt-4 md:pt-0">
+            {/* Giant Name */}
+            <div className="text-center w-full select-none pointer-events-none">
+              <h1 className="text-[16vw] md:text-[12vw] font-heading font-bold leading-[0.85] tracking-[-0.04em] text-outline uppercase">
+                Temwani
+              </h1>
+              <h1 className="text-[16vw] md:text-[12vw] font-heading font-bold leading-[0.85] tracking-[-0.04em] text-neutral-900 uppercase">
+                Msiska
+              </h1>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="#contact" className="bg-[#E91E8C] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#C2185B] transition-colors shadow-lg hover:shadow-xl">
-              Get In Touch
-            </a>
-            <a href="#projects" className="border-2 border-[#E91E8C] text-[#E91E8C] px-8 py-4 rounded-lg font-semibold hover:bg-[#E91E8C] hover:text-white transition-colors">
-              View Projects
-            </a>
+
+          {/* Bottom Info Bar */}
+          <div className="relative z-20 flex flex-col md:flex-row items-start md:items-end justify-between px-4 md:px-10 pb-6 md:pb-10 pt-2 gap-6">
+            {/* Left: Role + CTA */}
+            <div className="max-w-md">
+              <h2 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 mb-2">
+                Senior Systems Developer
+              </h2>
+              <p className="text-neutral-500 text-sm leading-relaxed mb-4">
+                Developing national payment and payroll systems at SMART Zambia Institute, while building Code SHEROs — teaching African girls to code through story driven missions.
+              </p>
+              <a href="#contact" className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-neutral-800 transition-colors">
+                Let&apos;s collaborate <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Right: Social Links */}
+            <div className="flex flex-row md:flex-col flex-wrap gap-2.5">
+              <a href="https://www.codesheros.co.zm" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-neutral-200 rounded-full px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors">
+                <Globe className="w-4 h-4" /> codesheros.co.zm
+              </a>
+              <a href="https://www.codebloom.co.zm" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-neutral-200 rounded-full px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors">
+                <Globe className="w-4 h-4" /> codebloom.co.zm
+              </a>
+              <a href="https://www.linkedin.com/in/temwani-msiska" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-neutral-200 rounded-full px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors">
+                <Linkedin className="w-4 h-4" /> LinkedIn
+              </a>
+              <a href="https://github.com/temwani-msiska" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-neutral-200 rounded-full px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors">
+                <Github className="w-4 h-4" /> GitHub
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-[#E91E8C]" />
         </div>
       </section>
 
+      {/* Main Content Container - single continuous card */}
+      <div className="mx-2 md:mx-5 mt-2 bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200">
+
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">About Me</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                I am an IT professional with over eight years of experience as both a Business Analyst and Systems Developer, currently leading initiatives on the Government Service Bus at Smart Zambia Institute in collaboration with the Ministry of Finance and National Planning.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                As CEO and Founder of Code SHEROs, I am building Africa's first story driven coding education platform for girls aged 7 to 12. The platform teaches real programming through gamified missions, and is preparing for its pilot launch across Lusaka schools in Q3 2026.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Through Pixel Pulse Studio, my technology consultancy, I deliver end to end web and mobile solutions with scalable cloud architecture and modern development practices. My work bridges the gap between policy intent and practical implementation, turning stakeholder needs into efficient, scalable digital services.
-              </p>
+      <section id="about" className="py-16 md:py-24 px-4 md:px-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">About</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-[#E91E8C]/10 to-[#E91E8C]/20 p-6 rounded-xl text-center border border-[#E91E8C]/20">
-                <Award className="w-12 h-12 text-[#E91E8C] mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1A0525] mb-2">8+</h3>
-                <p className="text-gray-600">Years Experience</p>
+            <div className="grid md:grid-cols-5 gap-12 md:gap-16">
+              <div className="md:col-span-3 space-y-5">
+                <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
+                  I am an IT professional with over eight years of experience as a Senior Systems Developer, currently developing national payment and payroll systems at SMART Zambia Institute under the Office of the President.
+                </p>
+                <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
+                  As CEO and Founder of Code SHEROs, I am building Africa&apos;s first story driven coding education platform for girls aged 7 to 18. The platform teaches real programming through gamified missions, and is preparing for its pilot launch across Lusaka schools in Q3 2026.
+                </p>
+                <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
+                  Through Code Bloom, a women-led digital studio where passion meets purpose, and Pixel Pulse Studio, my technology consultancy, I deliver end-to-end web and mobile solutions.
+                </p>
               </div>
-              <div className="bg-gradient-to-br from-[#4A0E6B]/5 to-[#4A0E6B]/10 p-6 rounded-xl text-center border border-[#4A0E6B]/20">
-                <Rocket className="w-12 h-12 text-[#4A0E6B] mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1A0525] mb-2">50+</h3>
-                <p className="text-gray-600">Projects Delivered</p>
-              </div>
-              <div className="bg-gradient-to-br from-[#E91E8C]/10 to-[#4A0E6B]/10 p-6 rounded-xl text-center border border-[#E91E8C]/20">
-                <Users className="w-12 h-12 text-[#E91E8C] mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1A0525] mb-2">1M+</h3>
-                <p className="text-gray-600">Users Impacted</p>
-              </div>
-              <div className="bg-gradient-to-br from-[#4A0E6B]/5 to-[#E91E8C]/10 p-6 rounded-xl text-center border border-[#4A0E6B]/20">
-                <TrendingUp className="w-12 h-12 text-[#4A0E6B] mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1A0525] mb-2">70%</h3>
-                <p className="text-gray-600">Efficiency Gains</p>
+              <div className="md:col-span-2 grid grid-cols-2 gap-4">
+                {[
+                  { value: '8+', label: 'Years Experience' },
+                  { value: '50+', label: 'Projects Delivered' },
+                  { value: '1M+', label: 'Users Impacted' },
+                  { value: '70%', label: 'Efficiency Gains' },
+                ].map((stat, i) => (
+                  <div key={i} className="border border-neutral-200 rounded-2xl p-5 text-center hover:border-neutral-400 transition-colors">
+                    <h3 className="text-3xl font-heading font-bold text-neutral-900 mb-1">{stat.value}</h3>
+                    <p className="text-xs text-neutral-500 uppercase tracking-wider">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-[#FDF6FF] to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Core Expertise</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {skills.map((skill, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-                <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${skill.color} flex items-center justify-center mr-4`}>
-                    <skill.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#1A0525]">{skill.name}</h3>
-                </div>
-                <div className="mb-2">
-                  <div className="flex justify-between text-sm text-gray-600 mb-1">
-                    <span>Proficiency</span>
-                    <span>{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div 
-                      className={`h-2 rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000`}
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Tech Stack */}
-          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-            <h3 className="text-2xl font-bold text-[#1A0525] mb-6 text-center">Technology Stack</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {techStack.map((tech, index) => (
-                <span key={index} className="px-4 py-2 bg-[#E6F9FC] text-[#00B4D8] rounded-full text-sm font-medium hover:bg-[#d0f4f9] transition-colors border border-[#00B4D8]/20">
-                  {tech}
-                </span>
-              ))}
+      <section id="skills" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Skills</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Professional Journey</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
-          </div>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative">
-                <div className={`bg-gradient-to-r ${exp.gradient} p-1 rounded-xl shadow-lg`}>
-                  <div className="bg-white p-8 rounded-xl">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                      <div className="flex-1">
-                        <div className="flex items-center mb-4">
-                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${exp.gradient} flex items-center justify-center mr-4`}>
-                            <exp.icon className="w-8 h-8 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-[#1A0525] mb-1">{exp.title}</h3>
-                            <div className="flex items-center">
-                              <p className="text-xl text-[#E91E8C] font-semibold">{exp.company}</p>
-                              {exp.link && (
-                                <a 
-                                  href={exp.link} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="ml-2 text-[#E91E8C] hover:text-[#4A0E6B] transition-colors"
-                                >
-                                  <ExternalLink className="w-5 h-5" />
-                                </a>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-4 mb-4">
-                          <div className="flex items-center text-gray-600">
-                            <Calendar className="w-5 h-5 mr-2" />
-                            <span>{exp.period}</span>
-                          </div>
-                          <span className="px-3 py-1 bg-[#E91E8C]/10 text-[#E91E8C] text-sm rounded-full font-medium border border-[#E91E8C]/20">
-                            {exp.type}
-                          </span>
-                        </div>
-                      </div>
+            <div className="grid md:grid-cols-2 gap-12 mb-14">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900 mb-6">Core Expertise</h3>
+                <div className="space-y-4">
+                  {skills.map((skill, index) => (
+                    <div key={index} className="flex items-center justify-between py-3 border-b border-neutral-100 last:border-0">
+                      <span className="text-neutral-700 font-medium">{skill.name}</span>
+                      <span className="text-sm text-neutral-400">{skill.level}%</span>
                     </div>
-                    <p className="text-gray-700 mb-6 leading-relaxed text-lg">{exp.description}</p>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {exp.achievements.map((achievement, i) => (
-                        <div key={i} className="flex items-start space-x-3">
-                          <CheckCircle className="w-5 h-5 text-[#E91E8C] mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{achievement}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-[#FDF6FF] to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Key Projects</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <a 
-                key={index} 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group border border-gray-100"
-              >
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-xl flex items-center justify-center`}>
-                      <project.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                        project.status === 'Live' 
-                          ? 'bg-green-100 text-green-800 border border-green-200' 
-                          : 'bg-blue-100 text-blue-800 border border-blue-200'
-                      }`}>
-                        {project.status}
-                      </span>
-                      <ExternalLink className="w-6 h-6 text-gray-400 group-hover:text-[#E91E8C] transition-colors" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1A0525] mb-3 group-hover:text-[#E91E8C] transition-colors">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 bg-[#E91E8C]/10 text-[#E91E8C] text-sm rounded-full font-medium border border-[#E91E8C]/20">
-                      {tag}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900 mb-6">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2.5">
+                  {techStack.map((tech, index) => (
+                    <span key={index} className="px-4 py-2 border border-neutral-200 rounded-full text-sm font-medium text-neutral-600 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-200 cursor-default">
+                      {tech}
                     </span>
                   ))}
                 </div>
-                <div className="border-t pt-4">
-                  <div className="flex items-start space-x-3">
-                    <Star className="w-5 h-5 text-[#E91E8C] mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-sm text-gray-600 font-medium mb-1">Impact:</p>
-                      <p className="text-[#1A0525] font-medium">{project.impact}</p>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Experience</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
+            </div>
+
+            <div className="space-y-0">
+              {experiences.map((exp, index) => (
+                <div key={index} className={`py-8 md:py-10 ${index !== experiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
+                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
+                    {/* Left column: meta */}
+                    <div className="md:col-span-1">
+                      <span className="text-sm text-neutral-400">{exp.period}</span>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
+                    {/* Right column: content */}
+                    <div className="md:col-span-3">
+                      <div className="flex items-start justify-between mb-1">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
+                        {exp.link && (
+                          <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-neutral-900 transition-colors ml-2 flex-shrink-0">
+                            <ArrowUpRight className="w-5 h-5" />
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
+                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
+                      <div className="space-y-2.5">
+                        {exp.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-neutral-600">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </a>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Projects</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+              {projects.map((project, index) => (
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group border border-neutral-200 rounded-2xl p-6 md:p-8 hover:border-neutral-900 transition-all duration-300"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 group-hover:text-neutral-700 transition-colors">{project.title}</h3>
+                    <div className="flex items-center gap-2 flex-shrink-0 ml-3">
+                      <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                      <span className="text-xs text-neutral-400">{project.status}</span>
+                      <ArrowUpRight className="w-5 h-5 text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                    </div>
+                  </div>
+                  <p className="text-neutral-500 text-sm leading-relaxed mb-5">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="px-3 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="pt-4 border-t border-neutral-100">
+                    <p className="text-sm text-neutral-700 font-medium">{project.impact}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
       </section>
 
       {/* Passion Projects */}
-      <section id="passion" className="py-20 bg-[#FDF6FF]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-heading font-bold text-center text-[#1A0525] mb-2">What I am Building</h2>
-          <p className="text-center text-[#6B4D7A] mb-12 max-w-2xl mx-auto">
-            Projects driven by purpose, not just profit. These are the things I work on because they matter.
-          </p>
+      <section id="passion" className="">
+        <div className="bg-neutral-900 m-3 md:m-5 rounded-2xl md:rounded-3xl py-16 md:py-24 px-4 md:px-10 text-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-500 tracking-wider uppercase">What I&apos;m Building</span>
+              <div className="flex-1 h-px bg-neutral-700"></div>
+            </div>
 
-          <div className="bg-white rounded-xl shadow-lg border-l-4 border-[#E91E8C] p-8 md:p-10">
-            <div className="md:flex md:gap-10">
-              <div className="md:w-2/5 mb-6 md:mb-0 flex flex-col items-center justify-center">
-                <h3 className="text-3xl font-heading font-bold text-[#4A0E6B] mb-2">&lt;Code&gt; SHEROs</h3>
-                <a
-                  href="https://www.codesheros.co.zm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#00B4D8] hover:underline text-sm"
-                >
-                  codesheros.co.zm
-                </a>
-              </div>
-
-              <div className="md:w-3/5">
-                <p className="text-xl font-semibold text-[#4A0E6B] mb-4">
-                  Teaching African girls to code through story driven missions.
-                </p>
-                <p className="text-[#1A0525] mb-4">
-                  Code SHEROs is an interactive coding education platform for girls aged 7 to 12, built in Zambia and designed for Africa. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
-                </p>
-                <p className="text-[#1A0525] mb-6">
-                  The platform is preparing for its pilot launch across 3 to 5 schools in Lusaka, targeting 100 to 200 girls in Q3 2026.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-sm">
-                  <div>
-                    <span className="text-[#6B4D7A]">Role:</span>
-                    <span className="text-[#1A0525] ml-1">CEO & Founder</span>
-                  </div>
-                  <div>
-                    <span className="text-[#6B4D7A]">Stack:</span>
-                    <span className="text-[#1A0525] ml-1">Next.js, Django, TypeScript</span>
-                  </div>
-                  <div>
-                    <span className="text-[#6B4D7A]">Stage:</span>
-                    <span className="text-[#1A0525] ml-1">Pre launch, pilot in prep</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
+            <div className="grid md:grid-cols-5 gap-10 md:gap-16">
+              <div className="md:col-span-2 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-4xl md:text-5xl font-heading font-bold mb-3">&lt;Code&gt;<br />SHEROs</h3>
                   <a
                     href="https://www.codesheros.co.zm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#E91E8C] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#C2185B] transition-colors shadow-md"
+                    className="text-neutral-400 hover:text-white text-sm transition-colors"
                   >
-                    Visit codesheros.co.zm
+                    codesheros.co.zm
+                  </a>
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="https://www.codesheros.co.zm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-neutral-900 rounded-full px-6 py-3 text-sm font-medium hover:bg-neutral-200 transition-colors inline-flex items-center gap-2"
+                  >
+                    Visit Site <ArrowUpRight className="w-4 h-4" />
                   </a>
                   <a
                     href="/blog/building-code-sheros"
-                    className="border-2 border-[#4A0E6B] text-[#4A0E6B] px-6 py-3 rounded-lg font-semibold hover:bg-[#4A0E6B] hover:text-white transition-colors"
+                    className="border border-neutral-600 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-neutral-800 transition-colors"
                   >
                     Read the Story
                   </a>
+                </div>
+              </div>
+
+              <div className="md:col-span-3">
+                <p className="text-lg text-neutral-300 leading-relaxed mb-5">
+                  Teaching African girls to code through story driven missions. Code SHEROs is an interactive coding education platform for girls aged 7 to 18, built in Zambia and designed for Africa. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
+                </p>
+                <p className="text-neutral-400 mb-8">
+                  Preparing for pilot launch across 3 to 5 schools in Lusaka, targeting 100 to 200 girls in Q3 2026.
+                </p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="border border-neutral-700 rounded-xl p-4">
+                    <span className="text-xs text-neutral-500 uppercase tracking-wider">Role</span>
+                    <p className="text-sm text-white mt-1">CEO & Founder</p>
+                  </div>
+                  <div className="border border-neutral-700 rounded-xl p-4">
+                    <span className="text-xs text-neutral-500 uppercase tracking-wider">Stack</span>
+                    <p className="text-sm text-white mt-1">Next.js, Django, TS</p>
+                  </div>
+                  <div className="border border-neutral-700 rounded-xl p-4">
+                    <span className="text-xs text-neutral-500 uppercase tracking-wider">Stage</span>
+                    <p className="text-sm text-white mt-1">Pre-launch</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -560,239 +583,280 @@ const projects = [
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Blog</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-[#6B4D7A] max-w-2xl mx-auto">
-              Writing about digital transformation, public systems, and building technology that creates opportunity across Africa.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {blogPosts.slice(0, 3).map((post) => (
+      <section id="blog" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Blog</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-10">
+              {blogPosts.slice(0, 3).map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group border border-neutral-200 rounded-2xl overflow-hidden hover:border-neutral-400 transition-all duration-300"
+                >
+                  {post.image && (
+                    <div className="h-40 overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-neutral-300 text-xs">{post.readTime}</span>
+                    </div>
+                    <h3 className="text-base font-heading font-bold text-neutral-900 mb-2 line-clamp-2 group-hover:text-neutral-600 transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-neutral-500 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <time className="text-neutral-300 text-xs">
+                        {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                      </time>
+                      <ArrowUpRight className="w-4 h-4 text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
               <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1 overflow-hidden"
+                href="/blog"
+                className="inline-flex items-center gap-2 border border-neutral-200 text-neutral-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-200"
               >
-                {post.image && (
-                  <div className="h-40 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-[#E91E8C]/10 text-[#E91E8C] text-sm rounded-full border border-[#E91E8C]/20">
-                      {post.category}
-                    </span>
-                    <span className="text-gray-400 text-sm">{post.readTime}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-[#1A0525] mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <time className="text-gray-400 text-sm">
-                      {new Date(post.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                      })}
-                    </time>
-                    <span className="text-[#E91E8C] font-medium text-sm">
-                      Read more
-                    </span>
-                  </div>
-                </div>
+                View All Posts <ArrowUpRight className="w-4 h-4" />
               </Link>
-            ))}
+            </div>
           </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/blog"
-              className="inline-block border-2 border-[#E91E8C] text-[#E91E8C] px-8 py-4 rounded-lg font-semibold hover:bg-[#E91E8C] hover:text-white transition-colors"
-            >
-              View All Posts
-            </Link>
-          </div>
-        </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gradient-to-br from-[#FDF6FF] to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Education</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
-          </div>
-          <div className="max-w-5xl mx-auto space-y-6">
-            {education.map((edu, index) => (
-              <div key={index} className={`bg-gradient-to-r ${edu.gradient} p-1 rounded-xl shadow-lg`}>
-                <div className="bg-white p-6 rounded-xl">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <div className="flex items-center mb-4 lg:mb-0">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${edu.gradient} rounded-xl flex items-center justify-center mr-4`}>
-                        <GraduationCap className="w-8 h-8 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-[#1A0525] mb-1">
-                          {edu.degree}
-                        </h3>
-                        <p className="text-lg text-[#E91E8C] font-semibold mb-1">{edu.institution}</p>
-                        <p className="text-md text-[#1A0525] font-medium">{edu.achievement}</p>
-                      </div>
+      <section id="education" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Education</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
+            </div>
+            <div className="space-y-0">
+              {education.map((edu, index) => (
+                <div key={index} className={`py-6 ${index !== education.length - 1 ? 'border-b border-neutral-100' : ''}`}>
+                  <div className="grid md:grid-cols-4 gap-2 md:gap-8">
+                    <div className="md:col-span-1">
+                      <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">{edu.level}</span>
                     </div>
-                    <div className="text-center lg:text-right">
-                      <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#E91E8C]/10 to-[#4A0E6B]/10 rounded-full border border-[#E91E8C]/20">
-                        <BookOpen className="w-5 h-5 text-[#E91E8C] mr-2" />
-                        <span className="text-[#1A0525] font-semibold">{edu.level}</span>
-                      </div>
+                    <div className="md:col-span-3">
+                      <h3 className="text-lg font-heading font-bold text-neutral-900">{edu.degree}</h3>
+                      <p className="text-neutral-500 text-sm">{edu.institution}</p>
+                      <p className="text-neutral-400 text-sm">{edu.achievement}</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+      </section>
+
+      {/* International Experience Section */}
+      <section id="international" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">International</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { title: 'GovStack Women in GovTech Challenge 2026 Mentee', detail: 'Selected from 1,300+ applicants across 137 countries' },
+                { title: 'OpenG2P Advanced Training Course', detail: 'IIIT Bangalore, December 2024' },
+                { title: 'AFRALO Individual Member', detail: 'ICANN' },
+                { title: 'ICANN Fellowship Applicant', detail: 'ICANN87 Muscat Oman, October 2026' }
+              ].map((item, index) => (
+                <div key={index} className="border border-neutral-200 rounded-2xl p-5 hover:border-neutral-400 transition-colors">
+                  <Globe className="w-5 h-5 text-neutral-300 mb-3" />
+                  <h3 className="text-base font-heading font-bold text-neutral-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-neutral-500">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+      </section>
+
+      {/* Certifications + Languages Section */}
+      <section id="certifications" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+              {/* Certifications */}
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Certifications</span>
+                  <div className="flex-1 h-px bg-neutral-200"></div>
+                </div>
+                <div className="space-y-0">
+                  {[
+                    { name: 'OpenG2P Advanced Training Course, IIIT Bangalore', detail: 'December 2024' },
+                    { name: 'Digital Awareness Certificate', detail: '' },
+                    { name: 'Introduction to Modern Artificial Intelligence', detail: '' },
+                    { name: 'CAPM Certification', detail: 'In progress, target May 2026' }
+                  ].map((cert, index) => (
+                    <div key={index} className="py-4 border-b border-neutral-100 last:border-0">
+                      <h3 className="text-sm font-medium text-neutral-900">{cert.name}</h3>
+                      {cert.detail && <p className="text-xs text-neutral-400 mt-0.5">{cert.detail}</p>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Languages */}
+              <div id="languages">
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Languages</span>
+                  <div className="flex-1 h-px bg-neutral-200"></div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="border border-neutral-200 rounded-2xl p-6 text-center hover:border-neutral-400 transition-colors">
+                    <h3 className="text-lg font-heading font-bold text-neutral-900 mb-1">English</h3>
+                    <p className="text-sm text-neutral-400">Fluent</p>
+                  </div>
+                  <div className="border border-neutral-200 rounded-2xl p-6 text-center hover:border-neutral-400 transition-colors">
+                    <h3 className="text-lg font-heading font-bold text-neutral-900 mb-1">French</h3>
+                    <p className="text-sm text-neutral-400">Intermediate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-[#FDF6FF] to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1A0525] mb-6">Let's Connect</h2>
-            <div className="w-24 h-1 bg-[#E91E8C] mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
-              Building systems that empower people and create opportunity across Africa. Whether it is digital government infrastructure, coding education for girls, or scalable technology solutions, I am always interested in meaningful collaboration.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#E91E8C]/10 rounded-lg flex items-center justify-center border border-[#E91E8C]/20">
-                  <MapPin className="w-6 h-6 text-[#E91E8C]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1A0525]">Location</h3>
-                  <p className="text-gray-600">Lusaka, Zambia</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#E91E8C]/10 rounded-lg flex items-center justify-center border border-[#E91E8C]/20">
-                  <Linkedin className="w-6 h-6 text-[#E91E8C]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1A0525]">LinkedIn</h3>
-                  <a 
-                    href="https://www.linkedin.com/in/temwani-msiska" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-[#E91E8C] transition-colors"
-                  >
-                    Connect with me professionally
-                  </a>
+      <section id="contact" className="py-16 md:py-24 px-4 md:px-10 ">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Contact</span>
+              <div className="flex-1 h-px bg-neutral-200"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-neutral-900 mb-4">
+                  Let&apos;s build something<br />meaningful together.
+                </h2>
+                <p className="text-neutral-500 leading-relaxed mb-8">
+                  Whether it&apos;s digital government infrastructure, coding education for girls, or scalable technology solutions — I&apos;m always interested in meaningful collaboration across Africa.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-neutral-600">
+                    <MapPin className="w-4 h-4 text-neutral-400" />
+                    <span className="text-sm">Lusaka, Zambia</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-neutral-600">
+                    <Mail className="w-4 h-4 text-neutral-400" />
+                    <a href="mailto:temwani.msiska@gmail.com" className="text-sm hover:text-neutral-900 transition-colors">
+                      temwani.msiska@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#4A0E6B]/10 rounded-lg flex items-center justify-center border border-[#4A0E6B]/20">
-                  <Github className="w-6 h-6 text-[#4A0E6B]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1A0525]">GitHub</h3>
-                  <a 
-                    href="https://github.com/temwani-msiska" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-[#4A0E6B] transition-colors"
-                  >
-                    View my code repositories
-                  </a>
-                </div>
+
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:temwani.msiska@gmail.com"
+                  className="flex items-center justify-between bg-neutral-900 text-white rounded-2xl px-6 py-5 hover:bg-neutral-800 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5" />
+                    <span className="font-medium">Send an Email</span>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/temwani-msiska"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between border border-neutral-200 rounded-2xl px-6 py-5 hover:border-neutral-400 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Linkedin className="w-5 h-5 text-neutral-600" />
+                    <span className="font-medium text-neutral-700">LinkedIn</span>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                </a>
+                <a
+                  href="https://github.com/temwani-msiska"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between border border-neutral-200 rounded-2xl px-6 py-5 hover:border-neutral-400 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Github className="w-5 h-5 text-neutral-600" />
+                    <span className="font-medium text-neutral-700">GitHub</span>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                </a>
+                <a
+                  href="https://www.codesheros.co.zm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between border border-neutral-200 rounded-2xl px-6 py-5 hover:border-neutral-400 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Globe className="w-5 h-5 text-neutral-600" />
+                    <span className="font-medium text-neutral-700">codesheros.co.zm</span>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                </a>
+                <a
+                  href="https://www.codebloom.co.zm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between border border-neutral-200 rounded-2xl px-6 py-5 hover:border-neutral-400 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Globe className="w-5 h-5 text-neutral-600" />
+                    <span className="font-medium text-neutral-700">codebloom.co.zm</span>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                </a>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-[#1A0525] mb-6">Ready to Collaborate?</h3>
-              <p className="text-gray-700 mb-6">
-                Looking to collaborate on projects that turn complex challenges into effective, 
-                user-focused solutions? Let's discuss how we can work together to drive meaningful 
-                digital transformation across Africa.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="mailto:temwani.msiska@gmail.com" 
-                  className="bg-[#E91E8C] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#C2185B] transition-colors flex items-center space-x-2"
-                >
-                  <Mail className="w-5 h-5" />
-                  <span>Send Email</span>
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/temwani-msiska" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="border-2 border-[#E91E8C] text-[#E91E8C] px-6 py-3 rounded-lg font-semibold hover:bg-[#E91E8C] hover:text-white transition-colors flex items-center space-x-2"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  <span>LinkedIn</span>
-                </a>
-                <a 
-                  href="https://github.com/temwani-msiska" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="border-2 border-[#4A0E6B] text-[#4A0E6B] px-6 py-3 rounded-lg font-semibold hover:bg-[#4A0E6B] hover:text-white transition-colors flex items-center space-x-2"
-                >
-                  <Github className="w-5 h-5" />
-                  <span>GitHub</span>
-                </a>
-              </div>
-            </div>
           </div>
-        </div>
       </section>
 
+      </div>{/* End Main Content Container */}
+
       {/* Footer */}
-      <footer className="bg-[#2D0840] text-white py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-4">Temwani Msiska</h3>
-            <p className="text-gray-400 mb-6">
-              Building technology that creates opportunity across Africa
-            </p>
-            <div className="flex justify-center space-x-6">
-              <a 
-                href="https://www.linkedin.com/in/temwani-msiska" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#E91E8C] transition-colors"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a 
-                href="https://github.com/temwani-msiska" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#E91E8C] transition-colors"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a 
-                href="mailto:temwani.msiska@gmail.com" 
-                className="text-gray-400 hover:text-[#E91E8C] transition-colors"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
+      <footer className="px-2 md:px-5 pt-2 pb-2 md:pb-5">
+        <div className="bg-neutral-900 rounded-[20px] md:rounded-[28px] py-10 px-4 md:px-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <h3 className="text-lg font-heading font-bold text-white mb-1">Temwani Msiska</h3>
+                <p className="text-neutral-500 text-sm">
+                  Building technology that creates opportunity across Africa
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <a href="https://www.linkedin.com/in/temwani-msiska" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="https://github.com/temwani-msiska" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors">
+                  <Github className="w-4 h-4" />
+                </a>
+                <a href="mailto:temwani.msiska@gmail.com" className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors">
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
+              <p className="text-neutral-600 text-xs">
+                &copy; 2026 Temwani Msiska
+              </p>
             </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8">
-            <p className="text-gray-400">
-              © 2026 Temwani Msiska. All rights reserved.
-            </p>
           </div>
         </div>
       </footer>
