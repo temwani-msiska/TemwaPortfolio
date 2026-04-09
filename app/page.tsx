@@ -351,9 +351,11 @@ const projects = [
         </div>
       </section>
 
+      {/* Main Content Container - single continuous card */}
+      <div className="mx-2 md:mx-5 mt-2 bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200">
+
       {/* About Section */}
-      <section id="about" className="px-2 md:px-5 pt-2 md:pt-0">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="about" className="py-16 md:py-24 px-4 md:px-10">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">About</span>
@@ -386,12 +388,10 @@ const projects = [
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="skills" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Skills</span>
@@ -422,12 +422,10 @@ const projects = [
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="experience" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Experience</span>
@@ -473,12 +471,10 @@ const projects = [
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="projects" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Projects</span>
@@ -517,12 +513,11 @@ const projects = [
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* Passion Projects */}
-      <section id="passion" className="px-2 md:px-5 pt-2">
-        <div className="bg-neutral-900 rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10 text-white">
+      <section id="passion" className="border-t border-neutral-200">
+        <div className="bg-neutral-900 m-3 md:m-5 rounded-2xl md:rounded-3xl py-16 md:py-24 px-4 md:px-10 text-white">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-500 tracking-wider uppercase">What I&apos;m Building</span>
@@ -588,8 +583,7 @@ const projects = [
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="blog" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Blog</span>
@@ -643,12 +637,10 @@ const projects = [
               </Link>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="education" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Education</span>
@@ -671,12 +663,10 @@ const projects = [
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* International Experience Section */}
-      <section id="international" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="international" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">International</span>
@@ -697,12 +687,10 @@ const projects = [
               ))}
             </div>
           </div>
-        </div>
       </section>
 
       {/* Certifications + Languages Section */}
-      <section id="certifications" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="certifications" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16">
               {/* Certifications */}
@@ -745,12 +733,10 @@ const projects = [
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-2 md:px-5 pt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] py-16 md:py-24 px-4 md:px-10">
+      <section id="contact" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Contact</span>
@@ -841,8 +827,9 @@ const projects = [
               </div>
             </div>
           </div>
-        </div>
       </section>
+
+      </div>{/* End Main Content Container */}
 
       {/* Footer */}
       <footer className="px-2 md:px-5 pt-2 pb-2 md:pb-5">
