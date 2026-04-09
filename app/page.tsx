@@ -315,16 +315,6 @@ const projects = [
                 Msiska
               </h1>
             </div>
-
-            {/* Photo - overlapping the name */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[55%] sm:w-[40%] md:w-[30%] lg:w-[24%] z-10">
-              <img
-                src="/WhatsApp Image 2025-05-21 at 18.19.13_42fc92ab.jpg"
-                alt="Temwani Msiska"
-                className="w-full object-cover object-top"
-                style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}
-              />
-            </div>
           </div>
 
           {/* Bottom Info Bar */}
