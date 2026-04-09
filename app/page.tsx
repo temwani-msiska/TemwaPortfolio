@@ -391,7 +391,7 @@ const projects = [
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="skills" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Skills</span>
@@ -425,7 +425,7 @@ const projects = [
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="experience" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Experience</span>
@@ -474,7 +474,7 @@ const projects = [
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="projects" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Projects</span>
@@ -516,7 +516,7 @@ const projects = [
       </section>
 
       {/* Passion Projects */}
-      <section id="passion" className="border-t border-neutral-200">
+      <section id="passion" className="">
         <div className="bg-neutral-900 m-3 md:m-5 rounded-2xl md:rounded-3xl py-16 md:py-24 px-4 md:px-10 text-white">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
@@ -583,7 +583,7 @@ const projects = [
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="blog" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Blog</span>
@@ -640,7 +640,7 @@ const projects = [
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="education" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Education</span>
@@ -666,7 +666,7 @@ const projects = [
       </section>
 
       {/* International Experience Section */}
-      <section id="international" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="international" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">International</span>
@@ -690,7 +690,7 @@ const projects = [
       </section>
 
       {/* Certifications + Languages Section */}
-      <section id="certifications" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="certifications" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16">
               {/* Certifications */}
@@ -736,7 +736,7 @@ const projects = [
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 px-4 md:px-10 border-t border-neutral-200">
+      <section id="contact" className="py-16 md:py-24 px-4 md:px-10 ">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Contact</span>
