@@ -61,7 +61,7 @@ export default function Portfolio() {
       company: 'Belvoir Group (Remote, UK)',
       period: 'January 2026 - Present',
       type: 'Part-time / Remote',
-      description: 'Sole developer of the Belvoir Automation Hub, a property management automation platform built with Django 5.0, PostgreSQL, and Railway.',
+      description: 'Developer of the Belvoir Automation Hub, a property management automation platform built with Django 5.0, PostgreSQL, and Railway.',
       achievements: [
         'Designed multi-step workflows for property onboarding, inventory management, and compliance reporting',
         'Integrated external systems via APIs and Playwright browser automation',
@@ -149,11 +149,12 @@ export default function Portfolio() {
       company: 'BongoHive Technology and Innovation Hub',
       period: 'May 2014 - October 2015',
       type: 'Tech Hub',
-      description: 'Early contributor to Zambia\'s founding tech innovation hub.',
+      description: 'Built foundational software development skills through hands-on projects within a collaborative innovation environment.',
       achievements: [
-        'Early contributor to Zambia\'s founding tech innovation hub',
-        'Developed technical foundation through collaborative projects',
-        'Supported early stage operations in emerging African tech ecosystem'
+        'Supported internal operations by documenting meetings and maintaining coordination workflows across teams',
+        'Contributed to the execution of community programs and events within Zambia\'s emerging tech ecosystem',
+        'Managed digital communication channels to support outreach, engagement, and ecosystem visibility',
+        'Provided front-desk and administrative support, ensuring smooth day-to-day operations and a professional user experience'
       ],
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#4A0E6B]'
@@ -329,7 +330,7 @@ const projects = [
             {/* Left: Role + CTA */}
             <div className="max-w-md">
               <h2 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 mb-2">
-                Senior Systems Developer
+                Systems Developer & Tech Entrepreneur
               </h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-4">
                 Building national systems at SMART Zambia Institute and growing Code SHEROs to empower the next generation of African female coders through storytelling.
@@ -523,7 +524,7 @@ const projects = [
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group border border-neutral-200 rounded-2xl p-6 md:p-8 hover:border-neutral-900 transition-all duration-300 ${index === projects.length - 1 && projects.length % 2 !== 0 ? 'md:col-start-1 md:col-end-2 md:mx-auto md:w-full md:max-w-[calc(50%-0.75rem)]' : ''}`}
+                  className={`group border border-neutral-200 rounded-2xl p-6 md:p-8 hover:border-neutral-900 transition-all duration-300 ${index === projects.length - 1 && projects.length % 2 !== 0 ? 'md:col-span-2 md:mx-auto md:max-w-[calc(50%-0.75rem)]' : ''}`}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 group-hover:text-neutral-700 transition-colors">{project.title}</h3>
