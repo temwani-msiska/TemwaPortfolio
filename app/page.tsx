@@ -58,30 +58,49 @@ export default function Portfolio() {
     { name: 'Mobile Development', level: 85, icon: Smartphone, color: 'from-[#2D0840] to-[#E91E8C]' }
   ];
 
-  const experiences = [
+  const consultingExperiences = [
     {
-      title: 'AI Agent Instruction Specialist and Automation',
+      title: 'AI Agent Instruction Specialist & Automation Developer',
       company: 'Belvoir Group (Remote, UK)',
       period: 'January 2026 - Present',
-      type: 'Part-time Consulting',
-      description: 'Audit and refine AI agent instructions; improve automation workflows.',
+      type: 'Consulting',
+      description: 'Sole developer of the Belvoir Automation Hub, a property management automation platform built with Django 5.0, PostgreSQL, and Railway.',
       achievements: [
-        'Audit and refine AI agent instructions to improve accuracy and task completion',
-        'Improve automation workflows across internal systems'
+        'Designed multi-step workflows for property onboarding, inventory management, and compliance reporting',
+        'Integrated external systems (SME Professional, MRI Inspect, Signable, TDS/DPS) via APIs and Playwright browser automation',
+        'Experimented with Claude AI and emerging agentic frameworks for workflow generation'
       ],
       icon: Zap,
       gradient: 'from-[#4A0E6B] to-[#E91E8C]'
     },
     {
+      title: 'Advanced AI Trainer',
+      company: 'Invisible Technologies',
+      period: 'April 2024 - June 2024',
+      type: 'Contract',
+      description: 'Evaluated and rewrote AI generated content to improve authenticity and real world accuracy.',
+      achievements: [
+        'Evaluated AI generated content and rewrote responses for authenticity',
+        'Created natural prompts and conversations to improve AI system training',
+        'Helped fine tune large language models for real world use cases'
+      ],
+      icon: Code,
+      gradient: 'from-[#E91E8C] to-[#2D0840]'
+    }
+  ];
+
+  const governmentExperiences = [
+    {
       title: 'Senior Systems Developer',
       company: 'SMART Zambia Institute',
       period: 'March 2026 - Present',
       type: 'Government',
-      description: 'Developing national payment and payroll systems at SMART Zambia Institute under the Office of the President, building secure digital infrastructure for civil servants nationwide.',
+      description: 'Leading digital transformation initiatives for national e-government service delivery at the Office of the President.',
       achievements: [
-        'Developing the Payment Aggregator system to curb payslip fraud through integration with accredited financial institutions, multi-factor authentication, and multi-layered access controls',
-        'Built the ePayslip system digitising payroll delivery for civil servants nationwide',
-        'Contributing to the Cash for Work digital payment system supporting social protection disbursements'
+        'Lead digital transformation initiatives for national e-government service delivery',
+        'Develop secure, scalable software systems for the Government Service Bus platform',
+        'Design API integrations connecting multiple government agencies and third party services',
+        'Conduct stakeholder requirements analysis and translate policy objectives into technical solutions'
       ],
       icon: Building,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
@@ -89,13 +108,13 @@ export default function Portfolio() {
     },
     {
       title: 'Business Analyst and Systems Developer',
-      company: 'SMART Zambia Institute - Government Service Bus',
+      company: 'SMART Zambia Institute',
       period: 'January 2025 - April 2026',
       type: 'Government',
-      description: 'Collaborated with the Ministry of Finance and National Planning on the Government Service Bus initiative, bridging policy intent with practical implementation for national e-government services.',
+      description: 'Collaborated with the Ministry of Finance and National Planning on the Government Service Bus initiative.',
       achievements: [
-        'Gathered and documented system requirements for national e-government services on the GSB',
-        'Created user manuals and conducted training for government staff across ministries',
+        'Gathered and documented detailed system requirements for national e-government services on the Government Service Bus',
+        'Created comprehensive user manuals and conducted training for government staff across ministries',
         'Collaborated with the Ministry of Finance and National Planning on integrated digital service delivery'
       ],
       icon: Building,
@@ -106,52 +125,41 @@ export default function Portfolio() {
       company: 'SMART Zambia Institute',
       period: 'January 2024 - January 2025',
       type: 'Government',
-      description: 'Designed and maintained robust software systems to enhance Zambia\'s digital public infrastructure and improve government service delivery across multiple platforms.',
+      description: 'Built and maintained software systems powering Zambia\'s digital public infrastructure.',
       achievements: [
-        'Developed scalable software systems for national digital infrastructure',
-        'Conducted comprehensive system requirements analysis with stakeholders',
-        'Implemented innovative solutions with seamless government platform integration',
-        'Provided frontline user support and system monitoring for deployed solutions',
-        'Collaborated with cross-functional teams to optimize operational efficiency',
-        'Drove continuous improvement through user feedback and system evaluation'
+        'Built and maintained software systems powering Zambia\'s digital public infrastructure',
+        'Implemented platform integrations across government systems with automated testing',
+        'Provided user support, system monitoring, and feedback driven continuous improvement'
       ],
       icon: Code,
       gradient: 'from-[#2D0840] to-[#E91E8C]'
     },
     {
-      title: 'CEO & Founder',
-      company: 'Code SHEROs (A Code Bloom / Codebloom Digital Technologies Company)',
-      period: '2026 - Present',
-      type: 'EdTech',
-      description: 'Building Africa\'s first story driven coding education platform for girls aged 7 to 18. Code SHEROs teaches HTML, CSS, and JavaScript through gamified missions featuring three mentor characters who guide players through progressively challenging coding worlds.',
+      title: 'Records Officer',
+      company: 'Government Printers, Ministry of Transport and Logistics',
+      period: 'June 2021 - December 2023',
+      type: 'Government',
+      description: 'Managed records and administrative operations across government agency.',
       achievements: [
-        'Built the full platform independently: Django REST backend, Next.js frontend, PostgreSQL, GPT 4o integration',
-        'Designed 8 learning tracks across 3 character worlds with 12 interactive challenge types',
-        'Developed organisation system with teacher dashboards, pacing controls, and impact reporting',
-        'Preparing pilot programme targeting 100 to 200 girls across 3 to 5 Lusaka schools in Q3 2026'
+        'Managed records and administrative operations across government agency',
+        'Supported compliance and documentation workflows'
       ],
-      icon: Rocket,
-      gradient: 'from-[#E91E8C] to-[#4A0E6B]',
-      link: 'https://www.codesheros.co.zm'
+      icon: Building,
+      gradient: 'from-[#4A0E6B] to-[#2D0840]'
     },
     {
-      title: 'CEO & Founder',
-      company: 'Pixel Pulse Studio',
-      period: 'January 2018 - Present',
-      type: 'Entrepreneurship',
-      description: 'Founded and lead a technology studio delivering end-to-end web and mobile solutions with scalable cloud architecture, clean API contracts, and automated CI/CD pipelines.',
+      title: 'Intern',
+      company: 'BongoHive Technology and Innovation Hub',
+      period: 'May 2014 - October 2015',
+      type: 'Tech Hub',
+      description: 'Early contributor to Zambia\'s founding tech innovation hub.',
       achievements: [
-        'Built Zamlex AI: AI-powered legal-tech platform reducing legal research time by 70%',
-        'Developed Temzie Bites: Interactive cultural hub preserving Zambian culinary heritage',
-        'Architected scalable microservices using React, Next.js, Node.js, and TypeScript',
-        'Implemented robust DevOps practices with Docker, GitHub Actions, and zero-downtime deployments',
-        'Delivered WCAG-compliant, mobile-first user interfaces across multiple projects',
-        'Established automated CI/CD pipelines deployed to AWS, Vercel, and DigitalOcean',
-        'Founded Code SHEROs (2026): story driven coding platform for African girls, now operating as a separate company under Code Bloom / Codebloom Digital Technologies'
+        'Early contributor to Zambia\'s founding tech innovation hub',
+        'Developed technical foundation through collaborative projects',
+        'Supported early stage operations in emerging African tech ecosystem'
       ],
       icon: Rocket,
-      gradient: 'from-[#E91E8C] to-[#2D0840]',
-      link: 'https://www.pixelpulse.co.zm/'
+      gradient: 'from-[#E91E8C] to-[#4A0E6B]'
     }
   ];
 
@@ -366,7 +374,7 @@ const projects = [
             <div className="grid md:grid-cols-5 gap-12 md:gap-16">
               <div className="md:col-span-3 space-y-5">
                 <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-                  Systems developer and tech entrepreneur based in Lusaka, Zambia. I build government digital infrastructure at scale: Payment Aggregator, Government Service Bus, OpenG2P. Scaling Code SHEROs across Africa. Targeting digital governance roles at the UN or World Bank.
+                  Systems developer and tech entrepreneur based in Lusaka, Zambia. I build government digital infrastructure at scale &mdash; Payment Aggregator, Government Service Bus, OpenG2P. Scaling Code SHEROs across Africa. Targeting digital governance roles at the UN or World Bank.
                 </p>
               </div>
               <div className="md:col-span-2 grid grid-cols-2 gap-4">
@@ -428,11 +436,12 @@ const projects = [
               <div className="flex-1 h-px bg-neutral-200"></div>
             </div>
 
-            <div className="space-y-0">
-              {experiences.map((exp, index) => (
-                <div key={index} className={`py-8 md:py-10 ${index !== experiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
+            {/* Consulting */}
+            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Consulting</h3>
+            <div className="space-y-0 mb-14">
+              {consultingExperiences.map((exp, index) => (
+                <div key={index} className={`py-8 md:py-10 ${index !== consultingExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
                   <div className="grid md:grid-cols-4 gap-4 md:gap-8">
-                    {/* Left column: meta */}
                     <div className="md:col-span-1">
                       <span className="text-sm text-neutral-400">{exp.period}</span>
                       <div className="mt-2 flex flex-wrap gap-2">
@@ -441,7 +450,40 @@ const projects = [
                         </span>
                       </div>
                     </div>
-                    {/* Right column: content */}
+                    <div className="md:col-span-3">
+                      <div className="flex items-start justify-between mb-1">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
+                      </div>
+                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
+                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
+                      <div className="space-y-2.5">
+                        {exp.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-neutral-600">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Government / Formal */}
+            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Government / Formal</h3>
+            <div className="space-y-0">
+              {governmentExperiences.map((exp, index) => (
+                <div key={index} className={`py-8 md:py-10 ${index !== governmentExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
+                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
+                    <div className="md:col-span-1">
+                      <span className="text-sm text-neutral-400">{exp.period}</span>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
                     <div className="md:col-span-3">
                       <div className="flex items-start justify-between mb-1">
                         <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
