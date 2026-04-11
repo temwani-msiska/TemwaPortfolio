@@ -60,11 +60,11 @@ export default function Portfolio() {
       title: 'AI Agent Instruction Specialist & Automation Developer',
       company: 'Belvoir Group (Remote, UK)',
       period: 'January 2026 - Present',
-      type: 'Consulting',
+      type: 'Part-time / Remote',
       description: 'Sole developer of the Belvoir Automation Hub, a property management automation platform built with Django 5.0, PostgreSQL, and Railway.',
       achievements: [
         'Designed multi-step workflows for property onboarding, inventory management, and compliance reporting',
-        'Integrated external systems (SME Professional, MRI Inspect, Signable, TDS/DPS) via APIs and Playwright browser automation',
+        'Integrated external systems via APIs and Playwright browser automation',
         'Experimented with Claude AI and emerging agentic frameworks for workflow generation'
       ],
       icon: Zap,
@@ -74,7 +74,7 @@ export default function Portfolio() {
       title: 'Advanced AI Trainer',
       company: 'Invisible Technologies',
       period: 'April 2024 - June 2024',
-      type: 'Contract',
+      type: 'Part-time / Remote',
       description: 'Evaluated and rewrote AI generated content to improve authenticity and real world accuracy.',
       achievements: [
         'Evaluated AI generated content and rewrote responses for authenticity',
@@ -523,7 +523,7 @@ const projects = [
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group border border-neutral-200 rounded-2xl p-6 md:p-8 hover:border-neutral-900 transition-all duration-300"
+                  className={`group border border-neutral-200 rounded-2xl p-6 md:p-8 hover:border-neutral-900 transition-all duration-300 ${index === projects.length - 1 && projects.length % 2 !== 0 ? 'md:col-start-1 md:col-end-2 md:mx-auto md:w-full md:max-w-[calc(50%-0.75rem)]' : ''}`}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 group-hover:text-neutral-700 transition-colors">{project.title}</h3>
@@ -561,16 +561,8 @@ const projects = [
 
             <div className="grid md:grid-cols-5 gap-10 md:gap-16">
               <div className="md:col-span-2 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-4xl md:text-5xl font-heading font-bold mb-3">&lt;Code&gt;<br />SHEROs</h3>
-                  <a
-                    href="https://www.codesheros.co.zm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-white text-sm transition-colors"
-                  >
-                    codesheros.co.zm
-                  </a>
+                <div className="aspect-[4/3] bg-neutral-800 rounded-xl overflow-hidden mb-4">
+                  {/* Code SHEROs image placeholder */}
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
