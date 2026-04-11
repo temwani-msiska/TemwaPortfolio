@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "EdTech & Social Impact",
     tags: ["Code SHEROs", "EdTech", "Girls in STEM", "Zambia", "Coding Education", "Social Impact"],
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+    image: "/Pixel.png",
     content: `I have spent the better part of a decade building software systems. For government. For businesses. For clients across Zambia and beyond. And in all of that time, across all of those projects, one thing has been consistently, painfully obvious: the rooms where technology gets built do not have enough women in them. And they almost never have women who look like the girls I grew up with in Lusaka.
 
 That observation is not new. Anyone working in African tech knows the numbers. But knowing a statistic and seeing it play out in front of you are different things. The moment that really stuck with me was not in a boardroom or at a conference. It was watching my younger relatives interact with phones and tablets. The boys were curious about how things worked. They wanted to take things apart, build things, break things and fix them. The girls were users. They consumed content, they scrolled, they watched. Nobody had ever told them they could be the ones building what they were looking at.

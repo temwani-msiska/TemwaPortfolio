@@ -563,7 +563,8 @@ const projects = [
             <div className="grid md:grid-cols-5 gap-10 md:gap-16">
               <div className="md:col-span-2 flex flex-col justify-between">
                 <div className="aspect-[4/3] bg-neutral-800 rounded-xl overflow-hidden mb-4">
-                  {/* Code SHEROs image placeholder */}
+                 <img src="/Logo.png" alt="Code SHEROs" className="w-full h-full object-cover" />
+
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
