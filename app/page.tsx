@@ -482,40 +482,6 @@ const projects = [
               <div className="flex-1 h-px bg-neutral-200"></div>
             </div>
 
-            {/* Consulting */}
-            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Consulting</h3>
-            <div className="space-y-0 mb-14">
-              {consultingExperiences.map((exp, index) => (
-                <div key={index} className={`py-8 md:py-10 ${index !== consultingExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
-                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
-                    <div className="md:col-span-1">
-                      <span className="text-sm text-neutral-400">{exp.period}</span>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
-                          {exp.type}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="md:col-span-3">
-                      <div className="flex items-start justify-between mb-1">
-                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
-                      </div>
-                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
-                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
-                      <div className="space-y-2.5">
-                        {exp.achievements.map((achievement, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
-                            <span className="text-sm text-neutral-600">{achievement}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
             {/* Government / Formal */}
             <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Government / Formal</h3>
             <div className="space-y-0 mb-14">
@@ -557,7 +523,7 @@ const projects = [
 
             {/* Ventures */}
             <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Ventures</h3>
-            <div className="space-y-0">
+            <div className="space-y-0 mb-14">
               {ventureExperiences.map((exp, index) => (
                 <div key={index} className={`py-8 md:py-10 ${index !== ventureExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
                   <div className="grid md:grid-cols-4 gap-4 md:gap-8">
@@ -577,6 +543,40 @@ const projects = [
                             <ArrowUpRight className="w-5 h-5" />
                           </a>
                         )}
+                      </div>
+                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
+                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
+                      <div className="space-y-2.5">
+                        {exp.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-neutral-600">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Consulting */}
+            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Consulting</h3>
+            <div className="space-y-0">
+              {consultingExperiences.map((exp, index) => (
+                <div key={index} className={`py-8 md:py-10 ${index !== consultingExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
+                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
+                    <div className="md:col-span-1">
+                      <span className="text-sm text-neutral-400">{exp.period}</span>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="md:col-span-3">
+                      <div className="flex items-start justify-between mb-1">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
                       </div>
                       <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
                       <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
