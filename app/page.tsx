@@ -161,6 +161,54 @@ export default function Portfolio() {
     }
   ];
 
+  const ventureExperiences = [
+    {
+      title: 'CEO and Founder',
+      company: 'Code SHEROs',
+      period: '2026 - Present',
+      type: 'Venture',
+      description: 'Building Africa\'s first offline-capable coding platform for girls aged 7 to 12.',
+      achievements: [
+        'Building Africa\'s first offline-capable coding platform for girls aged 7 to 12',
+        'Developed full stack independently: Django REST backend, Next.js frontend, PostgreSQL, GPT 4o integration',
+        'Designed 8 learning tracks with 12 interactive challenge types and teacher dashboards for impact reporting',
+        'Preparing pilot programme targeting 100 to 200 girls across Lusaka schools in Q3 2026'
+      ],
+      icon: Rocket,
+      gradient: 'from-[#E91E8C] to-[#4A0E6B]',
+      link: 'https://www.codesheros.co.zm'
+    },
+    {
+      title: 'CEO and Founder',
+      company: 'Code Bloom (Codebloom Digital Technologies)',
+      period: '2026 - Present',
+      type: 'Venture',
+      description: 'Women-led digital studio combining technology and creative impact.',
+      achievements: [
+        'Women-led digital studio combining technology and creative impact',
+        'Founding partner in building African tech ecosystem for underrepresented founders'
+      ],
+      icon: Users,
+      gradient: 'from-[#2D0840] to-[#E91E8C]',
+      link: 'https://www.codebloom.co.zm'
+    },
+    {
+      title: 'CEO and Founder',
+      company: 'Pixel Pulse Studio',
+      period: '2018 - Present',
+      type: 'Venture',
+      description: 'Technology consultancy delivering end-to-end web and mobile solutions for clients across Zambia.',
+      achievements: [
+        'Built Zamlex AI: AI-powered legal tech platform using NLP and GraphQL, reducing legal research time by 70%',
+        'Architected scalable microservices with Docker, GitHub Actions, zero-downtime deployments on AWS and Vercel',
+        'Established automated CI/CD pipelines and WCAG-compliant, mobile-first interfaces across client projects'
+      ],
+      icon: Zap,
+      gradient: 'from-[#4A0E6B] to-[#E91E8C]',
+      link: 'https://www.pixelpulse.co.zm/'
+    }
+  ];
+
 const projects = [
     {
       title: 'Code SHEROs',
@@ -436,7 +484,7 @@ const projects = [
 
             {/* Government / Formal */}
             <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Government / Formal</h3>
-            <div className="space-y-0">
+            <div className="space-y-0 mb-14">
               {governmentExperiences.map((exp, index) => (
                 <div key={index} className={`py-8 md:py-10 ${index !== governmentExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
                   <div className="grid md:grid-cols-4 gap-4 md:gap-8">
@@ -473,8 +521,47 @@ const projects = [
               ))}
             </div>
 
+            {/* Ventures */}
+            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Ventures</h3>
+            <div className="space-y-0 mb-14">
+              {ventureExperiences.map((exp, index) => (
+                <div key={index} className={`py-8 md:py-10 ${index !== ventureExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
+                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
+                    <div className="md:col-span-1">
+                      <span className="text-sm text-neutral-400">{exp.period}</span>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="md:col-span-3">
+                      <div className="flex items-start justify-between mb-1">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
+                        {exp.link && (
+                          <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-neutral-900 transition-colors ml-2 flex-shrink-0">
+                            <ArrowUpRight className="w-5 h-5" />
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
+                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
+                      <div className="space-y-2.5">
+                        {exp.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-neutral-600">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             {/* Consulting */}
-            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6 mt-14">Consulting</h3>
+            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Consulting</h3>
             <div className="space-y-0">
               {consultingExperiences.map((exp, index) => (
                 <div key={index} className={`py-8 md:py-10 ${index !== consultingExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
