@@ -264,8 +264,8 @@ const projects = [
               <span className="text-xs md:text-sm font-medium text-neutral-700">Open to Collaborate</span>
             </div>
             <div className="hidden lg:flex items-center gap-8">
-              <a href="#projects" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Projects <span className="text-neutral-300">[{projects.length}]</span></a>
-              <a href="#experience" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Experience <span className="text-neutral-300">[8y+]</span></a>
+              <a href="#projects" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Projects</a>
+              <a href="#experience" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Experience</a>
               <a href="#skills" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Skills</a>
               <a href="#blog" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Blog</a>
               <a href="#contact" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">Contact</a>
