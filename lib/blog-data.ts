@@ -20,6 +20,37 @@ export const categories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "speaking-up-for-girls-in-ict-radio-interview",
+    title: "Speaking Up for Girls in ICT: My International Girls in ICT Day Radio Interview",
+    excerpt: "On 24 April 2026, SMART Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up.",
+    date: "April 11, 2026",
+    readTime: "3 min read",
+    category: "GovTech & Public Sector Innovation",
+    tags: ["Women in Tech", "Public Service", "Girls in ICT", "Zambia", "SMART Zambia"],
+    image: "/radio.jpeg",
+    content: `On 24 April 2026, SMART Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up: a woman in a government technology role saying out loud that this field is for you.
+
+## What I actually do
+
+I am a Senior Systems Developer at SMART Zambia Institute. I build and maintain digital systems that sit behind government services. Most people never see this infrastructure but interact with it every day. It is detailed, methodical work. You spend a lot of time understanding how things connect before you write a single line of code.
+
+I wanted to name that reality on air because the image most girls have of ICT is either a lone genius in a dark room or a Silicon Valley startup. Some of the most meaningful technology work happens inside public institutions, solving problems that actually matter.
+
+## What I said
+
+I told them they do not need to wait until they feel ready. Readiness is not something you arrive at before you begin. It is something you build by beginning.
+
+I also told them that one step is enough. One course. One project. One question they were afraid to ask. That is how most of us started.
+
+## A note to any girl reading this
+
+I was once exactly where you are. Unsure. Wondering if I was the right kind of person for this field.
+
+I was not waiting for permission. I was just stubborn enough to keep going.
+
+Come and build the next generation of systems. We need you here.`
+  },
+  {
     slug: "building-code-sheros",
     title: "Building Code SHEROs: Why I am Teaching African Girls to Code",
     excerpt: "I have spent the better part of a decade building software systems. And in all of that time, one thing has been consistently obvious: the rooms where technology gets built do not have enough women in them.",
