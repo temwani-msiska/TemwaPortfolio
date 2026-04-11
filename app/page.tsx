@@ -48,14 +48,11 @@ export default function Portfolio() {
   }, []);
 
   const skills = [
-    { name: 'Business Analysis', level: 95, icon: TrendingUp, color: 'from-[#E91E8C] to-[#C2185B]' },
     { name: 'Systems Development', level: 92, icon: Code, color: 'from-[#4A0E6B] to-[#2D0840]' },
     { name: 'Digital Transformation', level: 94, icon: Zap, color: 'from-[#E91E8C] to-[#2D0840]' },
-    { name: 'Cloud Architecture', level: 88, icon: Cloud, color: 'from-[#2D0840] to-[#4A0E6B]' },
     { name: 'API Development', level: 90, icon: Server, color: 'from-[#E91E8C] to-[#C2185B]' },
     { name: 'Full-Stack Development', level: 89, icon: Monitor, color: 'from-[#4A0E6B] to-[#E91E8C]' },
-    { name: 'Database Management', level: 87, icon: Database, color: 'from-[#C2185B] to-[#E91E8C]' },
-    { name: 'Mobile Development', level: 85, icon: Smartphone, color: 'from-[#2D0840] to-[#E91E8C]' }
+    { name: 'Database Management', level: 87, icon: Database, color: 'from-[#C2185B] to-[#E91E8C]' }
   ];
 
   const consultingExperiences = [
@@ -335,7 +332,7 @@ const projects = [
                 Senior Systems Developer
               </h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-4">
-                Developing national payment and payroll systems at SMART Zambia Institute, while building Code SHEROs — teaching African girls to code through story driven missions.
+                Building national systems at SMART Zambia Institute and growing Code SHEROs to empower the next generation of African female coders through storytelling.
               </p>
               <a href="#contact" className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-neutral-800 transition-colors">
                 Let&apos;s collaborate <ArrowUpRight className="w-4 h-4" />
@@ -374,7 +371,7 @@ const projects = [
             <div className="grid md:grid-cols-5 gap-12 md:gap-16">
               <div className="md:col-span-3 space-y-5">
                 <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-                  Systems developer and tech entrepreneur based in Lusaka, Zambia. I build government digital infrastructure at scale &mdash; Payment Aggregator, Government Service Bus, OpenG2P. Scaling Code SHEROs across Africa. Targeting digital governance roles at the UN or World Bank.
+                  I am a systems developer and tech entrepreneur based in Lusaka, Zambia. I build scalable government digital infrastructure at SMART Zambia Institute, while also leading Code SHEROs, a movement equipping African girls with coding skills through immersive, story driven experiences.
                 </p>
               </div>
               <div className="md:col-span-2 grid grid-cols-2 gap-4">
@@ -436,40 +433,6 @@ const projects = [
               <div className="flex-1 h-px bg-neutral-200"></div>
             </div>
 
-            {/* Consulting */}
-            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Consulting</h3>
-            <div className="space-y-0 mb-14">
-              {consultingExperiences.map((exp, index) => (
-                <div key={index} className={`py-8 md:py-10 ${index !== consultingExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
-                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
-                    <div className="md:col-span-1">
-                      <span className="text-sm text-neutral-400">{exp.period}</span>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
-                          {exp.type}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="md:col-span-3">
-                      <div className="flex items-start justify-between mb-1">
-                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
-                      </div>
-                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
-                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
-                      <div className="space-y-2.5">
-                        {exp.achievements.map((achievement, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
-                            <span className="text-sm text-neutral-600">{achievement}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
             {/* Government / Formal */}
             <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6">Government / Formal</h3>
             <div className="space-y-0">
@@ -492,6 +455,40 @@ const projects = [
                             <ArrowUpRight className="w-5 h-5" />
                           </a>
                         )}
+                      </div>
+                      <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
+                      <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
+                      <div className="space-y-2.5">
+                        {exp.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-300 mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-neutral-600">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Consulting */}
+            <h3 className="text-lg font-heading font-bold text-neutral-400 uppercase tracking-wider mb-6 mt-14">Consulting</h3>
+            <div className="space-y-0">
+              {consultingExperiences.map((exp, index) => (
+                <div key={index} className={`py-8 md:py-10 ${index !== consultingExperiences.length - 1 ? 'border-b border-neutral-200' : ''}`}>
+                  <div className="grid md:grid-cols-4 gap-4 md:gap-8">
+                    <div className="md:col-span-1">
+                      <span className="text-sm text-neutral-400">{exp.period}</span>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="md:col-span-3">
+                      <div className="flex items-start justify-between mb-1">
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900">{exp.title}</h3>
                       </div>
                       <p className="text-neutral-500 font-medium mb-4">{exp.company}</p>
                       <p className="text-neutral-600 leading-relaxed mb-5">{exp.description}</p>
