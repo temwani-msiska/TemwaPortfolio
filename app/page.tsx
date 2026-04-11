@@ -60,6 +60,19 @@ export default function Portfolio() {
 
   const experiences = [
     {
+      title: 'AI Agent Instruction Specialist and Automation',
+      company: 'Belvoir Group (Remote, UK)',
+      period: 'January 2026 - Present',
+      type: 'Part-time Consulting',
+      description: 'Audit and refine AI agent instructions; improve automation workflows.',
+      achievements: [
+        'Audit and refine AI agent instructions to improve accuracy and task completion',
+        'Improve automation workflows across internal systems'
+      ],
+      icon: Zap,
+      gradient: 'from-[#4A0E6B] to-[#E91E8C]'
+    },
+    {
       title: 'Senior Systems Developer',
       company: 'SMART Zambia Institute',
       period: 'March 2026 - Present',
@@ -143,45 +156,34 @@ export default function Portfolio() {
   ];
 
 const projects = [
-  
     {
-      title: 'Zamlex AI',
-      description: 'AI-powered legal-tech platform that demystifies Zambian law for entrepreneurs, investors, and startups using advanced NLP and GraphQL.',
-      tags: ['AI/ML', 'Legal Tech', 'NLP', 'GraphQL', 'Serverless'],
-      impact: 'Reduced legal research time by 70% for business professionals',
-      icon: Zap,
-      gradient: 'from-[#2D0840] to-[#E91E8C]',
-      link: 'https://ai.zamlex.com/',
-      status: 'Live'
-    },
-    {
-      title: 'Temzie Bites',
-      description: 'Interactive cultural hub preserving Zambia\'s culinary heritage with Strapi CMS, geolocation search, and responsive video storytelling.',
-      tags: ['Cultural Preservation', 'Headless CMS', 'Geolocation', 'Video Streaming'],
-      impact: 'Preserving and sharing Zambian cultural heritage digitally',
-      icon: Globe,
+      title: 'Code SHEROs',
+      description: 'Story driven coding platform teaching African girls aged 7 to 18 to code through gamified missions. Pilot launching across Lusaka schools in Q3 2026.',
+      tags: ['EdTech', 'Social Impact', 'Django', 'Next.js'],
+      impact: 'Building coding literacy for girls across Africa',
+      icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#4A0E6B]',
-      link: 'https://www.temziebites.com/',
+      link: 'https://www.codesheros.co.zm',
       status: 'Live'
     },
     {
-      title: 'Smart Mechanics',
-      description: 'A dynamic and engaging portfolio website for Smart Mechanics, a leading mechanical service provider in Zambia since 2018. ',
-      tags: ['Portfolio Website', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
-      impact: 'Enhanced digital presence for mechanical services',
-      icon: Globe,
+      title: 'Code Bloom',
+      description: 'Women-led digital studio building tech solutions and social impact ventures. The parent company behind Code SHEROs.',
+      tags: ['Digital Studio', 'Social Impact', 'Women in Tech'],
+      impact: 'Empowering women-led innovation in Zambia',
+      icon: Users,
       gradient: 'from-[#2D0840] to-[#E91E8C]',
-      link: 'https://www.smartmechanics.co.zm/',
+      link: 'https://www.codebloom.co.zm',
       status: 'Live'
     },
     {
-      title: 'Cowrie Shell',
-      description: 'An innovative giving platform connecting donors to African communities through transparent donations. It enables grassroots organizations to identify needs, local vendors to provide solutions, secure fund releases, and real-time impact tracking.',
-      tags: ['Social Impact Platform', 'Blockchain', 'Transparent Giving', 'Community Development'],
-      impact: 'Revolutionizing charitable giving with transparency and cultural relevance',
-      icon: Globe,
-      gradient: 'from-[#E91E8C] to-[#2D0840]',
-      link: 'https://www.cowrieshell.africa/',
+      title: 'Pixel Pulse Studio',
+      description: 'Technology consultancy delivering end-to-end web and mobile solutions. Built Zamlex AI, Temzie Bites, and Smart Mechanics.',
+      tags: ['Consultancy', 'Web', 'Mobile', 'Cloud'],
+      impact: 'Shipping products for clients across Zambia and beyond',
+      icon: Zap,
+      gradient: 'from-[#4A0E6B] to-[#E91E8C]',
+      link: 'https://www.pixelpulse.co.zm/',
       status: 'Live'
     }
   ];
@@ -364,13 +366,7 @@ const projects = [
             <div className="grid md:grid-cols-5 gap-12 md:gap-16">
               <div className="md:col-span-3 space-y-5">
                 <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-                  I am an IT professional with over eight years of experience as a Senior Systems Developer, currently developing national payment and payroll systems at SMART Zambia Institute under the Office of the President.
-                </p>
-                <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-                  As CEO and Founder of Code SHEROs, I am building Africa&apos;s first story driven coding education platform for girls aged 7 to 18. The platform teaches real programming through gamified missions, and is preparing for its pilot launch across Lusaka schools in Q3 2026.
-                </p>
-                <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-                  Through Code Bloom, a women-led digital studio where passion meets purpose, and Pixel Pulse Studio, my technology consultancy, I deliver end-to-end web and mobile solutions.
+                  Systems developer and tech entrepreneur based in Lusaka, Zambia. I build government digital infrastructure at scale: Payment Aggregator, Government Service Bus, OpenG2P. Scaling Code SHEROs across Africa. Targeting digital governance roles at the UN or World Bank.
                 </p>
               </div>
               <div className="md:col-span-2 grid grid-cols-2 gap-4">
