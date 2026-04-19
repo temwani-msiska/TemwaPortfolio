@@ -792,8 +792,7 @@ const projects = [
               {[
                 { title: 'GovStack Women in GovTech Challenge 2026 Mentee', detail: 'Selected from 1,300+ applicants across 137 countries' },
                 { title: 'OpenG2P Advanced Training Course', detail: 'IIIT Bangalore, December 2024' },
-                { title: 'AFRALO Individual Member', detail: 'ICANN' },
-                { title: 'ICANN Fellowship Applicant', detail: 'ICANN87 Muscat Oman, October 2026' }
+                { title: 'AFRALO Individual Member', detail: 'ICANN' }
               ].map((item, index) => (
                 <div key={index} className="border border-neutral-200 rounded-2xl p-5 hover:border-neutral-400 transition-colors">
                   <Globe className="w-5 h-5 text-neutral-300 mb-3" />
