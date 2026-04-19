@@ -714,11 +714,11 @@ const projects = [
                   className="group border border-neutral-200 rounded-2xl overflow-hidden hover:border-neutral-400 transition-all duration-300"
                 >
                   {post.image && (
-                    <div className="h-40 overflow-hidden">
+                    <div className="h-56 overflow-hidden bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   )}
@@ -792,8 +792,7 @@ const projects = [
               {[
                 { title: 'GovStack Women in GovTech Challenge 2026 Mentee', detail: 'Selected from 1,300+ applicants across 137 countries' },
                 { title: 'OpenG2P Advanced Training Course', detail: 'IIIT Bangalore, December 2024' },
-                { title: 'AFRALO Individual Member', detail: 'ICANN' },
-                { title: 'ICANN Fellowship Applicant', detail: 'ICANN87 Muscat Oman, October 2026' }
+                { title: 'AFRALO Individual Member', detail: 'ICANN' }
               ].map((item, index) => (
                 <div key={index} className="border border-neutral-200 rounded-2xl p-5 hover:border-neutral-400 transition-colors">
                   <Globe className="w-5 h-5 text-neutral-300 mb-3" />
