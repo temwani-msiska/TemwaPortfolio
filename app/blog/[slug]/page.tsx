@@ -88,15 +88,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      {/* Featured Image — large, floating */}
+      {/* Featured Image — large, floating, full image visible */}
       {post.image && (
         <div className="relative z-10 px-4 md:px-12 mb-16 md:mb-24">
           <div className="max-w-6xl mx-auto">
-            <div className="rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl shadow-neutral-900/20 ring-1 ring-neutral-900/5">
+            <div className="rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl shadow-neutral-900/20 ring-1 ring-neutral-900/5 bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-[450px] md:h-[700px] object-cover"
+                className="w-full max-h-[80vh] object-contain"
               />
             </div>
           </div>
@@ -198,11 +198,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   className="group block"
                 >
                   {relatedPost.image && (
-                    <div className="rounded-2xl md:rounded-3xl overflow-hidden mb-5 shadow-xl shadow-neutral-900/10 ring-1 ring-neutral-900/5">
+                    <div className="rounded-2xl md:rounded-3xl overflow-hidden mb-5 shadow-xl shadow-neutral-900/10 ring-1 ring-neutral-900/5 bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center aspect-[4/3]">
                       <img
                         src={relatedPost.image}
                         alt={relatedPost.title}
-                        className="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                       />
                     </div>
                   )}

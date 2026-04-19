@@ -714,11 +714,11 @@ const projects = [
                   className="group border border-neutral-200 rounded-2xl overflow-hidden hover:border-neutral-400 transition-all duration-300"
                 >
                   {post.image && (
-                    <div className="h-40 overflow-hidden">
+                    <div className="h-56 overflow-hidden bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   )}

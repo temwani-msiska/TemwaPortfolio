@@ -44,11 +44,11 @@ export default function BlogPage() {
                 >
                   <div className="md:flex">
                     {post.image && (
-                      <div className="md:w-1/2 h-72 md:h-[420px] overflow-hidden">
+                      <div className="md:w-1/2 h-72 md:h-[420px] overflow-hidden bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
                         <img
                           src={post.image}
                           alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                     )}
