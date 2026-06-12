@@ -20,6 +20,72 @@ export const categories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "code-sheros-ignite-zicta-recognition",
+    title: "Code SHEROs recognised by IGNITE and ZICTA",
+    excerpt: "Code SHEROs has been selected as one of the Top 40 startups in the IGNITE Digital Economy programme and shortlisted among 100 candidates for the ZICTA ICT Innovation Programme 2026.",
+    date: "June 10, 2026",
+    readTime: "2 min read",
+    category: "EdTech & Social Impact",
+    tags: ["Code SHEROs", "Women in Tech", "Zambia", "EdTech", "Milestones"],
+    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80",
+    content: `This week I learned that Code SHEROs has received recognition from two of the most competitive programmes shaping the future of women-led tech innovation in Zambia.
+
+## Selected: Top 40 in the IGNITE Digital Economy Incubator
+
+Code SHEROs has been selected as one of the Top 40 startups in the IGNITE Digital Economy Incubator and Accelerator, a programme run by BongoHive and co-funded by the European Union under the Global Gateway initiative. Out of hundreds of applicants across Zambia, we earned a place among the country's most promising digital startups.
+
+## Shortlisted: ZICTA ICT Innovation Programme 2026
+
+Code SHEROs was also shortlisted among 100 candidates for the ZICTA ICT Innovation Programme 2026 Cohort, a nationally recognised programme supporting Zambia's most innovative ICT solutions.
+
+## What we are building
+
+Code SHEROs is an interactive coding education platform designed to introduce African girls aged 7 to 12 to the world of technology through engaging, story-driven experiences. The mission is simple. No girl should grow up believing that technology is not for her.
+
+We are still in our early stages. The platform is in beta. We are building our first world. Families are finding us organically. But recognitions like these reinforce the importance and urgency of what we are building, and the place women-led innovation holds in Zambia's growing digital economy.
+
+## For the girls
+
+To every girl who has ever opened our platform and seen herself as a builder for the first time: this is for you.
+
+Originally published on codebloom.co.zm. Canonical link: https://www.codebloom.co.zm/blog/code-sheros-ignite-zicta-recognition`
+  },
+  {
+    slug: "speaking-to-second-chance-students-about-ai",
+    title: "What I learned speaking to second-chance students about AI",
+    excerpt: "Last week I sat on a panel at UNZA for International Girls in ICT Day. The room was not who I expected, and it changed what I had to say.",
+    date: "April 23, 2026",
+    readTime: "4 min read",
+    category: "GovTech & Public Sector Innovation",
+    tags: ["AI", "Digital Inclusion", "Zambia", "GovTech", "Women in Tech", "Reflections"],
+    image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80",
+    content: `Last week I sat on a panel at the University of Zambia for the FAWEZA International Girls in ICT Day 2026 commemoration. The theme was "AI for Development: Girls Shaping the Digital Future." I went in with a prepared opening, three takeaways I had rehearsed, and a couple of facts I knew would land.
+
+The room was not who I expected.
+
+I had assumed the audience would be UNZA students from across the disciplines, broadly the kind of crowd you get at university events: ambitious, distracted, half on their phones. What I found was different. The students in front of me were on the FAWEZA Remedial Learning Bursary Programme, supported by the Mastercard Foundation. They were young women and men who had not made it into university the first time around, and who were now rewriting their GCE exams with the support of a laptop, a monthly stipend for upkeep and data, and a real second chance. They had fought to be in that room in a way most students never have to.
+
+That changed everything about what I had to say.
+
+## Rewriting the speech in my head
+
+The version of my speech I had prepared was for ambitious tech-curious students who needed a nudge. What this room actually needed was different. They needed someone to tell them, honestly, that they were not behind. That AI as we know it is three years old. That nobody has twenty years of experience in this. That the door is open longer than people realise, and that the access they have been given through this programme is not a consolation prize, it is a starting line.
+
+I told them about Socrates. I told them that the questions behind AI are older than computers, that teaching by example and correction is not a new idea, and that the methods we use to train AI today have roots that go back two and a half thousand years.
+
+## What I keep coming back to
+
+The thing I keep coming back to, days later, is how badly the international AI conversation underestimates rooms like that one. The students I spoke to are sharper than most rooms in Geneva or Washington assume the "target beneficiaries" of digital development to be. They know what works and what does not. They notice when an AI tool fails in Nyanja. They know which classmates have devices and which do not. They have a working model of digital inequality that no amount of policy paper consumption can teach you.
+
+The gap in global AI is not that Zambia lacks talent. It is that the people building these tools rarely include people who have lived what most of the continent lives. That is not a problem you fix from London. It is a problem you fix by making sure students like the ones I met have laptops in their hands now, not after they have proven themselves to gatekeepers who have already decided what their futures look like.
+
+## I went in to teach
+
+I went in to teach. I came out reminded.
+
+Thank you to FAWEZA, to the Mastercard Foundation, and to the SMART Zambia Institute for the opportunity to be in that room. To the students who were there: you are not behind. The conversation is yours to shape, and the rest of us are paying attention.`
+  },
+  {
     slug: "speaking-up-for-girls-in-ict-radio-interview",
     title: "Speaking Up for Girls in ICT: My International Girls in ICT Day Radio Interview",
     excerpt: "On 24 April 2026, SMART Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up.",
