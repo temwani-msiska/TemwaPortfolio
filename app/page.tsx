@@ -158,6 +158,21 @@ export default function Portfolio() {
       ],
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#4A0E6B]'
+    },
+    {
+      title: 'Trainee Sales Associate',
+      company: 'Riverbed Limited Zambia',
+      period: 'October 2014 - January 2015',
+      type: 'Retail',
+      description: 'Advised clients on products and services while supporting the full sales cycle from customer welcome through payment processing.',
+      achievements: [
+        'Provided advice to clients on products and services, and answered customer queries and concerns',
+        'Quoted prices, discounts, credit terms, warranties and delivery dates to prospective buyers',
+        'Welcomed customers and determined their needs and wants to recommend suitable options',
+        'Prepared sales contracts and accepted payments through cash and cheque'
+      ],
+      icon: Users,
+      gradient: 'from-[#2D0840] to-[#E91E8C]'
     }
   ];
 
