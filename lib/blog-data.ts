@@ -203,49 +203,6 @@ This is the kind of opportunity that does not come often. I intend to make the m
     image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80"
   },
   {
-    slug: "working-at-intersection-technology-public-service",
-    title: "Working at the Intersection of Technology and Public Service",
-    excerpt: "Technology and public institutions create a particular kind of complexity. The real challenge lies in coordination: making systems work together across agencies and ensuring digital services reach citizens.",
-    content: `
-Technology and public institutions create a particular kind of complexity. Not the complexity of code or infrastructure. Those challenges have known solutions. The real complexity lies in coordination: making systems work together across agencies, aligning technical capabilities with policy intent, and ensuring digital services actually reach the citizens they serve.
-
-This is the space where I work.
-
-## The Work
-
-As a Business Analyst and Systems Developer at SMART Zambia Institute, I contribute to initiatives at the core of Zambia's digital transformation. My current focus is the Government Service Bus, a national integration platform developed in partnership with the Ministry of Finance and National Planning and supported by the World Bank.
-
-The work involves translating between worlds. Stakeholders articulate needs in policy language. Technical teams think in systems and data flows. The gap between these perspectives is where requirements get lost and where projects stall.
-
-I have seen this firsthand. Working on national integration platforms means navigating not just technical complexity but institutional complexity. Different agencies with different systems, different data standards, and different assumptions about how information should flow. The technical work is often the straightforward part. The harder work is aligning stakeholders before code gets written.
-
-Bridging that gap through requirements analysis, documentation, and coordination is central to what I do.
-
-I also build systems. This dual role shapes my approach. When gathering requirements, I understand what is technically feasible and where implementation risks lie. When writing code, I think about users, institutions, and the policy context the system must serve.
-
-## What Drives This Work
-
-Public systems carry different weight than commercial products. When a government platform fails, citizens do not switch to a competitor. They go without services or return to paper processes that cost time and money they may not have.
-
-This accountability draws me to public sector work. Effective digital public infrastructure reduces friction between citizens and services. It makes institutions more transparent. It frees human capacity for work that requires judgment rather than data entry.
-
-These outcomes require more than technology. They require thoughtful implementation, strong governance, and systems designed with real operational constraints in mind.
-
-## What This Space Explores
-
-This blog works through ideas at the intersection of technology, governance, and public systems. The focus is digital public infrastructure, GovTech implementation, and the practical challenges of making these systems work in emerging economies.
-
-The perspective is practitioner oriented. I write from the position of someone doing this work in Zambia and engaging with the broader African digital public infrastructure community, not observing from a distance. The questions here are the ones I encounter professionally. How do integration architectures scale across agencies with different technical maturity? What makes governance frameworks effective when institutional capacity is limited? Why do some digital transformation initiatives succeed where others stall?
-
-If you work in this space or are trying to understand it, I hope you find something useful here.
-    `,
-    date: "2025-01-20",
-    category: "Policy to Implementation",
-    tags: ["Digital Transformation", "Public Service", "GovTech", "Governance"],
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
-  },
-  {
     slug: "mosip-transforming-digital-identity-global-south",
     title: "MOSIP: How Open Source Identity Infrastructure is Transforming the Global South",
     excerpt: "The Modular Open Source Identity Platform is reshaping how nations approach digital identity, offering a sovereign, interoperable foundation for inclusive public services.",
