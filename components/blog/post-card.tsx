@@ -19,7 +19,7 @@ export function PostCard({ post }: { post: PostSummary }) {
         />
       )}
       <div className="flex flex-col flex-1 p-4 md:p-5">
-        <div className="flex items-center justify-between gap-3 mb-4">
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 mb-4">
           <CategoryBadge category={post.category} />
           <span className="text-xs text-neutral-400 whitespace-nowrap">{post.readTime}</span>
         </div>
