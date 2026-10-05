@@ -1,7 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { siteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Temwani Msiska - Senior Systems Developer | Digital Public Infrastructure',
   description: 'Professional portfolio of Temwani Msiska, Senior Systems Developer at SMART Zambia Institute with 8+ years of experience in digital public infrastructure, GovTech, and systems development.',
   keywords: 'Senior Systems Developer, Digital Public Infrastructure, GovTech, Smart Zambia, SMART Zambia Institute, Web Development, Code SHEROs, Code Bloom',

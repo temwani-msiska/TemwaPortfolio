@@ -259,10 +259,56 @@ The question for each country is not whether to digitise identity. That transiti
   }
 ];
 
+export type PostSummary = Omit<BlogPost, 'content'>;
+
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find(post => post.slug === slug);
 }
 
 export function getAllBlogSlugs(): string[] {
   return blogPosts.map(post => post.slug);
+}
+
+export function getPostSummaries(): PostSummary[] {
+  return blogPosts.map(({ content, ...summary }) => summary);
+}
+
+export function getAdjacentPosts(slug: string): { newer?: BlogPost; older?: BlogPost } {
+  const index = blogPosts.findIndex(post => post.slug === slug);
+  if (index === -1) return {};
+  return {
+    newer: blogPosts[index - 1],
+    older: blogPosts[index + 1],
+  };
+}
+
+export function getRelatedPosts(post: BlogPost, limit = 3): BlogPost[] {
+  const others = blogPosts.filter(p => p.slug !== post.slug);
+  const sameCategory = others.filter(p => p.category === post.category);
+  const rest = others.filter(p => p.category !== post.category);
+  return [...sameCategory, ...rest].slice(0, limit);
+}
+
+// Post dates are stored both as "June 10, 2026" and "2025-01-22"; parsing the
+// ISO form by hand keeps it in local time instead of UTC (which shifts the day).
+function parsePostDate(date: string): Date {
+  const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+  return iso
+    ? new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]))
+    : new Date(date);
+}
+
+export function formatPostDate(date: string, style: 'long' | 'short' = 'long'): string {
+  return parsePostDate(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: style === 'long' ? 'long' : 'short',
+    day: 'numeric',
+  });
+}
+
+export function postDateIso(date: string): string {
+  const parsed = parsePostDate(date);
+  const month = String(parsed.getMonth() + 1).padStart(2, '0');
+  const day = String(parsed.getDate()).padStart(2, '0');
+  return `${parsed.getFullYear()}-${month}-${day}`;
 }

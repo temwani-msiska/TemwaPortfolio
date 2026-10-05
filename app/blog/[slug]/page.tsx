@@ -1,238 +1,266 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getBlogPost, getAllBlogSlugs, blogPosts } from '@/lib/blog-data';
+import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronDown } from 'lucide-react';
+import {
+  formatPostDate,
+  getAdjacentPosts,
+  getAllBlogSlugs,
+  getBlogPost,
+  getRelatedPosts,
+  postDateIso,
+  type BlogPost,
+} from '@/lib/blog-data';
+import { siteUrl } from '@/lib/site';
+import { ArticleBody, extractHeadings } from '@/components/blog/article-body';
+import { BlogFooter } from '@/components/blog/blog-footer';
+import { BlogNav } from '@/components/blog/blog-nav';
+import { CategoryBadge } from '@/components/blog/category-badge';
+import { PostCard } from '@/components/blog/post-card';
+import { PostImage } from '@/components/blog/post-image';
+import { ReadingProgress } from '@/components/blog/reading-progress';
+import { ShareButtons } from '@/components/blog/share-buttons';
+import { TableOfContents } from '@/components/blog/table-of-contents';
 
 export function generateStaticParams() {
-  return getAllBlogSlugs().map((slug) => ({
-    slug: slug,
-  }));
+  return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = getBlogPost(params.slug);
   if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
+    return { title: 'Post Not Found' };
   }
+  const url = `${siteUrl}/blog/${post.slug}`;
+  const image = post.image
+    ? post.image.startsWith('http') ? post.image : `${siteUrl}${post.image}`
+    : undefined;
   return {
     title: `${post.title} | Temwani Msiska`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      url,
+      publishedTime: postDateIso(post.date),
+      authors: ['Temwani Msiska'],
+      images: image ? [image] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: image ? [image] : undefined,
+    },
   };
+}
+
+function AdjacentPostLink({ post, direction }: { post: BlogPost; direction: 'older' | 'newer' }) {
+  const isNewer = direction === 'newer';
+  return (
+    <Link
+      href={`/blog/${post.slug}`}
+      className={`group flex flex-col border border-neutral-200 rounded-2xl p-6 hover:border-neutral-900 transition-colors ${isNewer ? 'md:text-right md:items-end' : ''}`}
+    >
+      <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-neutral-400 mb-3">
+        {!isNewer && <ArrowLeft className="w-3.5 h-3.5" />}
+        {isNewer ? 'Newer article' : 'Older article'}
+        {isNewer && <ArrowRight className="w-3.5 h-3.5" />}
+      </span>
+      <span className="font-heading font-bold text-neutral-900 leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+        {post.title}
+      </span>
+    </Link>
+  );
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getBlogPost(params.slug);
-
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = blogPosts
-    .filter(p => p.category === post.category && p.slug !== post.slug)
-    .slice(0, 2);
+  const headings = extractHeadings(post.content);
+  const related = getRelatedPosts(post, 3);
+  const { newer, older } = getAdjacentPosts(post.slug);
+  const url = `${siteUrl}/blog/${post.slug}`;
+
+  const tags = (
+    <div className="flex flex-wrap gap-2">
+      {post.tags.map((tag) => (
+        <span key={tag} className="px-3 py-1 border border-neutral-200 text-neutral-600 text-xs rounded-full">
+          {tag}
+        </span>
+      ))}
+    </div>
+  );
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-stone-100 via-neutral-100 to-neutral-200/70">
-      {/* Decorative gradient orbs */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-neutral-300/60 to-transparent blur-3xl" />
-        <div className="absolute top-[30%] -right-40 h-[600px] w-[600px] rounded-full bg-gradient-to-tl from-stone-300/50 to-transparent blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-neutral-400/30 to-transparent blur-3xl" />
+    <main className="min-h-screen bg-neutral-300/40 pb-2 md:pb-5">
+      <ReadingProgress />
+      <div className="pt-2 md:pt-3">
+        <BlogNav />
       </div>
 
-      {/* Top nav */}
-      <div className="relative z-10 px-6 md:px-12 pt-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-          >
-            ← Back to Blog
-          </Link>
-          <Link
-            href="/"
-            className="text-sm font-heading font-bold text-neutral-900"
-          >
-            TM
-          </Link>
-        </div>
-      </div>
+      <header className="px-2 md:px-5 mt-2">
+        <div className="relative overflow-hidden bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 px-5 md:px-10 pt-8 md:pt-12 pb-10 md:pb-14">
+          <div className="pointer-events-none absolute -top-48 -left-40 w-[640px] h-[640px] rounded-full bg-gradient-to-br from-primary/10 via-accent/10 to-transparent blur-3xl" />
+          <div className="relative max-w-6xl mx-auto">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" /> All articles
+            </Link>
 
-      {/* Editorial header */}
-      <header className="relative z-10 px-6 md:px-12 pt-16 md:pt-24 pb-12 md:pb-16">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 mb-8">
-            <span className="px-3 py-1.5 bg-neutral-900 text-white text-xs uppercase tracking-wider rounded-full font-medium">
-              {post.category}
-            </span>
-            <span className="text-neutral-500 text-xs uppercase tracking-wider">{post.readTime}</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-neutral-900 mb-8 leading-[1.05] tracking-tight">
-            {post.title}
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            {post.excerpt}
-          </p>
-          <div className="flex items-center justify-center gap-3 text-sm text-neutral-500">
-            <span className="font-medium text-neutral-700">Temwani Msiska</span>
-            <span className="w-1 h-1 rounded-full bg-neutral-400"></span>
-            <time>
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
+            <div className="mt-10 md:mt-14 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <div className="lg:col-span-7">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-400">
+                  <CategoryBadge category={post.category} />
+                  <time dateTime={postDateIso(post.date)}>{formatPostDate(post.date)}</time>
+                  <span className="w-1 h-1 rounded-full bg-neutral-300" />
+                  <span>{post.readTime}</span>
+                </div>
+                <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-[-0.02em] leading-[1.02] text-neutral-900">
+                  {post.title}
+                </h1>
+                <p className="mt-6 text-lg md:text-xl text-neutral-600 leading-relaxed max-w-2xl">{post.excerpt}</p>
+                <div className="mt-8 flex flex-wrap items-center justify-between gap-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-heading font-bold text-sm flex-shrink-0">
+                      TM
+                    </div>
+                    <div>
+                      <p className="text-sm font-heading font-semibold text-neutral-900">Temwani Msiska</p>
+                      <p className="text-xs text-neutral-500">Systems Developer &amp; Tech Entrepreneur, Lusaka</p>
+                    </div>
+                  </div>
+                  <ShareButtons url={url} title={post.title} />
+                </div>
+              </div>
+              {post.image && (
+                <div className="lg:col-span-5">
+                  <PostImage
+                    src={post.image}
+                    alt={post.title}
+                    priority
+                    className="aspect-[16/10] lg:aspect-[4/5] rounded-[20px] md:rounded-3xl"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Featured Image — large, floating, full image visible */}
-      {post.image && (
-        <div className="relative z-10 px-4 md:px-12 mb-16 md:mb-24">
-          <div className="max-w-6xl mx-auto">
-            <div className="rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl shadow-neutral-900/20 ring-1 ring-neutral-900/5 bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full max-h-[80vh] object-contain"
-              />
-            </div>
+      <section className="px-2 md:px-5 mt-2">
+        <div className="bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 px-5 md:px-10 py-12 md:py-20">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-28 space-y-10">
+                <TableOfContents headings={headings} />
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-neutral-400 mb-4">Tagged</p>
+                  {tags}
+                </div>
+              </div>
+            </aside>
+
+            <article className="lg:col-span-8 lg:col-start-4 max-w-3xl">
+              {headings.length > 0 && (
+                <details className="group lg:hidden mb-10 rounded-2xl border border-neutral-200 p-5">
+                  <summary className="flex items-center justify-between cursor-pointer list-none text-sm font-medium text-neutral-900">
+                    On this page
+                    <ChevronDown className="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <ol className="mt-4 space-y-2.5">
+                    {headings.map((heading, index) => (
+                      <li key={heading.id} className="flex gap-3 text-sm">
+                        <span className="text-neutral-300 tabular-nums">{String(index + 1).padStart(2, '0')}</span>
+                        <a href={`#${heading.id}`} className="text-neutral-600 hover:text-neutral-900 transition-colors">
+                          {heading.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </details>
+              )}
+
+              <ArticleBody content={post.content} />
+
+              <div className="lg:hidden mt-12 pt-8 border-t border-neutral-200">
+                <p className="text-xs font-medium uppercase tracking-wider text-neutral-400 mb-4">Tagged</p>
+                {tags}
+              </div>
+
+              <div className="mt-14 pt-10 border-t border-neutral-200 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+                <p className="text-sm text-neutral-500">Found this useful? Pass it on.</p>
+                <ShareButtons url={url} title={post.title} />
+              </div>
+
+              <div className="mt-10 relative overflow-hidden rounded-3xl border border-neutral-200 p-7 md:p-8">
+                <div className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 blur-3xl" />
+                <div className="relative flex flex-col sm:flex-row sm:items-start gap-5">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-heading font-bold flex-shrink-0">
+                    TM
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-heading font-bold text-neutral-900">Temwani Msiska</p>
+                    <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+                      Systems developer and tech entrepreneur based in Lusaka, Zambia. Building national digital
+                      infrastructure at SMART Zambia Institute and growing Code SHEROs, a movement teaching African
+                      girls to code through story-driven experiences.
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <Link
+                        href="/#contact"
+                        className="inline-flex items-center gap-1.5 bg-neutral-900 text-white rounded-full px-5 py-2.5 text-sm font-medium hover:bg-neutral-800 transition-colors"
+                      >
+                        Get in touch <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                      <Link
+                        href="/#about"
+                        className="inline-flex items-center gap-1.5 border border-neutral-200 text-neutral-700 rounded-full px-5 py-2.5 text-sm font-medium hover:border-neutral-900 hover:text-neutral-900 transition-colors"
+                      >
+                        More about me
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-      )}
+      </section>
 
-      {/* Article Content — no card, just typography on the gradient */}
-      <article className="relative z-10 px-6 md:px-12 pb-16 md:pb-24">
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-1">
-            {post.content.split('\n\n').map((paragraph, index) => {
-              const trimmed = paragraph.trim();
-              if (trimmed.startsWith('## ')) {
-                return (
-                  <h2 key={index} className="text-3xl md:text-4xl font-heading font-bold text-neutral-900 mt-14 mb-5 tracking-tight">
-                    {trimmed.replace('## ', '')}
-                  </h2>
-                );
-              }
-              if (trimmed.startsWith('### ')) {
-                return (
-                  <h3 key={index} className="text-2xl md:text-3xl font-heading font-semibold text-neutral-900 mt-10 mb-4 tracking-tight">
-                    {trimmed.replace('### ', '')}
-                  </h3>
-                );
-              }
-              if (trimmed) {
-                const parts = trimmed.split(/(codesheros\.co\.zm)/g);
-                return (
-                  <p key={index} className="text-lg md:text-xl text-neutral-700 leading-[1.8] mb-7">
-                    {parts.map((part, i) =>
-                      part === 'codesheros.co.zm' ? (
-                        <a key={i} href="https://www.codesheros.co.zm" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline decoration-neutral-400 underline-offset-4 hover:decoration-neutral-900 transition-colors">codesheros.co.zm</a>
-                      ) : (
-                        part
-                      )
-                    )}
-                  </p>
-                );
-              }
-              return null;
-            })}
-          </div>
-
-          {/* Tags */}
-          <div className="mt-16 pt-10 border-t border-neutral-300/60">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs uppercase tracking-wider text-neutral-500 mr-2">Tagged</span>
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-white/60 backdrop-blur-sm border border-neutral-300/60 text-neutral-700 text-sm rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Author signature */}
-          <div className="mt-12 flex items-center gap-4 p-6 rounded-3xl bg-white/40 backdrop-blur-sm border border-white/60">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-white font-heading font-bold text-lg flex-shrink-0">
-              TM
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-neutral-900">Temwani Msiska</p>
-              <p className="text-xs text-neutral-600">Systems Developer & Tech Entrepreneur, Lusaka</p>
-            </div>
-            <Link
-              href="/#contact"
-              className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors"
-            >
-              Get in touch →
-            </Link>
-          </div>
-        </div>
-      </article>
-
-      {/* Related Posts — floating, no cards */}
-      {relatedPosts.length > 0 && (
-        <section className="relative z-10 px-6 md:px-12 pb-20 md:pb-28">
+      <section className="px-2 md:px-5 mt-2">
+        <div className="bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 px-5 md:px-10 py-12 md:py-16">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-end justify-between mb-10 md:mb-12">
-              <h2 className="text-2xl md:text-4xl font-heading font-bold text-neutral-900 tracking-tight">
-                Keep reading
-              </h2>
-              <Link
-                href="/blog"
-                className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-              >
-                All posts →
+            {(older || newer) && (
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-14 md:mb-16">
+                {older ? <AdjacentPostLink post={older} direction="older" /> : <div className="hidden md:block" />}
+                {newer && <AdjacentPostLink post={newer} direction="newer" />}
+              </div>
+            )}
+
+            <div className="flex items-center gap-3 mb-8 md:mb-10">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Keep reading</span>
+              <div className="flex-1 h-px bg-neutral-200" />
+              <Link href="/blog" className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors">
+                All articles
               </Link>
             </div>
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-              {relatedPosts.map((relatedPost) => (
-                <Link
-                  key={relatedPost.slug}
-                  href={`/blog/${relatedPost.slug}`}
-                  className="group block"
-                >
-                  {relatedPost.image && (
-                    <div className="rounded-2xl md:rounded-3xl overflow-hidden mb-5 shadow-xl shadow-neutral-900/10 ring-1 ring-neutral-900/5 bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center aspect-[4/3]">
-                      <img
-                        src={relatedPost.image}
-                        alt={relatedPost.title}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-                      />
-                    </div>
-                  )}
-                  <div className="px-1">
-                    <span className="text-xs uppercase tracking-wider text-neutral-500">
-                      {relatedPost.category}
-                    </span>
-                    <h3 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 mt-2 mb-2 line-clamp-2 group-hover:text-neutral-600 transition-colors tracking-tight">
-                      {relatedPost.title}
-                    </h3>
-                    <p className="text-neutral-600 line-clamp-2">
-                      {relatedPost.excerpt}
-                    </p>
-                  </div>
-                </Link>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {related.map((relatedPost) => (
+                <PostCard key={relatedPost.slug} post={relatedPost} />
               ))}
             </div>
           </div>
-        </section>
-      )}
-
-      {/* Footer */}
-      <footer className="relative z-10 px-6 md:px-12 pb-8">
-        <div className="max-w-7xl mx-auto pt-8 border-t border-neutral-300/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-neutral-500">&copy; 2026 Temwani Msiska</p>
-          <Link href="/" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors">
-            ← Back to Portfolio
-          </Link>
         </div>
-      </footer>
+      </section>
+
+      <BlogFooter />
     </main>
   );
 }

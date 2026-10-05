@@ -1,99 +1,69 @@
-import Link from 'next/link';
-import { blogPosts } from '@/lib/blog-data';
+import type { Metadata } from 'next';
+import { getPostSummaries } from '@/lib/blog-data';
+import { BlogNav } from '@/components/blog/blog-nav';
+import { BlogFooter } from '@/components/blog/blog-footer';
+import { PostList } from '@/components/blog/post-list';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | Temwani Msiska',
-  description: 'Exploring how digital technologies shape public institutions, policy frameworks, and global cooperation.',
+  description:
+    'Essays on technology, governance and public digital systems: how digital technologies shape public institutions, policy frameworks and global cooperation, with a focus on GovTech and emerging economies.',
 };
 
 export default function BlogPage() {
+  const posts = getPostSummaries();
+
   return (
-    <main className="min-h-screen bg-neutral-300/40">
-      {/* Header */}
-      <header className="px-2 md:px-5 pt-2 md:pt-5">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 py-16 md:py-20 px-6 md:px-10">
-          <div className="max-w-7xl mx-auto">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors mb-8"
-            >
-              ← Back to Portfolio
-            </Link>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-neutral-900 mb-6">Blog</h1>
-            <p className="text-lg text-neutral-700 max-w-2xl">
-              Technology. Governance. Public Digital Systems.
-            </p>
-            <p className="text-neutral-500 mt-4 max-w-2xl">
-              Exploring how digital technologies shape public institutions, policy frameworks,
-              and global cooperation — with a focus on GovTech and emerging economies.
-            </p>
+    <main className="min-h-screen bg-neutral-300/40 pb-2 md:pb-5">
+      <div className="pt-2 md:pt-3">
+        <BlogNav />
+      </div>
+
+      <header className="px-2 md:px-5 mt-2">
+        <div className="relative overflow-hidden bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 px-5 md:px-10 pt-14 md:pt-24 pb-12 md:pb-20">
+          <div className="pointer-events-none absolute -top-48 -right-40 w-[640px] h-[640px] rounded-full bg-gradient-to-br from-primary/10 via-accent/10 to-transparent blur-3xl" />
+          <div className="relative max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-10 md:mb-14">
+              <span className="text-sm font-medium text-neutral-400 tracking-wider uppercase">Blog</span>
+              <div className="flex-1 h-px bg-neutral-200" />
+              <span className="text-sm text-neutral-400">{posts.length} articles</span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-[-0.03em] leading-[0.95] text-neutral-900">
+              Technology, governance &amp;{' '}
+              <span className="bg-gradient-to-r from-primary via-primary-light to-accent bg-clip-text text-transparent">
+                public digital systems.
+              </span>
+            </h1>
+
+            <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+              <p className="md:col-span-7 text-lg md:text-xl text-neutral-600 leading-relaxed">
+                Exploring how digital technologies shape public institutions, policy frameworks, and global
+                cooperation, with a focus on GovTech and emerging economies.
+              </p>
+              <div className="md:col-span-5 md:justify-self-end flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-heading font-bold text-xs flex-shrink-0">
+                  TM
+                </div>
+                <div>
+                  <p className="text-sm font-heading font-semibold text-neutral-900">Temwani Msiska</p>
+                  <p className="text-xs text-neutral-500">Writing from Lusaka, Zambia</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Blog Posts Grid */}
       <section className="px-2 md:px-5 mt-2">
-        <div className="bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 py-16 md:py-20 px-6 md:px-10">
-          <div className="max-w-7xl mx-auto">
-            <div className="space-y-10">
-              {blogPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group block border border-neutral-200 rounded-2xl hover:border-neutral-400 transition-all duration-300 overflow-hidden"
-                >
-                  <div className="md:flex">
-                    {post.image && (
-                      <div className="md:w-1/2 h-72 md:h-[420px] overflow-hidden bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                    )}
-                    <div className={`p-8 md:p-10 flex flex-col justify-center ${post.image ? 'md:w-1/2' : 'w-full'}`}>
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="px-2.5 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full">
-                          {post.category}
-                        </span>
-                        <span className="text-neutral-400 text-xs">{post.readTime}</span>
-                      </div>
-                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-neutral-900 mb-3 line-clamp-2 group-hover:text-neutral-600 transition-colors">
-                        {post.title}
-                      </h2>
-                      <p className="text-neutral-500 mb-6 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <time className="text-neutral-400 text-sm">
-                          {new Date(post.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </time>
-                        <span className="text-sm text-neutral-700 font-medium group-hover:text-neutral-900 transition-colors">
-                          Read more →
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+        <div className="bg-white rounded-[20px] md:rounded-[28px] border border-neutral-200 px-5 md:px-10 py-12 md:py-16">
+          <div className="max-w-6xl mx-auto">
+            <PostList posts={posts} />
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-2 md:px-5 pt-2 pb-2 md:pb-5">
-        <div className="bg-neutral-900 rounded-[20px] md:rounded-[28px] py-8 px-4 md:px-10 text-center">
-          <p className="text-neutral-500 text-sm">
-            Temwani Msiska
-          </p>
-        </div>
-      </footer>
+      <BlogFooter />
     </main>
   );
 }
