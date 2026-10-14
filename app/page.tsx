@@ -718,7 +718,7 @@ const projects = [
                   </div>
                   <div className="border border-neutral-700 rounded-xl p-4">
                     <span className="text-xs text-neutral-500 uppercase tracking-wider">Stage</span>
-                    <p className="text-sm text-white mt-1">Pre-launch</p>
+                    <p className="text-sm text-white mt-1">Live</p>
                   </div>
                 </div>
               </div>
