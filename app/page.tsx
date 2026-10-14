@@ -213,6 +213,16 @@ export default function Portfolio() {
 
 const projects = [
     {
+      title: 'Mukuba Technologies',
+      description: 'Satellite-based ESG verification for African mining. Checks mine rehabilitation claims against Sentinel-2 vegetation and water indices and produces hash-sealed, independently re-derivable compliance records for regulators, auditors and carbon registries.',
+      tags: ['ESG', 'Satellite Data', 'GeoDjango', 'PostGIS'],
+      impact: 'Running across five Copperbelt sites, anchored on Kansanshi',
+      icon: Globe,
+      gradient: 'from-[#2D0840] to-[#4A0E6B]',
+      link: 'https://mukuba.io/',
+      status: 'Live'
+    },
+    {
       title: 'Code SHEROs',
       description: 'Story driven coding platform teaching African girls aged 7 to 12 to code through gamified missions. Pilot launching across Lusaka schools in Q3 2026.',
       tags: ['EdTech', 'Social Impact', 'Django', 'Next.js'],
