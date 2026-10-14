@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "code-sheros-ignite-zicta-recognition",
     title: "Code SHEROs recognised by IGNITE and ZICTA",
-    excerpt: "Code SHEROs has been selected as one of the Top 40 startups in the IGNITE Digital Economy programme and shortlisted among 100 candidates for the ZICTA ICT Innovation Programme 2026.",
+    excerpt: "Code SHEROs has been selected for the Top 20 cohort of the IGNITE Digital Economy Incubator and Accelerator (2026) and shortlisted among 100 candidates for the ZICTA ICT Innovation Programme 2026.",
     date: "June 10, 2026",
     readTime: "2 min read",
     category: "EdTech & Social Impact",
@@ -30,9 +30,9 @@ export const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80",
     content: `This week I learned that Code SHEROs has received recognition from two of the most competitive programmes shaping the future of women-led tech innovation in Zambia.
 
-## Selected: Top 40 in the IGNITE Digital Economy Incubator
+## Selected: Top 20 cohort of the IGNITE Digital Economy Incubator
 
-Code SHEROs has been selected as one of the Top 40 startups in the IGNITE Digital Economy Incubator and Accelerator, a programme run by BongoHive and co-funded by the European Union under the Global Gateway initiative. Out of hundreds of applicants across Zambia, we earned a place among the country's most promising digital startups.
+Code SHEROs has been selected for the Top 20 cohort of the IGNITE Digital Economy Incubator and Accelerator (2026), a programme run by BongoHive and co-funded by the European Union under the Global Gateway initiative. Out of hundreds of applicants across Zambia, we earned a place among the country's most promising digital startups.
 
 ## Shortlisted: ZICTA ICT Innovation Programme 2026
 
