@@ -20,6 +20,49 @@ export const categories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "govstack-women-in-govtech-challenge-2026-certificate-of-distinction",
+    title: "A Certificate of Distinction from the GovStack Women in GovTech Challenge 2026",
+    excerpt: "The programme I joined from a field of over 1,300 applicants across 137 countries has concluded. I have been awarded a Certificate of Distinction for applied work on citizen-centric digital government services using the GovStack approach.",
+    date: "October 26, 2026",
+    readTime: "5 min read",
+    category: "GovTech & Public Sector Innovation",
+    tags: ["GovStack", "Women in Tech", "Digital Government", "Zambia", "Milestones"],
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80",
+    content: `The GovStack Women in GovTech Challenge 2026 has concluded, and I have been awarded a Certificate of Distinction for applied work on citizen-centric digital government services using the GovStack approach.
+
+The programme is delivered by GovStack, GIZ and the ITU. I was one of the women selected from over 1,300 applicants across 137 countries, and I wrote about what that selection meant to me at the time: https://temwanimsiska.dev/blog/govstack-women-in-govtech-challenge-2026-mentee
+
+This post is about what came after.
+
+## From selection to applied work
+
+Being selected was recognition of potential. The distinction is recognition of work. That difference matters to me, because the programme was never designed to be theoretical. The GovStack approach is practical by nature: governments assemble services from reusable, interoperable building blocks for things like identity, payments, messaging and consent, rather than building every system from scratch. The point of the programme was to take that approach and apply it to real services for real citizens.
+
+The work I brought into the programme came from my day job at Smart Zambia Institute, where the question is never whether a system is elegant. The question is whether a civil servant can see their payslip, whether a payment reaches the person it is meant for, and whether an agency can trust the data it receives from another.
+
+## What the GovStack approach changed in how I build
+
+Three things stayed with me.
+
+Start from the citizen's journey, not the agency's org chart. Government systems tend to mirror the institutions that commission them. A citizen does not experience government as departments. They experience it as one service that either works or does not. Designing from that end changes which integrations you build first and which edge cases you refuse to ignore.
+
+Reuse before you build. Every building block that already exists is one less thing to secure, maintain and explain. Treating identity verification, payments and notifications as shared infrastructure rather than features of a single product is slower to agree on and much faster to scale.
+
+Design for interoperability and accountability from day one. Multi-factor authentication, layered access controls and integration with accredited financial institutions are not finishing touches. On the Payslip Aggregator, the ePayslip system and the Cash for Work payment system, they are the reason the service can be trusted at all.
+
+## What a distinction does and does not mean
+
+A certificate recognises work done within the window of a programme. The systems themselves will be judged over years, by people who will never know the programme existed. That is the right measure. If payslip fraud falls, if payroll delivery reaches every civil servant, if social protection disbursements arrive on time, then the approach worked. The certificate is encouragement to keep going, not evidence that the job is done.
+
+## Thank you
+
+To GovStack, GIZ and the ITU for building a programme that takes women in government technology seriously as practitioners. To the mentors and the cohort, whose questions sharpened my own. To my colleagues at Smart Zambia Institute, who supported my application and then made room for the work.
+
+## For the next cohort
+
+If you work in digital government anywhere in the world and you are wondering whether to apply, apply. Bring a real problem with you. The programme rewards people who show up with something they are actually trying to fix, and the distinction, if it comes, will belong to the citizens you fixed it for as much as to you.`
+  },
+  {
     slug: "code-sheros-ignite-zicta-recognition",
     title: "Code SHEROs recognised by IGNITE and ZICTA",
     excerpt: "Code SHEROs has been selected for the Top 20 cohort of the IGNITE Digital Economy Incubator and Accelerator (2026) and shortlisted among 100 candidates for the ZICTA ICT Innovation Programme 2026.",
