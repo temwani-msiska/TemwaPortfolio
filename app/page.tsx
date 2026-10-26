@@ -89,15 +89,14 @@ export default function Portfolio() {
   const governmentExperiences = [
     {
       title: 'Senior Systems Developer',
-      company: 'SMART Zambia Institute',
+      company: 'Smart Zambia Institute',
       period: 'March 2026 - Present',
       type: 'Government',
-      description: 'Leading digital transformation initiatives for national e-government service delivery at the Office of the President.',
+      description: 'Developing the national Payslip Aggregator, a platform to curb payslip fraud on civil servants\' payslips through integration with accredited financial institutions, multi-factor authentication and multi-layered access controls.',
       achievements: [
-        'Lead digital transformation initiatives for national e-government service delivery',
-        'Develop secure, scalable software systems for the Government Service Bus platform',
-        'Design API integrations connecting multiple government agencies and third party services',
-        'Conduct stakeholder requirements analysis and translate policy objectives into technical solutions'
+        'Developing the national Payslip Aggregator to curb payslip fraud through integration with accredited financial institutions, multi-factor authentication and multi-layered access controls',
+        'Built the ePayslip system, digitising payroll delivery for civil servants nationwide',
+        'Contribute to the Cash for Work digital payment system supporting social protection disbursements'
       ],
       icon: Building,
       gradient: 'from-[#E91E8C] to-[#2D0840]',
@@ -105,8 +104,8 @@ export default function Portfolio() {
     },
     {
       title: 'Business Analyst and Systems Developer',
-      company: 'SMART Zambia Institute',
-      period: 'January 2025 - March 2026',
+      company: 'Smart Zambia Institute',
+      period: 'January 2025 - April 2026',
       type: 'Government',
       description: 'Collaborated with the Ministry of Finance and National Planning on the Government Service Bus initiative.',
       achievements: [
@@ -119,8 +118,8 @@ export default function Portfolio() {
     },
     {
       title: 'Systems Developer',
-      company: 'SMART Zambia Institute',
-      period: 'January 2024 - December 2024',
+      company: 'Smart Zambia Institute',
+      period: 'January 2024 - January 2025',
       type: 'Government',
       description: 'Built and maintained software systems powering Zambia\'s digital public infrastructure.',
       achievements: [
@@ -170,7 +169,7 @@ export default function Portfolio() {
       description: 'Satellite-based ESG verification for African mining, co-founded with Beene Chilala.',
       achievements: [
         'Checks mine rehabilitation claims against Sentinel-2 vegetation and water indices and produces hash-sealed, independently re-derivable compliance records for regulators, auditors and carbon registries without a site visit',
-        'Pre-populates reporting for IFC Performance Standards, ZEMA EIA, JORC 2026 ESG and GRI from operator data and eight open data feeds',
+        'Pre-populates reporting for IFC Performance Standards, ZEMA EIA, JORC 2026 ESG and GRI',
         'Lead platform engineering: the GeoDjango and PostGIS pipeline, the data clients and the provenance layer',
         'Running across five Copperbelt sites, anchored on Kansanshi'
       ],
@@ -183,13 +182,13 @@ export default function Portfolio() {
       company: 'Code SHEROs and Code HEROs (Code Bloom Digital Technologies)',
       period: 'December 2025 - Present',
       type: 'Venture',
-      description: 'Sister coding education platforms under Code Bloom Digital Technologies, founded December 2025. Code SHEROs is Africa\'s first offline-capable coding platform for girls aged 7 to 12.',
+      description: 'Sister coding education platforms for Zambian children aged 7 to 12, under Code Bloom Digital Technologies. Code SHEROs is focused on girls.',
       achievements: [
-        'Building Africa\'s first offline-capable coding platform for girls aged 7 to 12',
-        'Developed full stack independently: Django REST backend, Next.js frontend, PostgreSQL, GPT 4o integration',
+        'Offline-capable platforms built on Django REST Framework, Next.js and PostgreSQL',
+        'Dual model combining sponsored NGO access for underserved communities and public subscriptions',
         'Designed 8 learning tracks with 12 interactive challenge types and teacher dashboards for impact reporting',
-        'Preparing pilot programme targeting 100 to 200 girls across Lusaka schools in Q3 2026',
-        'Building Code HEROs (codeheros.co.zm), the sister platform to Code SHEROs under the same parent company'
+        'Preparing a pilot targeting 100 to 200 girls across Lusaka schools',
+        'Code HEROs (codeheros.co.zm) is the sister platform to Code SHEROs (codesheros.co.zm)'
       ],
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#4A0E6B]',
@@ -200,10 +199,12 @@ export default function Portfolio() {
       company: 'Pixel Pulse Studio',
       period: '2018 - Present',
       type: 'Venture',
-      description: 'Technology consultancy delivering end-to-end web and mobile solutions for clients across Zambia.',
+      description: 'Web design and development consultancy in Lusaka.',
       achievements: [
-        'Architected scalable microservices with Docker, GitHub Actions, zero-downtime deployments on Vercel',
-        'Established automated CI/CD pipelines and WCAG-compliant, mobile-first interfaces across client projects'
+        'Full-stack development, brand and UI/UX design, mobile-first websites, business email and DNS setup, and business analysis',
+        'Payments and third-party integrations including mobile money and card processing',
+        'Clients include Hillview Blossoms, Tharros Engineering, Smart Mechanics and the ZNCF Conference for NCFI 2026',
+        'Built on Next.js, React, Node and PostgreSQL, deployed to Vercel, Hetzner and Railway'
       ],
       icon: Zap,
       gradient: 'from-[#4A0E6B] to-[#E91E8C]',
@@ -224,9 +225,9 @@ const projects = [
     },
     {
       title: 'Code SHEROs',
-      description: 'Story driven coding platform teaching African girls aged 7 to 12 to code through gamified missions. Pilot launching across Lusaka schools in Q3 2026.',
+      description: 'Story driven, offline-capable coding platform teaching Zambian girls aged 7 to 12 to code through gamified missions. Sponsored NGO access for underserved communities alongside public subscriptions.',
       tags: ['EdTech', 'Social Impact', 'Django', 'Next.js'],
-      impact: 'Building coding literacy for girls across Africa',
+      impact: 'Building coding literacy for Zambian girls',
       icon: Rocket,
       gradient: 'from-[#E91E8C] to-[#4A0E6B]',
       link: 'https://www.codesheros.co.zm',
@@ -234,8 +235,8 @@ const projects = [
     },
     {
       title: 'Code HEROs',
-      description: 'Sister coding education platform to Code SHEROs under Code Bloom Digital Technologies, founded December 2025.',
-      tags: ['EdTech', 'Coding Education', 'Social Impact'],
+      description: 'Sister coding education platform to Code SHEROs for Zambian children aged 7 to 12, under Code Bloom Digital Technologies. Offline-capable, built on Django REST Framework, Next.js and PostgreSQL.',
+      tags: ['EdTech', 'Coding Education', 'Django', 'Next.js'],
       impact: 'Expanding coding education alongside Code SHEROs',
       icon: Rocket,
       gradient: 'from-[#4A0E6B] to-[#E91E8C]',
@@ -254,8 +255,8 @@ const projects = [
     },
     {
       title: 'Pixel Pulse Studio',
-      description: 'Technology consultancy delivering end-to-end web and mobile solutions. Built Temzie Bites and Smart Mechanics.',
-      tags: ['Consultancy', 'Web', 'Mobile', 'Cloud'],
+      description: 'Web design and development consultancy in Lusaka: full-stack builds, brand and UI/UX design, payments and mobile money integrations. Clients include Hillview Blossoms, Tharros Engineering, Smart Mechanics and the ZNCF Conference for NCFI 2026.',
+      tags: ['Consultancy', 'Web', 'UI/UX', 'Payments'],
       impact: 'Shipping products for clients across Zambia and beyond',
       icon: Zap,
       gradient: 'from-[#4A0E6B] to-[#E91E8C]',
@@ -267,41 +268,41 @@ const projects = [
   const education = [
     {
       degree: 'BSc (Hons) Computer Systems and Networking',
-      institution: 'University of Greenwich, UK (via Cyber Academy, Lusaka, Zambia)',
-      achievement: 'Upper Second Class Honours',
+      institution: 'University of Greenwich',
+      achievement: 'Upper Second Class Honours (2:1)',
       level: 'Bachelor\'s Degree',
       period: '2023',
       gradient: 'from-[#E91E8C] to-[#2D0840]'
     },
     {
-      degree: 'NCC Education Level Diploma in Computing (Level 5)',
-      institution: 'Computer Science',
-      achievement: 'With Merit',
+      degree: 'NCC Level 5 Diploma in Computing',
+      institution: 'Cyber Academy Lusaka',
+      achievement: 'Merit',
       level: 'Level 5 Diploma',
-      period: '2021 - 2022',
+      period: 'October 2022',
       gradient: 'from-[#2D0840] to-[#E91E8C]'
     },
     {
-      degree: 'NCC Education Level Diploma in Computing (Level 4)',
-      institution: 'Computer Science',
+      degree: 'NCC Level 4 Diploma in Computing',
+      institution: 'Cyber Academy Lusaka',
       achievement: 'Completed',
       level: 'Level 4 Diploma',
       period: '2020 - 2021',
       gradient: 'from-[#E91E8C] to-[#4A0E6B]'
     },
     {
-      degree: 'NCC Education Level Diploma in Computing (Level 3)',
-      institution: 'Computer Science',
-      achievement: 'With Merit',
+      degree: 'NCC Level 3 Diploma in Computing',
+      institution: 'Cyber Academy Lusaka',
+      achievement: 'Merit',
       level: 'Level 3 Diploma',
       gradient: 'from-[#4A0E6B] to-[#E91E8C]'
     }
   ];
 
   const techStack = [
-    'React', 'Next.js', 'Node.js', 'TypeScript', 'Django', 'PostgreSQL', 
-    'Docker', 'Hetzner', 'Vercel', 'Railway', 'GraphQL', 'REST APIs',
-    'GitHub Actions', 'Microservices', 'Serverless', 'NLP'
+    'Python', 'JavaScript', 'TypeScript', 'Django', 'Django REST Framework', 'React', 'Next.js', 'Node.js',
+    'GraphQL', 'REST APIs', 'PostgreSQL', 'MySQL', 'Vercel', 'Hetzner', 'Railway', 'Linux VMs',
+    'Docker', 'GitHub Actions', 'CI/CD', 'OpenG2P', 'Government Service Bus', 'ZamPortal', 'Payslip Aggregator'
   ];
 
   return (
@@ -405,10 +406,10 @@ const projects = [
             {/* Left: Role + CTA */}
             <div className="max-w-md">
               <h2 className="text-xl md:text-2xl font-heading font-bold text-neutral-900 mb-2">
-                Systems Developer & Tech Entrepreneur
+                Senior Systems Developer | Digital Public Infrastructure | GovTech
               </h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-4">
-                Building national systems at SMART Zambia Institute and growing Code SHEROs to empower the next generation of African female coders through storytelling.
+                Building national systems at Smart Zambia Institute and growing Code SHEROs and Code HEROs to empower the next generation of Zambian coders through storytelling.
               </p>
               <a href="#contact" className="inline-flex items-center gap-2 bg-neutral-900 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-neutral-800 transition-colors">
                 Let&apos;s collaborate <ArrowUpRight className="w-4 h-4" />
@@ -447,7 +448,7 @@ const projects = [
             <div className="grid md:grid-cols-5 gap-12 md:gap-16">
               <div className="md:col-span-3 space-y-5">
                 <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-                  I am a systems developer and tech entrepreneur based in Lusaka, Zambia. I build scalable government digital infrastructure at SMART Zambia Institute, while also leading Code SHEROs, a movement equipping African girls with coding skills through immersive, story driven experiences.
+                  I am a Senior Systems Developer based in Lusaka, Zambia, with over nine years of experience in digital public infrastructure, systems development, and government digital transformation. I build national systems atSmart Zambia Institute, co-founded Mukuba Technologies, and lead Code SHEROs and Code HEROs, sister coding education platforms for Zambian children under Code Bloom Digital Technologies.
                 </p>
               </div>
               <div className="md:col-span-2 grid grid-cols-2 gap-4">
@@ -701,10 +702,10 @@ const projects = [
 
               <div className="md:col-span-3">
                 <p className="text-lg text-neutral-300 leading-relaxed mb-5">
-                  Teaching African girls to code through story driven missions. Code SHEROs is an interactive coding education platform for girls aged 7 to 12, built in Zambia and designed for Africa. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
+                  Teaching Zambian girls to code through story driven missions. Code SHEROs is an interactive, offline-capable coding education platform for girls aged 7 to 12, built in Zambia on Django REST Framework, Next.js and PostgreSQL. Players become digital heroes who learn HTML, CSS, and JavaScript by battling villains and solving coding challenges alongside three mentor characters: Byte, Pixel, and Nova.
                 </p>
                 <p className="text-neutral-400 mb-8">
-                  Preparing for pilot launch across 3 to 5 schools in Lusaka, targeting 100 to 200 girls in Q3 2026. Its sister platform, Code HEROs, sits alongside it under Code Bloom Digital Technologies at{' '}
+                  A pilot targeting 100 to 200 girls across Lusaka schools is in preparation, with a dual model combining sponsored NGO access for underserved communities and public subscriptions. Its sister platform, Code HEROs, sits alongside it under Code Bloom Digital Technologies at{' '}
                   <a href="https://www.codeheros.co.zm" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-neutral-600 underline-offset-4 hover:decoration-white transition-colors">codeheros.co.zm</a>.
                 </p>
                 <div className="grid grid-cols-3 gap-4">
@@ -714,7 +715,7 @@ const projects = [
                   </div>
                   <div className="border border-neutral-700 rounded-xl p-4">
                     <span className="text-xs text-neutral-500 uppercase tracking-wider">Stack</span>
-                    <p className="text-sm text-white mt-1">Next.js, Django, TS</p>
+                    <p className="text-sm text-white mt-1">Django REST, Next.js, PostgreSQL</p>
                   </div>
                   <div className="border border-neutral-700 rounded-xl p-4">
                     <span className="text-xs text-neutral-500 uppercase tracking-wider">Stage</span>
@@ -820,8 +821,9 @@ const projects = [
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { title: 'GovStack Women in GovTech Challenge 2026: Certificate of Distinction', detail: 'Awarded for applied work on citizen-centric digital government services using the GovStack approach. Selected from over 1,300 applicants across 137 countries' },
-                { title: 'OpenG2P Advanced Training Course', detail: 'IIIT Bangalore, December 2024' },
+                { title: 'GovStack Women in GovTech Challenge 2026: Certificate of Distinction', detail: 'Selected from over 1,300 applicants across 137 countries. Delivered by GovStack, GIZ and the ITU' },
+                { title: 'OpenG2P Advanced Training Course', detail: 'IIIT Bangalore, India, December 2024' },
+                { title: 'IGNITE Digital Economy Incubator and Accelerator, Top 20 Cohort', detail: '2026, with Code SHEROs' },
                 { title: 'AFRALO Individual Member', detail: 'ICANN' }
               ].map((item, index) => (
                 <div key={index} className="border border-neutral-200 rounded-2xl p-5 hover:border-neutral-400 transition-colors">
@@ -846,7 +848,7 @@ const projects = [
                 </div>
                 <div className="space-y-0">
                   {[
-                    { name: 'OpenG2P Advanced Training Course, IIIT Bangalore', detail: 'December 2024' },
+                    { name: 'OpenG2P Advanced Training Course, IIIT Bangalore, India', detail: 'December 2024' },
                     { name: 'Digital Awareness Certificate', detail: '' },
                     { name: 'Introduction to Modern Artificial Intelligence', detail: '' }
                   ].map((cert, index) => (
@@ -903,8 +905,8 @@ const projects = [
                   </div>
                   <div className="flex items-center gap-3 text-neutral-600">
                     <Mail className="w-4 h-4 text-neutral-400" />
-                    <a href="mailto:temwani.msiska@gmail.com" className="text-sm hover:text-neutral-900 transition-colors">
-                      temwani.msiska@gmail.com
+                    <a href="mailto:hello@temwanimsiska.dev" className="text-sm hover:text-neutral-900 transition-colors">
+                      hello@temwanimsiska.dev
                     </a>
                   </div>
                 </div>
@@ -912,7 +914,7 @@ const projects = [
 
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:temwani.msiska@gmail.com"
+                  href="mailto:hello@temwanimsiska.dev"
                   className="flex items-center justify-between bg-neutral-900 text-white rounded-2xl px-6 py-5 hover:bg-neutral-800 transition-colors group"
                 >
                   <div className="flex items-center gap-3">
@@ -994,7 +996,7 @@ const projects = [
                 <a href="https://github.com/temwani-msiska" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors">
                   <Github className="w-4 h-4" />
                 </a>
-                <a href="mailto:temwani.msiska@gmail.com" className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors">
+                <a href="mailto:hello@temwanimsiska.dev" className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors">
                   <Mail className="w-4 h-4" />
                 </a>
               </div>

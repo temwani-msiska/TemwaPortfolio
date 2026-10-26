@@ -83,22 +83,22 @@ The gap in global AI is not that Zambia lacks talent. It is that the people buil
 
 I went in to teach. I came out reminded.
 
-Thank you to FAWEZA, to the Mastercard Foundation, and to the SMART Zambia Institute for the opportunity to be in that room. To the students who were there: you are not behind. The conversation is yours to shape, and the rest of us are paying attention.`
+Thank you to FAWEZA, to the Mastercard Foundation, and to the Smart Zambia Institute for the opportunity to be in that room. To the students who were there: you are not behind. The conversation is yours to shape, and the rest of us are paying attention.`
   },
   {
     slug: "speaking-up-for-girls-in-ict-radio-interview",
     title: "Speaking Up for Girls in ICT: My International Girls in ICT Day Radio Interview",
-    excerpt: "On 24 April 2026, SMART Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up.",
+    excerpt: "On 24 April 2026, Smart Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up.",
     date: "April 11, 2026",
     readTime: "3 min read",
     category: "GovTech & Public Sector Innovation",
-    tags: ["Women in Tech", "Public Service", "Girls in ICT", "Zambia", "SMART Zambia"],
+    tags: ["Women in Tech", "Public Service", "Girls in ICT", "Zambia", "Smart Zambia"],
     image: "/radio.jpeg",
-    content: `On 24 April 2026, SMART Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up: a woman in a government technology role saying out loud that this field is for you.
+    content: `On 24 April 2026, Smart Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up: a woman in a government technology role saying out loud that this field is for you.
 
 ## What I actually do
 
-I am a Senior Systems Developer at SMART Zambia Institute. I build and maintain digital systems that sit behind government services. Most people never see this infrastructure but interact with it every day. It is detailed, methodical work. You spend a lot of time understanding how things connect before you write a single line of code.
+I am a Senior Systems Developer at Smart Zambia Institute. I build and maintain digital systems that sit behind government services. Most people never see this infrastructure but interact with it every day. It is detailed, methodical work. You spend a lot of time understanding how things connect before you write a single line of code.
 
 I wanted to name that reality on air because the image most girls have of ICT is either a lone genius in a dark room or a Silicon Valley startup. Some of the most meaningful technology work happens inside public institutions, solving problems that actually matter.
 
@@ -168,7 +168,7 @@ The philosophy aligns closely with the Digital Public Infrastructure approach th
 
 ## Why This Matters to Me
 
-Working at SMART Zambia Institute, I have seen firsthand how digital transformation can improve public service delivery. I have also seen the challenges: coordination across agencies, building technical capacity, earning public trust, and sustaining systems beyond initial implementation. These are not problems with simple solutions. They require continuous learning, collaboration, and exposure to how others are navigating similar terrain.
+Working at Smart Zambia Institute, I have seen firsthand how digital transformation can improve public service delivery. I have also seen the challenges: coordination across agencies, building technical capacity, earning public trust, and sustaining systems beyond initial implementation. These are not problems with simple solutions. They require continuous learning, collaboration, and exposure to how others are navigating similar terrain.
 
 The GovStack mentorship programme offers exactly this. Over the coming months, I will have access to experienced practitioners, structured learning, and a global cohort of women working on similar challenges in their own countries. The cross border exchange of ideas and experiences is what excites me most.
 
@@ -192,7 +192,7 @@ The programme kicks off in February, and I am already preparing. There is readin
 
 For anyone considering applying to future cohorts of this programme or similar initiatives, my encouragement is simple: apply. The worst outcome is a rejection. The best outcome is an opportunity that reshapes your trajectory. I almost did not submit my application, thinking the odds were too long. I am grateful I did.
 
-To the GovStack team, the ITU, GIZ, and everyone involved in making this programme possible: thank you. To my colleagues at SMART Zambia who supported my application: thank you. And to the other women selected for this cohort: I look forward to learning alongside you.
+To the GovStack team, the ITU, GIZ, and everyone involved in making this programme possible: thank you. To my colleagues at Smart Zambia who supported my application: thank you. And to the other women selected for this cohort: I look forward to learning alongside you.
 
 This is the kind of opportunity that does not come often. I intend to make the most of it.
     `,

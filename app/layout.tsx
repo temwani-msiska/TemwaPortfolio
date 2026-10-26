@@ -5,13 +5,13 @@ import { siteUrl } from '@/lib/site';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Temwani Msiska - Senior Systems Developer | Digital Public Infrastructure',
-  description: 'Professional portfolio of Temwani Msiska, Senior Systems Developer at SMART Zambia Institute with 9+ years of experience in digital public infrastructure, GovTech, and systems development.',
-  keywords: 'Senior Systems Developer, Digital Public Infrastructure, GovTech, Smart Zambia, SMART Zambia Institute, Web Development, Code SHEROs, Code Bloom',
+  description: 'Professional portfolio of Temwani Msiska, Senior Systems Developer at Smart Zambia Institute with 9+ years of experience in digital public infrastructure, GovTech, and systems development.',
+  keywords: 'Senior Systems Developer, Digital Public Infrastructure, GovTech, Smart Zambia, Smart Zambia Institute, Web Development, Code SHEROs, Code Bloom',
   authors: [{ name: 'Temwani Msiska' }],
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
-    title: 'Temwani Msiska - Business Analyst & Systems Developer',
+    title: 'Temwani Msiska - Senior Systems Developer | Digital Public Infrastructure',
     description: 'Professional portfolio showcasing expertise in business analysis, systems development, and digital transformation across Africa.',
     type: 'website',
     locale: 'en_US',

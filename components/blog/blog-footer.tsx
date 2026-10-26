@@ -23,7 +23,7 @@ export function BlogFooter() {
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href="mailto:temwani.msiska@gmail.com"
+                href="mailto:hello@temwanimsiska.dev"
                 className="inline-flex items-center gap-2 bg-white text-neutral-900 rounded-full px-6 py-3 text-sm font-medium hover:bg-neutral-200 transition-colors"
               >
                 Send an email <ArrowUpRight className="w-4 h-4" />
@@ -64,7 +64,7 @@ export function BlogFooter() {
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href="mailto:temwani.msiska@gmail.com"
+                href="mailto:hello@temwanimsiska.dev"
                 aria-label="Email"
                 className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-500 transition-colors"
               >

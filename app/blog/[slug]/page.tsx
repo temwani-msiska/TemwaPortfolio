@@ -133,7 +133,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     </div>
                     <div>
                       <p className="text-sm font-heading font-semibold text-neutral-900">Temwani Msiska</p>
-                      <p className="text-xs text-neutral-500">Systems Developer &amp; Tech Entrepreneur, Lusaka</p>
+                      <p className="text-xs text-neutral-500">Senior Systems Developer, Lusaka</p>
                     </div>
                   </div>
                   <ShareButtons url={url} title={post.title} />
@@ -208,9 +208,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <div className="flex-1">
                     <p className="font-heading font-bold text-neutral-900">Temwani Msiska</p>
                     <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
-                      Systems developer and tech entrepreneur based in Lusaka, Zambia. Building national digital
-                      infrastructure at SMART Zambia Institute and growing Code SHEROs, a movement teaching African
-                      girls to code through story-driven experiences.
+                      Senior Systems Developer based in Lusaka, Zambia. Building national digital public
+                      infrastructure at Smart Zambia Institute and growing Code SHEROs and Code HEROs, sister coding
+                      education platforms for Zambian children.
                     </p>
                     <div className="mt-5 flex flex-wrap gap-3">
                       <Link
