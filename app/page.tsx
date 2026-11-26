@@ -793,7 +793,7 @@ const projects = [
                 { title: 'GovStack Women in GovTech Challenge 2026 Mentee', detail: 'Selected from 1,300+ applicants across 137 countries' },
                 { title: 'OpenG2P Advanced Training Course', detail: 'IIIT Bangalore, December 2024' },
                 { title: 'AFRALO Individual Member', detail: 'ICANN' },
-                { title: 'Certificate in Diplomatic Practice, Protocol and Public Relations, ZIDIS', detail: 'Completed October to November 2026. Diplomatic practice, protocol and public relations for public service and international engagement.' }
+                { title: 'Certificate in Diplomatic Practice, Protocol and Public Relations, ZIDIS', detail: 'Diplomatic practice, protocol and public relations for public service and international engagement.' }
               ].map((item, index) => (
                 <div key={index} className="border border-neutral-200 rounded-2xl p-5 hover:border-neutral-400 transition-colors">
                   <Globe className="w-5 h-5 text-neutral-300 mb-3" />
