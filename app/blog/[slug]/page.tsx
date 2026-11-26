@@ -21,6 +21,16 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') && part.length > 4 ? (
+      <strong key={i} className="font-semibold text-neutral-900">{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getBlogPost(params.slug);
 
@@ -123,6 +133,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   </h3>
                 );
               }
+              const lines = trimmed.split('\n');
+              if (trimmed && lines.every((line) => line.trim().startsWith('- '))) {
+                return (
+                  <ul key={index} className="list-disc pl-6 space-y-3 mb-7 text-lg md:text-xl text-neutral-700 leading-[1.8]">
+                    {lines.map((line, i) => (
+                      <li key={i}>{renderInline(line.trim().slice(2))}</li>
+                    ))}
+                  </ul>
+                );
+              }
               if (trimmed) {
                 const parts = trimmed.split(/(codesheros\.co\.zm)/g);
                 return (
@@ -131,7 +151,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       part === 'codesheros.co.zm' ? (
                         <a key={i} href="https://www.codesheros.co.zm" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline decoration-neutral-400 underline-offset-4 hover:decoration-neutral-900 transition-colors">codesheros.co.zm</a>
                       ) : (
-                        part
+                        <span key={i}>{renderInline(part)}</span>
                       )
                     )}
                   </p>

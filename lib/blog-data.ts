@@ -20,6 +20,74 @@ export const categories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "why-a-systems-developer-studied-diplomacy",
+    title: "Why a systems developer studied diplomacy",
+    excerpt: "I just completed a certificate in Diplomatic Practice, Protocol and Public Relations. Here is why a developer would bother.",
+    date: "November 26, 2026",
+    readTime: "3 min read",
+    category: "GovTech & Public Sector Innovation",
+    tags: ["Diplomacy", "ZIDIS", "International Engagement", "Public Service", "Zambia"],
+    image: "/blog/zidis-certificate.jpg",
+    content: `I have just completed the Certificate in Diplomatic Practice, Protocol and Public Relations at the Zambia Institute of Diplomacy and International Studies (ZIDIS), which ran from 5 October to 19 November 2026.
+
+People have asked me why a systems developer would study diplomacy. The honest answer is that the systems I care about most do not stop at borders.
+
+## Technology is now a diplomatic subject
+
+Digital public infrastructure, data protection, internet governance, AI: these are now discussed at the UN, the ITU and regional bodies as often as in engineering teams. Countries negotiate over where data is stored, how identity systems work together, and who sets the standards. The people in those rooms need to understand both the technology and how international engagement actually works.
+
+Through my work at SMART Zambia Institute, my membership of ICANN's African Regional At-Large Organisation, and the GovStack Women in GovTech Challenge, I kept finding myself in conversations where the technical part was the easy part. The hard part was protocol, representation and building trust between institutions.
+
+## What the course gave me
+
+The course covered diplomatic practice, protocol and public relations: how official engagements are structured, how institutions communicate, and how to represent an organisation well. For someone used to talking to servers and databases, that was a valuable shift.
+
+The timing was fitting. The certificate is dated 19 November, the final day of the Africa Tech Festival in Cape Town, where I was part of an official SMART Zambia Institute delegation. I finished a course on representing an institution while doing exactly that.
+
+## Where this fits
+
+My goal is to work at the intersection of technology and international development. Code gets systems built. Diplomacy gets them adopted, trusted and shared across borders. I want to be good at both.`
+  },
+  {
+    slug: "inside-an-ai-factory-cape-town",
+    title: "Inside an AI factory: what I learned in Cape Town",
+    excerpt: "I stood in a hall full of GPUs and realised the AI conversation in Africa is really a conversation about infrastructure.",
+    date: "November 24, 2026",
+    readTime: "4 min read",
+    category: "GovTech & Public Sector Innovation",
+    tags: ["AI", "Infrastructure", "Data Sovereignty", "Africa Tech Festival", "SMART Zambia"],
+    image: "/blog/cape-town-ai-factory.jpg",
+    content: `In November I was part of a SMART Zambia Institute delegation, led by our National Coordinator, that visited the Cassava AI Factory in Cape Town and attended the Africa Tech Festival.
+
+I have spent most of my career building systems that sit on top of infrastructure: payroll aggregators, tracking platforms, government portals. This was the first time I walked through the infrastructure itself.
+
+## What an AI factory actually is
+
+An AI factory is a data centre built for one job: running and training AI models. Instead of rows of ordinary servers, you have thousands of NVIDIA GPUs working together, connected by very fast networks and kept cool with liquid cooling. The scale is hard to picture until you stand in it. The heat these machines produce is so intense that air alone can no longer cool them.
+
+What stayed with me was not the hardware. It was how much of AI depends on things we rarely talk about: power, cooling, water, security certifications, and the question of where data physically lives.
+
+## Why this matters for Zambia
+
+When people talk about AI, they usually talk about models and apps. But a country that wants to use AI in public services also has to answer harder questions. Where will government data be processed? Who can access it? Does it ever leave the country? How do we protect it under our Data Protection Act?
+
+These are not only technical questions. They are questions of sovereignty and trust, and they need to be answered before any system is built.
+
+## What I took from the Africa Tech Festival
+
+A few sessions stood out:
+
+- **Public sector transformation.** Dr Sylvia Sathekge, CIO of South Africa's National Health Laboratory Service, spoke about what successful transformation programmes do differently. My takeaway: well-governed, centralised data lets government see the whole country at once, and that kind of data needs serious protection.
+- **Skills.** The IITPSA ICT Skills Survey compared STEM graduate numbers across countries. Zambia was not in the comparison, which made me think we need our own baseline.
+- **Developers.** The Developer Lab, with Andela and GitHub as talent partners, was a reminder that the infrastructure means nothing without the people who build on it.
+
+## What's next
+
+I came home with pages of notes and one clear conviction: AI in Africa will be decided as much in data centres and policy rooms as in code. I want to be in both conversations.
+
+A Smart Zambia is a Connected Zambia.`
+  },
+  {
     slug: "speaking-up-for-girls-in-ict-radio-interview",
     title: "Speaking Up for Girls in ICT: My International Girls in ICT Day Radio Interview",
     excerpt: "On 24 April 2026, SMART Zambia Institute invited me to speak on a radio interview for International Girls in ICT Day. A few minutes on air. But those few minutes represented something I did not have growing up.",
