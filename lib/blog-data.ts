@@ -8,6 +8,7 @@ export interface BlogPost {
   tags: string[];
   readTime: string;
   image?: string;
+  imageCredit?: { text: string; url: string };
 }
 
 export const categories = [
@@ -28,6 +29,7 @@ export const blogPosts: BlogPost[] = [
     category: "GovTech & Public Sector Innovation",
     tags: ["Diplomacy", "ZIDIS", "International Engagement", "Public Service", "Zambia"],
     image: "/blog/diplomacy.jpg",
+    imageCredit: { text: "Photo via Unsplash", url: "https://unsplash.com" },
     content: `I have just completed the Certificate in Diplomatic Practice, Protocol and Public Relations at the Zambia Institute of Diplomacy and International Studies (ZIDIS), which ran from 5 October to 19 November 2026.
 
 People have asked me why a systems developer would study diplomacy. The honest answer is that the systems I care about most do not stop at borders.

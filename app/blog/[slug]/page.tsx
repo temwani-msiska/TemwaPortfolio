@@ -109,6 +109,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 className="w-full max-h-[80vh] object-contain"
               />
             </div>
+            {post.imageCredit && (
+              <p className="mt-3 text-right text-xs text-neutral-500">
+                <a href={post.imageCredit.url} target="_blank" rel="noopener noreferrer" className="underline decoration-neutral-300 underline-offset-2 hover:text-neutral-900 transition-colors">
+                  {post.imageCredit.text}
+                </a>
+              </p>
+            )}
           </div>
         </div>
       )}
